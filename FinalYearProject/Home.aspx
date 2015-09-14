@@ -3,7 +3,7 @@
      <link href="CssStyles/style.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
-    <div class="navbar navbar-inverse navbar-fixed-top headroom" >
+    &nbsp;<div class="navbar navbar-inverse navbar-fixed-top headroom" >
         <div class="container">
             <div class="navbar-header">
 				<!-- Button for smallest screens -->
