@@ -11,16 +11,16 @@ using System.IO;
 namespace FinalYearProject
 {
     public partial class SignUp : System.Web.UI.Page
-    {
+   {
         protected void Page_Load(object sender, EventArgs e)
         {
             
         }
 
-        protected void btn_signup(object sender,EventArgs e)
+        protected void btn_signup(object sender, EventArgs e)
         {
             string emailinput = email.Value;
-            if(emailinput == "")
+            if (emailinput == "")
             {
                 lbl_result.Text = "Email cannot be empty";
             }
@@ -30,30 +30,32 @@ namespace FinalYearProject
             string cfmpasswordinput = cfmpassword.Value;
             string mobileinput = mobileno.Value;
             bool emailcheck = IsValid(emailinput);
-            HttpPostedFile file = Request.Files["profimage"];
-            
-            if(emailcheck == true )
+
+
+            if (emailcheck == true)
             {
-                
-                if (file != null && file.ContentLength > 0)
+                if (fu_upload.HasFile)
                 {
-                    AzureUserBLL validateinput = new AzureUserBLL();
-                    string FileName = Path.GetFileName(file.FileName);
-                    file.SaveAs(Server.MapPath("ProfileImages//" + FileName));
-                    validateinput.CreateDoctorAcccount(emailinput, tnameinput, userpasswordinput, cfmpasswordinput, mobileinput, userdob, "ProfileImages//" + FileName);
-                    lbl_result.Text = validateinput.returnMessage;
+                    if (fu_upload.PostedFile != null)
+                    {
+                        AzureUserBLL validateinput = new AzureUserBLL();
+                        string FileName = Path.GetFileName(fu_upload.PostedFile.FileName);
+                        fu_upload.SaveAs(Server.MapPath("ProfileImages//" + FileName));
+                        validateinput.CreateDoctorAcccount(emailinput, tnameinput, userpasswordinput, cfmpasswordinput, mobileinput, userdob, "ProfileImages//" + FileName);
+                        lbl_result.Text = validateinput.returnMessage;
+                    }
+                    else
+                    {
+                        lbl_result.Text = "You did not upload a profile image";
+                    }
                 }
                 else
                 {
-                    lbl_result.Text = "You did not upload a profile image";
+                    lbl_result.Text = "Email is Invalid";
                 }
-            }
-            else
-            {
-                lbl_result.Text = "Email is Invalid";
-            }
 
 
+            }
         }
         public bool IsValid(string emailaddress)
         {

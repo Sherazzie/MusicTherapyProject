@@ -67,6 +67,15 @@ namespace FinalYearProject {
         protected global::System.Web.UI.HtmlControls.HtmlInputText dob;
         
         /// <summary>
+        /// fu_upload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fu_upload;
+        
+        /// <summary>
         /// lbl_result control.
         /// </summary>
         /// <remarks>

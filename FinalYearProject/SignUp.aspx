@@ -48,7 +48,7 @@
         <div class="login-card">
             <h1>Registration Page</h1>
             <br />
-           <form method="post">
+          
              Email:
              <input type="text" name="email" placeholder="Email" runat="server" id="email"/>
             Therapist Name:
@@ -62,12 +62,12 @@
             Date of Birth:
             <input type="text" name="dob" placeholder="DD/MM/YY" runat="server" id="dob"/>
             Profile Picture:
-            <input type="file" name ="profimage" />
+            <asp:FileUpload ID="fu_upload" runat="server" />
             <br />
             <asp:Label ID="lbl_result" runat="server"></asp:Label>
             <input type="submit" name="login" class="login login-submit" value="Sign Up"  runat="server" OnServerClick="btn_signup"/>
             
-            </form>
+            
 
             <div class="login-help">
                 <a href="Login.aspx">Login</a> • <a href="#">Forgot Password</a>

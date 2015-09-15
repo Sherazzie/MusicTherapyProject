@@ -36,7 +36,7 @@ namespace BusinessLogicLayer
                 byte[] data = Encoding.ASCII.GetBytes(pwd);
                 byte[] result = sha.ComputeHash(data);
                 string hashedpwd = Convert.ToBase64String(result);
-                AzureUserDAL doc = new AzureUserDAL(email, dname, pwd, mobileno, dob, pip);
+                AzureUserDAL doc = new AzureUserDAL(email, dname, hashedpwd, mobileno, dob, pip);
                 int noofRows = 0;
                 noofRows = doc.CreateDoctorProfile();
 
