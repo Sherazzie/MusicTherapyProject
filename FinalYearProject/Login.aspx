@@ -18,12 +18,12 @@
                 <ul class="nav navbar-nav pull-right">
                     <li class="active"><a href="Home.aspx">Home</a></li>
                     <li><a href="About.aspx">About</a></li>
-                          <!--  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+                           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="sidebar-left.html"></a></li>
-                                    <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
+                                    <li class="active"><a href="sidebar-right.html">Left siderbar </a></li>
                                 </ul>
-                            </li> -->
+                            </li>
                             <li><a href="SignUp.aspx">Registration</a></li>
                     <li><a href="Login.aspx">Login</a></li>
                 </ul>
@@ -47,9 +47,9 @@
             <br />
            
             
-             <input type="text" name="email" placeholder="Email" runat="server" />
-            <input type="password" name="pass" placeholder="Password" runat="server" />
-            <input type="submit" name="login" class="login login-submit" value="Login"  runat="server"/>
+             <input type="text" name="email" placeholder="Email" runat="server" id="email" />
+            <input type="password" name="pass" placeholder="Password" runat="server" id="password" />
+            <input type="submit" name="login" class="login login-submit" value="Login"  runat="server" onServerClick="btnLogin_Click" />
             
 
 

@@ -42,25 +42,38 @@
                     <img src="siteimages/BLmasterpagebanner.jpg" />
                 </p>
     </asp:Panel>
+ 
       <div>
+             
         <div class="login-card">
             <h1>Registration Page</h1>
             <br />
-           
+           <form method="post">
+             Email:
+             <input type="text" name="email" placeholder="Email" runat="server" id="email"/>
+            Therapist Name:
+            <input type="text" name="fullname" placeholder="Therapist Name" runat="server" id="tname" />
+            Password:
+            <input type="password" name="pass" placeholder="Password" runat="server" id="password" />
+            Renenter Password:
+            <input type="password" name="confpass" placeholder="Confirm Password" runat="server" id="cfmpassword"/>
+            Mobile Number:
+            <input type="text" name="phoneno" placeholder="Mobile No." runat="server" id="mobileno"/>
+            Date of Birth:
+            <input type="text" name="dob" placeholder="DD/MM/YY" runat="server" id="dob"/>
+            Profile Picture:
+            <input type="file" name ="profimage" />
+            <br />
+            <asp:Label ID="lbl_result" runat="server"></asp:Label>
+            <input type="submit" name="login" class="login login-submit" value="Sign Up"  runat="server" OnServerClick="btn_signup"/>
             
-             <input type="text" name="email" placeholder="Email" runat="server" />
-            <input type="text" name="fullname" placeholder="Therapist Name" runat="server" />
-            <input type="password" name="pass" placeholder="Password" runat="server" />
-            <input type="password" name="confpass" placeholder="Confirm Password" runat="server" />
-            <input type="text" name="phoneno" placeholder="Mobile No." runat="server" />
-            <input type="submit" name="login" class="login login-submit" value="Sign Up"  runat="server"/>
-            
-
+            </form>
 
             <div class="login-help">
                 <a href="Login.aspx">Login</a> • <a href="#">Forgot Password</a>
             </div>
         </div>
+      
 
         <!-- <div id="error"><img src="https://dl.dropboxusercontent.com/u/23299152/Delete-icon.png" /> Your caps-lock is on.</div> -->
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

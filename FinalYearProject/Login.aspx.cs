@@ -13,5 +13,11 @@ namespace FinalYearProject
         {
 
         }
+        protected void btnLogin_Click(object sender,EventArgs e)
+        {
+            string useremail = email.Value;
+            string userpassword = password.Value;
+          
+        }
     }
 }
