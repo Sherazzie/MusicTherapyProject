@@ -101,6 +101,7 @@
     <Content Include="BeforeLogin.Master" />
     <Content Include="SignUp.aspx" />
     <Content Include="siteimages\BLmasterpagebanner.jpg" />
+    <Content Include="UploadMusic.aspx" />
     <Content Include="webcss\css\main.css" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -158,8 +159,16 @@
     <Compile Include="testform.aspx.designer.cs">
       <DependentUpon>testform.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UploadMusic.aspx.cs">
+      <DependentUpon>UploadMusic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadMusic.aspx.designer.cs">
+      <DependentUpon>UploadMusic.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="MusicAlbumArt\" />
     <Folder Include="ProfileImages\" />
     <Folder Include="webcss\fonts\" />
     <Folder Include="webcss\images\" />

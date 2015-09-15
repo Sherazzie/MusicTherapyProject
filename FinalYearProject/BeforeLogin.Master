@@ -41,6 +41,7 @@
                                     <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
                                 </ul>
                             </li> -->
+                            <li><a href="UploadMusic.aspx">Upload Music</a></li>
                             <li><a href="SignUp.aspx">Registration</a></li>
                             <li><a href="Login.aspx">Login</a></li>
                         </ul>
