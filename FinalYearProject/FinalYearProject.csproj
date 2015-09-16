@@ -94,9 +94,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CssStyles\datalist css.css" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="music.aspx" />
+    <Content Include="MusicView.aspx" />
     <Content Include="packages.config" />
     <Content Include="BeforeLogin.Master" />
     <Content Include="SignUp.aspx" />
@@ -114,7 +116,9 @@
   <ItemGroup>
     <Content Include="CssStyles\style.css" />
     <Content Include="testform.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BeforeLogin.Master.cs">
@@ -144,6 +148,13 @@
     </Compile>
     <Compile Include="music.aspx.designer.cs">
       <DependentUpon>music.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MusicView.aspx.cs">
+      <DependentUpon>MusicView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MusicView.aspx.designer.cs">
+      <DependentUpon>MusicView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignUp.aspx.cs">
