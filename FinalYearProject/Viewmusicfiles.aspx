@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BeforeLogin.Master" AutoEventWireup="true" CodeBehind="Viewmusicfiles.aspx.cs" Inherits="FinalYearProject.Viewmusicfiles" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="CssStyles/style.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
     <div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -79,6 +80,37 @@
               
             </Columns>
         </asp:GridView>
+    <br />
+    <br />
+    <table style="margin:0 auto">
+        <tr>
+            <td>Enter Artist Name:</td>
+            <td><asp:TextBox ID="tb_aname" runat="server"></asp:TextBox>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="btn_searchbyartist" runat="server" Text="Search by artist" OnClick="btn_searchbyartist_Click" /> </td>
+            
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Enter Album Name:</td>
+            
+            <td><asp:TextBox ID="tb_albumname" runat="server"></asp:TextBox>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="btn_searchbyalbum" runat="server" Text="Search by album" OnClick="btn_searchbyalbum_Click" /> </td>
+        </tr>
+         <tr>
+            <td></td>
+            <td> </td>
+             
+        </tr>
+        <tr><td>Enter Song Name</td>
+            <td><asp:TextBox ID="tb_sname" runat="server"></asp:TextBox>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="btn_searchbysong" runat="server" Text="Search by song" OnClick="btn_searchbysong_Click" /> </td>
+        </tr>
+        <tr>
+            <td>Reset Music List</td>
+            
+            <td><asp:Button ID="btn_resetmusic" runat="server" Text="Reset Music List" OnClick="btn_resetmusic_Click" /></td>
+        </tr>
+    </table>
     <footer id="footer" class="top-space">
         <div class="footer2">
             <div class="container">
