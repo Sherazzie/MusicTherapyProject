@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CssStyles\datalist css.css" />
+    <Content Include="FilterSongsByAlbum.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="music.aspx" />
@@ -127,6 +128,13 @@
     </Compile>
     <Compile Include="BeforeLogin.Master.designer.cs">
       <DependentUpon>BeforeLogin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FilterSongsByAlbum.aspx.cs">
+      <DependentUpon>FilterSongsByAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilterSongsByAlbum.aspx.designer.cs">
+      <DependentUpon>FilterSongsByAlbum.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

@@ -17,6 +17,7 @@ namespace FinalYearProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+        
             if (!IsPostBack)
             {
                 databind();
@@ -37,9 +38,24 @@ namespace FinalYearProject
 
         }
 
-        protected void load_songs(object sender,EventArgs e)
+        
+
+        protected void dl_music_ItemCommand(object source, DataListCommandEventArgs e)
         {
-            
+            if (e.CommandName == "SongInfo")
+            {
+                foreach (DataListItem dli in dl_music.Items)
+                {
+                    Label albname = (Label)dl_music.Items[e.Item.ItemIndex].FindControl("lbl_albumname");
+                    Label artname = (Label)dl_music.Items[e.Item.ItemIndex].FindControl("lbl_artistname");
+
+                    Session["albumname"] = albname.Text;
+                    Session["artistname"] = artname.Text;
+
+                    Response.Redirect("FilterSongsByAlbum.aspx");
+
+                }
+            }
         }
     }
 }

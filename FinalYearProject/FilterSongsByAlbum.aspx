@@ -1,7 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BeforeLogin.Master" AutoEventWireup="true" CodeBehind="MusicView.aspx.cs" Inherits="FinalYearProject.MusicView" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BeforeLogin.Master" AutoEventWireup="true" CodeBehind="FilterSongsByAlbum.aspx.cs" Inherits="FinalYearProject.FilterSongsByAlbum" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CssStyles/style.css" rel="stylesheet" />
-    <link href="CssStyles/datalist%20css.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
     <div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -42,50 +40,6 @@
                     <img src="siteimages/BLmasterpagebanner.jpg" />
                 </p>
     </asp:Panel>
-
-    <asp:DataList ID="dl_music" runat="server"  Font-Names="Verdana"  Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" Width="600px" HorizontalAlign="Center" OnItemCommand="dl_music_ItemCommand" >
-        <ItemStyle ForeColor="Black" />
-        <ItemTemplate>
-            <div id="pricePlans">
-                <ul id="plans">
-                    <li class="plan">
-                        <ul class="planContainer">
-                            <li class="title">
-                                <h2>
-                                    Album Name:
-                                    <asp:Label ID="lbl_albumname" runat="server" Text='<%#Bind("Album") %>'></asp:Label>
-                            </li>
-                            <li class="title">
-                                <asp:Image ID="img_albumart" runat="server" Height="200" Width="200" ImageUrl='<%# Bind("AlbumArtPath", "~/{0}") %>' />
-                            </li>
-                            <li>
-                                <ul class="options">
-                                    <li><span>
-                                        Artist Name:
-                                        <asp:Label ID="lbl_artistname" runat="server" Text='<%#Bind("ArtistName") %>'></asp:Label></span></li>
-                                </ul>
-                            </li>
-                            <li class="button">
-                                <asp:LinkButton ID="lb_songs" CommandName="SongInfo" runat="server">Songs</asp:LinkButton>
-                                    
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-
-
-
-
-
-
-        </ItemTemplate>
-
-
-       
-
-    </asp:DataList>
     <footer id="footer" class="top-space">
         <div class="footer2">
             <div class="container">
