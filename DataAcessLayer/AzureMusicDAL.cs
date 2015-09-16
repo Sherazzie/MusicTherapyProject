@@ -91,7 +91,7 @@ namespace DataAcessLayer
             cmd.Parameters.AddWithValue("@artistname", _artistname);
             cmd.Parameters.AddWithValue("@albumname", _album);
             cmd.Parameters.AddWithValue("@azureurl", _azureurl);
-            cmd.Parameters.AddWithValue("@alumartpath", _albumartpath);
+            cmd.Parameters.AddWithValue("@albumartpath", _albumartpath);
 
             conn.Open();
             int noofRow = 0;

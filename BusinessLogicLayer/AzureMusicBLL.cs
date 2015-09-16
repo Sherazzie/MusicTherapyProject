@@ -9,7 +9,7 @@ namespace BusinessLogicLayer
 {
    public class AzureMusicBLL
     {
-        string returnmessage = "";
+       public  string returnmessage = "";
     
         public string MusicDetails(string songname,string artistname,string albumname,string azureurl,string albumartpath)
         {
