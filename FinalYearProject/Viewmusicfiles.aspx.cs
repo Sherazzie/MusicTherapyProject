@@ -79,6 +79,9 @@ namespace FinalYearProject
         protected void btn_resetmusic_Click(object sender, EventArgs e)
         {
             databind();
+            tb_aname.Text = "";
+            tb_sname.Text = "";
+            tb_albumname.Text= "";
         }
 
 

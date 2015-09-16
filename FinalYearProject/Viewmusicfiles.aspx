@@ -45,7 +45,7 @@
             <Columns>
                 <asp:TemplateField HeaderText="Album Art">
                 <ItemTemplate>
-                    <asp:Image ID="Image1" runat="server" Height="88px" Width="180px" ImageUrl='<%# Bind("AlbumArtPath", "~/{0}") %>' />
+                    <asp:Image ID="Image1" runat="server" Height="200" Width="200" ImageUrl='<%# Bind("AlbumArtPath", "~/{0}") %>' />
                 </ItemTemplate>
             </asp:TemplateField>
                  <asp:TemplateField HeaderText="Song Name">
