@@ -43,9 +43,16 @@
                 </p>
     </asp:Panel>
       <asp:Panel runat="server" HorizontalAlign="Center">
-          <asp:Button ID="btn_sortbyalphabet" runat="server" Text="Sort Albums (A-Z)" OnClick="btn_sortbyalphabet_Click" />
+          Search Query:<asp:TextBox ID="tb_query" runat="server"></asp:TextBox>  by <asp:RadioButton ID="rb_artists" runat="server" Text="Artists" GroupName="Query"/> by <asp:RadioButton ID="rb_albums" runat="server" Text="Albums" GroupName="Query" /> 
+          <asp:Button ID="btn_queries" runat="server" Text="Search" OnClick="btn_queries_Click" Width="67px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="btn_reset" runat="server" Text="Reset Music View" OnClick="btn_reset_Click" />
+          <br />
+          <asp:Label ID="lbl_result" runat="server" ></asp:Label>
+          
+          
+          
+         
       </asp:Panel>
-    <asp:DataList ID="dl_music" runat="server"  Font-Names="Verdana"  Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" Width="600px" HorizontalAlign="Center" OnItemCommand="dl_music_ItemCommand" >
+    <asp:DataList ID="dl_music" runat="server"  Font-Names="Verdana"  Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" Width="800px" HorizontalAlign="Center" OnItemCommand="dl_music_ItemCommand" >
         <ItemStyle ForeColor="Black" />
         <ItemTemplate>
             <div id="pricePlans">
@@ -55,6 +62,7 @@
                             <li class="title">
                                 <h2>
                                     Album Name:
+                                    <br />
                                     <asp:Label ID="lbl_albumname" runat="server" Text='<%#Bind("Album") %>'></asp:Label>
                             </li>
                             <li class="title">

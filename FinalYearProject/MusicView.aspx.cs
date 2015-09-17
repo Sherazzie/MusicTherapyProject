@@ -62,16 +62,47 @@ namespace FinalYearProject
             }
         }
 
-        protected void btn_sortbyalphabet_Click(object sender, EventArgs e)
+        protected void btn_queries_Click(object sender, EventArgs e)
         {
-            string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
-            SqlConnection conn = new SqlConnection(connstr);
-            string cmdstring = "SELECT AlbumArtPath,ArtistName,Album from MusicFiles ORDER BY Album ASC";
-            SqlCommand cmd = new SqlCommand(cmdstring, conn);
-            conn.Open();
-            dl_music.DataSource = cmd.ExecuteReader();
-            dl_music.DataBind();
-            conn.Close();
+            if(tb_query.Text == "")
+            {
+                lbl_result.Text = "You have not entered a query";
+            }
+            
+            if(rb_albums.Checked == true)
+            {
+                string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+                SqlConnection conn = new SqlConnection(connstr);
+                string cmdstring = "SELECT AlbumArtPath,ArtistName,Album from MusicFiles where Album=@album";
+                SqlCommand cmd = new SqlCommand(cmdstring, conn);
+                cmd.Parameters.AddWithValue("@album", tb_query.Text);
+                conn.Open();
+                dl_music.DataSource = cmd.ExecuteReader();
+                dl_music.DataBind();
+                conn.Close();
+            }
+
+            if(rb_artists.Checked == true)
+            {
+                string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+                SqlConnection conn = new SqlConnection(connstr);
+                string cmdstring = "SELECT AlbumArtPath,ArtistName,Album from MusicFiles where ArtistName=@artname";
+                SqlCommand cmd = new SqlCommand(cmdstring, conn);
+                cmd.Parameters.AddWithValue("@artname", tb_query.Text);
+                conn.Open();
+                dl_music.DataSource = cmd.ExecuteReader();
+                dl_music.DataBind();
+                conn.Close();
+            }
+            else
+            {
+                lbl_result.Text= "None of the checkboxes has been selected";
+            }
+        }
+
+        protected void btn_reset_Click(object sender, EventArgs e)
+        {
+            databind();
         }
     }
 }
