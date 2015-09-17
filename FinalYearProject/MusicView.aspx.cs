@@ -48,9 +48,12 @@ namespace FinalYearProject
                 {
                     Label albname = (Label)dl_music.Items[e.Item.ItemIndex].FindControl("lbl_albumname");
                     Label artname = (Label)dl_music.Items[e.Item.ItemIndex].FindControl("lbl_artistname");
+                    Image img = (Image)dl_music.Items[e.Item.ItemIndex].FindControl("img_albumart");
+                    String imgurl = img.ImageUrl.ToString(); 
 
                     Session["albumname"] = albname.Text;
                     Session["artistname"] = artname.Text;
+                    Session["imageurl"] = imgurl;
 
                     Response.Redirect("FilterSongsByAlbum.aspx");
 
