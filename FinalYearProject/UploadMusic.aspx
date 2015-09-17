@@ -64,7 +64,7 @@
             
 
             <div class="login-help">
-                <a href="Viewmusicfiles.aspx">View Music </a> • <a href="#">Forgot Password</a>
+                <a href="MusicView.aspx">View Music </a> • <a href="#">Forgot Password</a>
             </div>
         </div>
       

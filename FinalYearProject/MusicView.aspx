@@ -42,7 +42,9 @@
                     <img src="siteimages/BLmasterpagebanner.jpg" />
                 </p>
     </asp:Panel>
-
+      <asp:Panel runat="server" HorizontalAlign="Center">
+          <asp:Button ID="btn_sortbyalphabet" runat="server" Text="Sort Albums (A-Z)" OnClick="btn_sortbyalphabet_Click" />
+      </asp:Panel>
     <asp:DataList ID="dl_music" runat="server"  Font-Names="Verdana"  Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" Width="600px" HorizontalAlign="Center" OnItemCommand="dl_music_ItemCommand" >
         <ItemStyle ForeColor="Black" />
         <ItemTemplate>

@@ -37,6 +37,7 @@ namespace FinalYearProject
 
 
         }
+      
 
         
 
@@ -59,6 +60,18 @@ namespace FinalYearProject
 
                 }
             }
+        }
+
+        protected void btn_sortbyalphabet_Click(object sender, EventArgs e)
+        {
+            string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+            SqlConnection conn = new SqlConnection(connstr);
+            string cmdstring = "SELECT AlbumArtPath,ArtistName,Album from MusicFiles ORDER BY Album ASC";
+            SqlCommand cmd = new SqlCommand(cmdstring, conn);
+            conn.Open();
+            dl_music.DataSource = cmd.ExecuteReader();
+            dl_music.DataBind();
+            conn.Close();
         }
     }
 }
