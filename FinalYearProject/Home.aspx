@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BeforeLogin.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="FinalYearProject.Home" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-     <link href="CssStyles/style.css" rel="stylesheet" />
+    <link href="CssStyles/style.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
     &nbsp;<div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -30,6 +30,7 @@
                     <!--/.nav-collapse -->
 		        </div>
     </div>
+  
 	<!-- /.navbar -->
             <asp:Panel runat="server" HorizontalAlign="Center" >
                 <br />
@@ -38,8 +39,11 @@
                 <br />
                 <p style="vertical-align:middle;">
                     <img src="siteimages/BLmasterpagebanner.jpg" />
+                    <br />
+                      <a href="Home.aspx">Home</a>
                 </p>
     </asp:Panel>
+
     <footer id="footer" class="top-space">
         <div class="footer2">
             <div class="container">
@@ -56,6 +60,7 @@
 			        </div>
         </div>
     </footer>
+    
 		
 
 
@@ -64,7 +69,7 @@
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="webcss/js/headroom.min.js"></script>
+	<script src="webcss/js/headroom.min.js"></script> 
 	<script src="webcss/js/jQuery.headroom.min.js"></script>
 	<script src="webcss/js/template.js"></script>
         </asp:Content>

@@ -67,6 +67,7 @@ namespace FinalYearProject
             if(tb_query.Text == "")
             {
                 lbl_result.Text = "You have not entered a query";
+                databind();
             }
             
             if(rb_albums.Checked == true)
@@ -76,7 +77,7 @@ namespace FinalYearProject
                 string cmdstring = "SELECT AlbumArtPath,ArtistName,Album from MusicFiles where Album=@album";
                 SqlCommand cmd = new SqlCommand(cmdstring, conn);
                 cmd.Parameters.AddWithValue("@album", tb_query.Text);
-                conn.Open();
+                conn.Open(); 
                 dl_music.DataSource = cmd.ExecuteReader();
                 dl_music.DataBind();
                 conn.Close();
