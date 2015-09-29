@@ -23,9 +23,13 @@
                             </li> -->
                             <li><a href="UploadMusic.aspx">Music</a></li>
                 </ul>
-                <a class="pull-center" href="Home.aspx"g >
-                <img src="webcss/images/logo.png" alt="Progressus HTML5 template" /></a>
+                
+                <ul class="nav navbar-nav pull-center">
+                    <li><a>
+                <img src="webcss/images/logo.png" alt="Progressus HTML5 template" /></a></li>
+                </ul>
                 <ul class="nav navbar-nav pull-right">
+                    
                     <li><a href="Home.aspx">Registration</a></li>
                     <li><a href="About.aspx">Login</a></li>
                 </ul>
