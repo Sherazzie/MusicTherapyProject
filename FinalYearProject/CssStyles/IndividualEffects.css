@@ -1,0 +1,7 @@
+﻿.wowhover:hover {
+    outline: 12px solid #00B2FF;
+    outline-style:auto;
+}
+.wowhover {
+    border: 1px solid transparent;
+}

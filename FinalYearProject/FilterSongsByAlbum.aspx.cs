@@ -23,7 +23,7 @@ namespace FinalYearProject
              artistname = Session["artistname"].ToString();
              albumname = Session["albumname"].ToString();
             
-
+            
             sessiondatabind();
             
             databind();

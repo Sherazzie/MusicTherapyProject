@@ -70,7 +70,7 @@ namespace FinalYearProject
                 databind();
             }
             
-            if(rb_albums.Checked == true)
+            if(rb_albums.Checked == true)   
             {
                 string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
                 SqlConnection conn = new SqlConnection(connstr);

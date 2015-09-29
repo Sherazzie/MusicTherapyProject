@@ -29,7 +29,7 @@ namespace FinalYearProject
             string userpasswordinput = password.Value;
             string cfmpasswordinput = cfmpassword.Value;
             string mobileinput = mobileno.Value;
-            bool emailcheck = IsValid(emailinput);
+            bool emailcheck = EmailIsValid(emailinput);
 
 
             if (emailcheck == true)
@@ -57,7 +57,7 @@ namespace FinalYearProject
 
             }
         }
-        public bool IsValid(string emailaddress)
+        public bool EmailIsValid(string emailaddress)
         {
             if (emailaddress == "")
             {

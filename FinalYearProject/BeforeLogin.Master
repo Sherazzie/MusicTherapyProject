@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BeforeLogin.master.cs" Inherits="FinalYearProject.BeforeLogin" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BeforeLogin.master.cs" Inherits="FinalYearProject.BeforeLogin" %>   
 
 <!DOCTYPE html>
 
@@ -23,30 +23,33 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             <div class="navbar navbar-inverse navbar-fixed-top headroom" >
                 <div class="container">
-                    <div class="navbar-header">
+                    <div class="pull-center">
 				<!-- Button for smallest screens -->
 				        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html">
-                        <img src="webcss/images/logo.png" alt="Progressus HTML5 template" /></a>
                     </div>
                     <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav pull-right">
-                            <li class="active"><a href="Home.aspx">Home</a></li>
-                            <li><a href="About.aspx">About</a></li>
+                        <ul class="nav navbar-nav pull-left">
+                            <li><a href="Home.aspx">Home</a></li>
+                            <li><a href="About.aspx">Patient</a></li>
                           <!--  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="sidebar-left.html"></a></li>
                                     <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
                                 </ul>
                             </li> -->
-                            <li><a href="UploadMusic.aspx">Upload Music</a></li>
-                            <li><a href="SignUp.aspx">Registration</a></li>
-                            <li><a href="Login.aspx">Login</a></li>
+                            <li><a href="UploadMusic.aspx">Music</a></li>
+                        </ul>
+                        <a class="pull-center" href="Home.aspx"g >
+                        <img src="webcss/images/logo.png" alt="Progressus HTML5 template" /></a>
+                        <ul class="nav navbar-nav pull-right">
+                            <li><a href="Home.aspx">Registration</a></li>
+                            <li><a href="About.aspx">Login</a></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
+
 		        </div>
             </div>
 	<!-- /.navbar -->

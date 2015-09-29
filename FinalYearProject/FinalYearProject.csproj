@@ -94,7 +94,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CssStyles\1c2iItAD.jpeg" />
     <Content Include="CssStyles\datalist css.css" />
+    <Content Include="CssStyles\IndividualEffects.css" />
     <Content Include="FilterSongsByAlbum.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
@@ -103,9 +105,11 @@
     <Content Include="BeforeLogin.Master" />
     <Content Include="SignUp.aspx" />
     <Content Include="siteimages\BLmasterpagebanner.jpg" />
+    <Content Include="Testformcss.aspx" />
     <Content Include="UploadMusic.aspx" />
     <Content Include="Viewmusicfiles.aspx" />
     <Content Include="webcss\css\main.css" />
+    <Content Include="HomePage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -141,6 +145,13 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HomePage.Master.cs">
+      <DependentUpon>HomePage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage.Master.designer.cs">
+      <DependentUpon>HomePage.Master</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -162,6 +173,13 @@
     </Compile>
     <Compile Include="SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Testformcss.aspx.cs">
+      <DependentUpon>Testformcss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Testformcss.aspx.designer.cs">
+      <DependentUpon>Testformcss.aspx</DependentUpon>
     </Compile>
     <Compile Include="UploadMusic.aspx.cs">
       <DependentUpon>UploadMusic.aspx</DependentUpon>
