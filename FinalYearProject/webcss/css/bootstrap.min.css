@@ -305,7 +305,13 @@ a {
     }
 
 img {
-    vertical-align: middle;
+    position:relative;
+    right:100px;
+}
+
+.imgiconcss{
+    position:relative;
+    left:300px;
 }
 
 .img-responsive {

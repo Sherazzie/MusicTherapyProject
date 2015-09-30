@@ -5,3 +5,9 @@
 .wowhover {
     border: 1px solid transparent;
 }
+
+.gotothemiddle{
+    margin-left:auto;
+    margin-right:auto;
+    display:inline-block;
+}
