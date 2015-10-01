@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AzureMusicDAL.cs" />
+    <Compile Include="AzurePatientDAL.cs" />
     <Compile Include="AzureUserDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

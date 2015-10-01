@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CreatePatient.aspx" />
     <Content Include="CssStyles\1c2iItAD.jpeg" />
     <Content Include="CssStyles\datalist css.css" />
     <Content Include="CssStyles\IndividualEffects.css" />
@@ -103,12 +104,14 @@
     <Content Include="MusicView.aspx" />
     <Content Include="packages.config" />
     <Content Include="BeforeLogin.Master" />
+    <Content Include="PatientPersonalProfile.aspx" />
     <Content Include="PlistWorkt.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="siteimages\BLmasterpagebanner.jpg" />
     <Content Include="Testformcss.aspx" />
     <Content Include="UploadMusic.aspx" />
     <Content Include="Viewmusicfiles.aspx" />
+    <Content Include="ViewPatients.aspx" />
     <Content Include="webcss\css\main.css" />
     <Content Include="HomePage.Master" />
     <None Include="Web.Debug.config">
@@ -131,6 +134,13 @@
     </Compile>
     <Compile Include="BeforeLogin.Master.designer.cs">
       <DependentUpon>BeforeLogin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePatient.aspx.cs">
+      <DependentUpon>CreatePatient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreatePatient.aspx.designer.cs">
+      <DependentUpon>CreatePatient.aspx</DependentUpon>
     </Compile>
     <Compile Include="FilterSongsByAlbum.aspx.cs">
       <DependentUpon>FilterSongsByAlbum.aspx</DependentUpon>
@@ -167,6 +177,13 @@
     <Compile Include="MusicView.aspx.designer.cs">
       <DependentUpon>MusicView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PatientPersonalProfile.aspx.cs">
+      <DependentUpon>PatientPersonalProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientPersonalProfile.aspx.designer.cs">
+      <DependentUpon>PatientPersonalProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PlistWorkt.aspx.cs">
       <DependentUpon>PlistWorkt.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -202,6 +219,13 @@
     </Compile>
     <Compile Include="Viewmusicfiles.aspx.designer.cs">
       <DependentUpon>Viewmusicfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPatients.aspx.cs">
+      <DependentUpon>ViewPatients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPatients.aspx.designer.cs">
+      <DependentUpon>ViewPatients.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

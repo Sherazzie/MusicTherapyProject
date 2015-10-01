@@ -43,6 +43,7 @@ namespace FinalYearProject
                     string azureurl = "https://musicupload.blob.core.windows.net/musicfiles/" + filenameUnique;
                     validatemusic.MusicDetails(songname, artname, albname, azureurl, albumartpath);
                     lbl_result.Text = validatemusic.returnmessage;
+                    
 
                 }
                 else

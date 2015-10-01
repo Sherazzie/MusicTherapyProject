@@ -17,19 +17,19 @@ namespace FinalYearProject
     {
         string artistname;
         string albumname;
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
-             artistname = Session["artistname"].ToString();
-             albumname = Session["albumname"].ToString();
-            
-            
+            artistname = Session["artistname"].ToString();
+            albumname = Session["albumname"].ToString();
+
+
             sessiondatabind();
-            
+
             databind();
         }
 
-      
+
         private void databind()
         {
 
@@ -52,7 +52,7 @@ namespace FinalYearProject
             SqlCommand cmd = new SqlCommand(cmdstring, conn);
             cmd.Parameters.AddWithValue("@aname", artistname);
             cmd.Parameters.AddWithValue("@album", albumname);
-     
+
             conn.Open();
             dl_music.DataSource = cmd.ExecuteReader();
             dl_music.DataBind();
@@ -66,9 +66,14 @@ namespace FinalYearProject
             {
                 Response.Redirect("MusicView.aspx");
             }
+
         }
 
+      
 
-
+       
+      
     }
+
+
 }
