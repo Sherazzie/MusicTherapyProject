@@ -81,8 +81,8 @@
    </asp:Panel>
   <br />
     <asp:Panel runat="server">
-        <asp:GridView ID="gv_musicfiles" runat="server" AutoGenerateColumns="False" HorizontalAlign="Center" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gv_musicfiles_RowCommand">
-        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+        <asp:GridView ID="gv_musicfiles" runat="server"   AutoGenerateColumns="False" HorizontalAlign="Center" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gv_musicfiles_RowCommand">
+        <AlternatingRowStyle BackColor="White" ForeColor="#284775"  />
         <Columns>
 
             <asp:TemplateField HeaderText="Song Name">
@@ -102,7 +102,7 @@
                 <asp:ItemTemplate>
                 </asp:ItemTemplate>
             </asp:TemplateField>
-            <asp:ButtonField CommandName="Select" Text="Assign Music"/>
+            <asp:ButtonField CommandName="DeleteSong" Text="Remove Song"/>
 
         </Columns>
         <EditRowStyle BackColor="#999999" />

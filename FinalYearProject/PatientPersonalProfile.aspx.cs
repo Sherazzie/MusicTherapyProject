@@ -17,10 +17,12 @@ namespace FinalYearProject
             patientname = Session["patientname"].ToString();
             imageurl = Session["imageurl"].ToString();
 
-
-            sessiondatabind();
-            bindonlyinfo();
-            assignedmusic();
+            if (!IsPostBack)
+            {
+                sessiondatabind();
+                bindonlyinfo();
+                assignedmusic();
+            }
         }
 
         protected void sessiondatabind()
@@ -67,6 +69,32 @@ namespace FinalYearProject
 
 
         }
+
+        protected void gv_musicfiles_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+            if (e.CommandName == "DeleteSong")
+            {
+                int index = Convert.ToInt32(e.CommandArgument.ToString());
+                Label songname = (Label)gv_musicfiles.Rows[index].FindControl("lbl_songname");
+                string sname = songname.Text;
+
+                string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+                SqlConnection conn = new SqlConnection(connstr);
+                string cmdstring = "Delete FROM MusicAssignment where PatientName=@aname AND SongName=@songname";
+                SqlCommand cmd = new SqlCommand(cmdstring, conn);
+                cmd.Parameters.AddWithValue("@aname", patientname);
+                cmd.Parameters.AddWithValue("@songname", sname);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                assignedmusic();
+                
+            }
+           
+        }
+
 
     }
 }
