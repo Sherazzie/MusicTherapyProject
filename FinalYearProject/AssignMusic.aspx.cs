@@ -70,7 +70,7 @@ namespace FinalYearProject
             SqlConnection conn = new SqlConnection(connstr);
             string cmdstring = "SELECT COUNT(*) FROM MusicAssignment WHERE PatientName=@pname and SongName=@sname";
             SqlCommand cmd = new SqlCommand(cmdstring, conn);
-            cmd.Parameters.AddWithValue("@pname", ddl_patients.SelectedValue.ToString());
+            cmd.Parameters.AddWithValue("@pname", ddl_patients.SelectedValue);
             cmd.Parameters.AddWithValue("@sname", songname);
 
             conn.Open();
@@ -86,7 +86,7 @@ namespace FinalYearProject
                 
                 SqlCommand cmd2 = new SqlCommand("AssignMusicToPatient", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@patientname", ddl_patients.SelectedValue.ToString());
+                cmd.Parameters.AddWithValue("@patientname", ddl_patients.SelectedValue);
                 cmd.Parameters.AddWithValue("@songname", songname);
                 cmd.Parameters.AddWithValue("@azureurl", azureurl);
 
