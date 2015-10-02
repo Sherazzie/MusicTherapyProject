@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AssignMusic.aspx" />
     <Content Include="CreatePatient.aspx" />
     <Content Include="CssStyles\1c2iItAD.jpeg" />
     <Content Include="CssStyles\datalist css.css" />
@@ -128,6 +129,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssignMusic.aspx.cs">
+      <DependentUpon>AssignMusic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssignMusic.aspx.designer.cs">
+      <DependentUpon>AssignMusic.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BeforeLogin.Master.cs">
       <DependentUpon>BeforeLogin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

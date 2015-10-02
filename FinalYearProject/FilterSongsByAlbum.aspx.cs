@@ -69,10 +69,16 @@ namespace FinalYearProject
 
         }
 
-      
-
-       
-      
+        protected void gv_musicfiles_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Select")
+            {
+                int index = Convert.ToInt32(e.CommandArgument.ToString());
+                Label songname = (Label)gv_musicfiles.Rows[index].FindControl("lbl_songname");
+                Session["assignedsongname"] = songname.Text;
+                Response.Redirect("AssignMusic.aspx");
+            }
+        }
     }
 
 

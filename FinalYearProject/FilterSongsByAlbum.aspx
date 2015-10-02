@@ -87,7 +87,7 @@
 
 
     </asp:DataList>
-    &nbsp;<asp:GridView ID="gv_musicfiles" runat="server" AutoGenerateColumns="False" HorizontalAlign="Center" CellPadding="4" ForeColor="#333333" GridLines="None">
+    &nbsp;<asp:GridView ID="gv_musicfiles" runat="server" AutoGenerateColumns="False" HorizontalAlign="Center" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gv_musicfiles_RowCommand">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
 
@@ -101,13 +101,14 @@
 
             <asp:TemplateField HeaderText="Play">
                 <ItemTemplate>
-                    <audio controls runat="server">
+                    <audio controls id="ac_music" runat="server">
                         <source src="<%# Eval("AzureUrl") %>" type="audio/mpeg">
                     </audio>
                 </ItemTemplate>
                 <asp:ItemTemplate>
                 </asp:ItemTemplate>
             </asp:TemplateField>
+            <asp:ButtonField CommandName="Select" Text="Assign Music"/>
 
         </Columns>
         <EditRowStyle BackColor="#999999" />
