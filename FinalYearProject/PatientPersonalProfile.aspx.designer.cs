@@ -20,5 +20,23 @@ namespace FinalYearProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataList dl_patients;
+        
+        /// <summary>
+        /// dl_info control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList dl_info;
+        
+        /// <summary>
+        /// gv_musicfiles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gv_musicfiles;
     }
 }

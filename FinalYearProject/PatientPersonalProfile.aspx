@@ -42,6 +42,11 @@
                     <img src="siteimages/BLmasterpagebanner.jpg" />
                 </p>
     </asp:Panel>
+    <asp:Panel runat="server" HorizontalAlign="Center">
+        <a href="ViewPatients.aspx">Patient List</a> > <a href="PatientPersonalProfile.aspx"> View Patient Details</a>
+        <table style="margin:0 auto;">
+            <tr>
+                <td>
     <asp:DataList ID="dl_patients" runat="server" HorizontalAlign="Center" CellPadding="4" ForeColor="#333333" RepeatColumns="3" RepeatDirection="Horizontal">
     <AlternatingItemStyle BackColor="White" />
         <FooterStyle BackColor="#507CD1" Font-Bold="true" ForeColor="White" />
@@ -49,7 +54,18 @@
         <ItemStyle BackColor="#EFF3FB" />
         <ItemTemplate>
             <asp:Image ID="img_profileimage" runat="server" Height="200" Width="200" ImageUrl='<%# Bind("PatientImageUrl") %>' style="float:left;"/>
-            <br />
+            
+        </ItemTemplate>
+    </asp:DataList>
+                    </td>
+                <td>
+              <asp:DataList ID="dl_info" runat="server" HorizontalAlign="Center" CellPadding="4" ForeColor="#333333" RepeatColumns="3" RepeatDirection="Horizontal">
+    <AlternatingItemStyle BackColor="White" />
+        <FooterStyle BackColor="#507CD1" Font-Bold="true" ForeColor="White" />
+        <HeaderStyle BackColor="#507CD1" Font-Bold="true" ForeColor="White" />
+        <ItemStyle BackColor="#EFF3FB" />
+        <ItemTemplate>
+            
             Name:<asp:Label ID="lbl_patientname" runat="server" Text='<%# Bind("PatientName") %>' Font-Bold="true"></asp:Label>
             <br />
             Paitent IC:<asp:Label ID="lbl_patientic" runat="server" Text='<%# Bind("PatientIC") %>' Font-Bold="true"></asp:Label>
@@ -59,7 +75,48 @@
             Birthdate:<asp:Label ID="lbl_bday" runat="server" Text='<%# Bind("Birtthdate") %>' Font-Bold="true"></asp:Label>
         </ItemTemplate>
     </asp:DataList>
-   
+                    </td>
+                </tr>
+            </table>
+   </asp:Panel>
+  <br />
+    <asp:Panel runat="server">
+        <asp:GridView ID="gv_musicfiles" runat="server" AutoGenerateColumns="False" HorizontalAlign="Center" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gv_musicfiles_RowCommand">
+        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+        <Columns>
+
+            <asp:TemplateField HeaderText="Song Name">
+                <ItemTemplate>
+                    <asp:Label ID="lbl_songname" Text='<%#Bind("SongName") %>' runat="server"></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+
+
+
+            <asp:TemplateField HeaderText="Play">
+                <ItemTemplate>
+                    <audio controls id="ac_music" runat="server">
+                        <source src="<%# Eval("AzureUrl") %>" type="audio/mpeg">
+                    </audio>
+                </ItemTemplate>
+                <asp:ItemTemplate>
+                </asp:ItemTemplate>
+            </asp:TemplateField>
+            <asp:ButtonField CommandName="Select" Text="Assign Music"/>
+
+        </Columns>
+        <EditRowStyle BackColor="#999999" />
+        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#E9E7E2" />
+        <SortedAscendingHeaderStyle BackColor="#506C8C" />
+        <SortedDescendingCellStyle BackColor="#FFFDF8" />
+        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+    </asp:GridView>
+    </asp:Panel>
     <footer id="footer" class="top-space">
         <div class="footer2">
             <div class="container">

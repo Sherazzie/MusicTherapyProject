@@ -59,7 +59,7 @@
         <tr>
             <td></td>
             
-            <td><asp:Button ID="btn_assign" runat="server" Text="Assign Music" OnClick="btn_assign_Click" /> <asp:Button ID="btn_back" runat="server" Text="Back to album" /></td>
+            <td><asp:Button ID="btn_assign" runat="server" Text="Assign Music" OnClick="btn_assign_Click" /> <asp:Button ID="btn_back" runat="server" Text="Back to album" OnClick="btn_back_Click" /></td>
         </tr>
         <tr>
             <td></td>

@@ -19,6 +19,8 @@ namespace FinalYearProject
 
 
             sessiondatabind();
+            bindonlyinfo();
+            assignedmusic();
         }
 
         protected void sessiondatabind()
@@ -34,5 +36,37 @@ namespace FinalYearProject
             dl_patients.DataBind();
             conn.Close();
         }
+
+        protected void bindonlyinfo()
+        {
+            string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+            SqlConnection conn = new SqlConnection(connstr);
+            string cmdstring = "SELECT * FROM PatientDetails where PatientName=@patientname and PatientImageUrl=@imageurl ";
+            SqlCommand cmd = new SqlCommand(cmdstring, conn);
+            cmd.Parameters.AddWithValue("@patientname", patientname);
+            cmd.Parameters.AddWithValue("@imageurl", imageurl);
+            conn.Open();
+            dl_info.DataSource = cmd.ExecuteReader();
+            dl_info.DataBind();
+            conn.Close();
+        }
+
+        protected void assignedmusic()
+        {
+            string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+            SqlConnection conn = new SqlConnection(connstr);
+            string cmdstring = "SELECT SongName,AzureUrl from MusicAssignment where PatientName=@aname";
+            SqlCommand cmd = new SqlCommand(cmdstring, conn);
+            cmd.Parameters.AddWithValue("@aname", patientname);
+            
+
+            conn.Open();
+            gv_musicfiles.DataSource = cmd.ExecuteReader();
+            gv_musicfiles.DataBind();
+            conn.Close();
+
+
+        }
+
     }
 }

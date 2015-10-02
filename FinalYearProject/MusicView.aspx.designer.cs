@@ -58,6 +58,15 @@ namespace FinalYearProject {
         protected global::System.Web.UI.WebControls.Button btn_reset;
         
         /// <summary>
+        /// btn_viewpatient control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_viewpatient;
+        
+        /// <summary>
         /// lbl_result control.
         /// </summary>
         /// <remarks>
