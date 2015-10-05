@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BeforeLogin.Master" AutoEventWireup="true" CodeBehind="AssignMusic.aspx.cs" Inherits="FinalYearProject.AssignMusic" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+        <link href="CssStyles/IndividualEffects.css" rel="stylesheet" />
+   <link href="CssStyles/style.css" rel="stylesheet" />
+    <link href="CssStyles/datalist%20css.css" rel="stylesheet" />
+    <link href="CssStyles/IndividualEffects.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
     <div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -67,6 +71,47 @@
             
         </tr>
     </table>
+    <br />
+    <br />
+    <br />
+    <asp:Panel runat="server" HorizontalAlign="Center">
+    Song Currently Assigned to :
+    </asp:Panel>
+ 
+    <asp:DataList ID="dl_patients" runat="server" Font-Names="Verdana" Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" HorizontalAlign="Center">
+        <ItemStyle ForeColor="Black" />
+        <ItemTemplate>
+            <div id="pricePlans">
+                <ul id="plans">
+                    <li class="plan">
+                        <ul class="planContainer">
+                            <li class="title">
+                                <h2>
+                                    
+                                    <asp:Label ID="lbl_patientname" runat="server" Text='<%#Bind("PatientName") %>'></asp:Label>
+                            </li>
+                            <li class="title">
+                                <asp:Image ID="img_profileimage" runat="server" Height="200" Width="200" ImageUrl='<%# Bind("PatientImageUrl") %>' />
+                            </li>
+                            <br />
+                            <li></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+
+
+
+
+
+        </ItemTemplate>
+
+
+        </asp:DataList>
+
     <footer id="footer" class="top-space">
         <div class="footer2">
             <div class="container">

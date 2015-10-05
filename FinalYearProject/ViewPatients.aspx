@@ -65,7 +65,7 @@
                             <br />
                             <li></li>
                             <li class="button">
-                                <asp:LinkButton ID="lbl_profile" CommandName="SongInfo" runat="server" >View Profile</asp:LinkButton>
+                                <asp:LinkButton ID="lbl_profile" CommandName="PatientInfo" runat="server" >View Profile</asp:LinkButton>
 
                             </li>
                         </ul>

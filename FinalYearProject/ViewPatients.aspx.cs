@@ -32,7 +32,7 @@ namespace FinalYearProject
         }
         protected void dl_patient_ItemCommand(object source, DataListCommandEventArgs e)
         {
-            if (e.CommandName == "SongInfo")
+            if (e.CommandName == "PatientInfo")
             {
                 foreach (DataListItem dli in dl_patients.Items)
                 {

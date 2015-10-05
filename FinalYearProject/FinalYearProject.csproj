@@ -111,7 +111,6 @@
     <Content Include="siteimages\BLmasterpagebanner.jpg" />
     <Content Include="Testformcss.aspx" />
     <Content Include="UploadMusic.aspx" />
-    <Content Include="Viewmusicfiles.aspx" />
     <Content Include="ViewPatients.aspx" />
     <Content Include="webcss\css\main.css" />
     <Content Include="HomePage.Master" />
@@ -220,13 +219,6 @@
     </Compile>
     <Compile Include="UploadMusic.aspx.designer.cs">
       <DependentUpon>UploadMusic.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Viewmusicfiles.aspx.cs">
-      <DependentUpon>Viewmusicfiles.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Viewmusicfiles.aspx.designer.cs">
-      <DependentUpon>Viewmusicfiles.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewPatients.aspx.cs">
       <DependentUpon>ViewPatients.aspx</DependentUpon>
