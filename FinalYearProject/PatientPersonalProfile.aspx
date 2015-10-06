@@ -80,7 +80,16 @@
             </table>
    </asp:Panel>
   <br />
-    <asp:Panel runat="server">
+
+    <asp:Panel runat="server" HorizontalAlign="Center">
+         Training Records:(<a href="PatientTrainingRecords.aspx">View Details</a>)
+    </asp:Panel>
+    <br />
+    <br />
+    <br />
+    <asp:Panel runat="server" HorizontalAlign="Center">
+        Music Assigned:
+        <br />
         <asp:GridView ID="gv_musicfiles" runat="server"   AutoGenerateColumns="False" HorizontalAlign="Center" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gv_musicfiles_RowCommand">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775"  />
         <Columns>

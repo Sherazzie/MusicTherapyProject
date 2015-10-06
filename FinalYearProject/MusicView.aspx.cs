@@ -23,7 +23,7 @@ namespace FinalYearProject
                 databind();
             }
         }
-
+         
         protected void databind()
         {
             string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";

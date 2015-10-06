@@ -72,6 +72,18 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Syncfusion.EJ, Version=13.3451.0.7, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Web.Base.13.3.0.7\lib\net451\Syncfusion.EJ.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.EJ.Export, Version=13.3451.0.7, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Web.Base.13.3.0.7\lib\net451\Syncfusion.EJ.Export.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.Linq.Base, Version=13.3451.0.7, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Web.Base.13.3.0.7\lib\net451\Syncfusion.Linq.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
       <Private>True</Private>
@@ -105,7 +117,9 @@
     <Content Include="MusicView.aspx" />
     <Content Include="packages.config" />
     <Content Include="BeforeLogin.Master" />
+    <Content Include="PatientEventsAssignment.aspx" />
     <Content Include="PatientPersonalProfile.aspx" />
+    <Content Include="PatientTrainingRecords.aspx" />
     <Content Include="PlistWorkt.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="siteimages\BLmasterpagebanner.jpg" />
@@ -184,12 +198,26 @@
     <Compile Include="MusicView.aspx.designer.cs">
       <DependentUpon>MusicView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PatientEventsAssignment.aspx.cs">
+      <DependentUpon>PatientEventsAssignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientEventsAssignment.aspx.designer.cs">
+      <DependentUpon>PatientEventsAssignment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PatientPersonalProfile.aspx.cs">
       <DependentUpon>PatientPersonalProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PatientPersonalProfile.aspx.designer.cs">
       <DependentUpon>PatientPersonalProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatientTrainingRecords.aspx.cs">
+      <DependentUpon>PatientTrainingRecords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientTrainingRecords.aspx.designer.cs">
+      <DependentUpon>PatientTrainingRecords.aspx</DependentUpon>
     </Compile>
     <Compile Include="PlistWorkt.aspx.cs">
       <DependentUpon>PlistWorkt.aspx</DependentUpon>

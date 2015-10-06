@@ -23,6 +23,7 @@ namespace FinalYearProject
                 bindonlyinfo();
                 assignedmusic();
             }
+            selectic();
         }
 
         protected void sessiondatabind()
@@ -94,7 +95,33 @@ namespace FinalYearProject
             }
            
         }
+        
+        protected void selectic()
+        {
+            string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+            SqlConnection conn = new SqlConnection(connstr);
+            string cmdstring = "SELECT PatientIC from PatientDetails where PatientName=@pname";
+            SqlCommand cmd = new SqlCommand(cmdstring, conn);
+            cmd.Parameters.AddWithValue("@pname", patientname);
 
+
+            conn.Open();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Session["patientic"] = (reader["PatientIC"].ToString());
+                    
+
+
+
+                }
+
+            }
+
+
+            conn.Close();
+        }
 
     }
 }
