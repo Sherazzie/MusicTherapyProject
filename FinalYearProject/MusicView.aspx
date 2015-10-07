@@ -54,7 +54,7 @@
         <asp:Button ID="btn_queries" runat="server" Text="Search" OnClick="btn_queries_Click" Width="67px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btn_reset" runat="server" Text="Reset Music View" OnClick="btn_reset_Click" />
         &nbsp;&nbsp;
-        <asp:Button ID="btn_viewpatient" runat="server" Text=" View Patients" OnClick="btn_viewpatient_Click" />
+        
         <br />
         <asp:Label ID="lbl_result" runat="server"></asp:Label>
 

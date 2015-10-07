@@ -106,9 +106,6 @@ namespace FinalYearProject
             databind();
         }
 
-        protected void btn_viewpatient_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ViewPatients.aspx");
-        }
+       
     }
 }
