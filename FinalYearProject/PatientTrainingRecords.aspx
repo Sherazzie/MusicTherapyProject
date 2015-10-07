@@ -43,7 +43,23 @@
                 </p>
     </asp:Panel>
     <asp:Panel HorizontalAlign="Center" runat="server">
+         <a href="ViewPatients.aspx">Patient List</a> > <a href="PatientPersonalProfile.aspx"> View Patient Details</a> > <a href="PatientTrainingRecords.aspx"> View Patient Calendar</a>
+        <br />
+        <br />
         Patient Training Calendar( <a href="PatientEventsAssignment.aspx">Add Record</a>)
+        <table style="margin:0 auto">
+            <tr>
+               <td>
+        <asp:Calendar ID="cal_records" runat="server" Height="268px" Width="335px" OnDayRender="cal_records_DayRender" OnSelectionChanged="cal_records_SelectionChanged">
+
+        </asp:Calendar>
+                   </td>
+                </tr>
+            
+        </table>
+        <br />
+        <br />
+        <asp:GridView ID="gv_apptinfo" runat="server" HorizontalAlign="Center"></asp:GridView>
     </asp:Panel>
     <footer id="footer" class="top-space">
         <div class="footer2">

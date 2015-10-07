@@ -16,20 +16,18 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav pull-left">
-                    <li><a href="Home.aspx">Home</a></li>
-                    <li><a href="About.aspx">Patient</a></li>
-                          <!--  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="sidebar-left.html"></a></li>
-                                    <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
-                                </ul>
-                            </li> -->
-                            <li><a href="UploadMusic.aspx">Music</a></li>
+                    <li><a href="patientprogress.aspx">Home</a></li>
+                    <li><a href="ViewPatients.aspx">Patient</a></li>
+                    <li class="dropdown"><a href="UploadMusic.aspx" class="dropdown-toggle" data-toggle="dropdown">Music</a>
+                        <ul class="dropdown-menu">
+                            <li class="active"><a href="UploadMusic.aspx">Upload Music</a></li>
+                            <li class="active"><a href="MusicView.aspx">View Music</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <img src="webcss/images/logo.png" alt="Progressus HTML5 template" class="imgiconcss" />
                 <ul class="nav navbar-nav pull-right">
-                    <li><a href="Home.aspx">Registration</a></li>
-                    <li><a href="About.aspx">Login</a></li>
+                    <li><a href="Home.aspx">Logout</a></li>
                 </ul>
             </div>
                     <!--/.nav-collapse -->
@@ -44,6 +42,8 @@
                 <br />
                 <p style="vertical-align:middle;">
                     <img src="siteimages/BLmasterpagebanner.jpg" />
+                    <br />
+                <a href="Home.aspx">Home</a> > <a href="MusicView.aspx">Music List</a> > <a href="FilterSongsByAlbum.aspx">Album Songs List</a> > <a href="AssignMusic.aspx">Assign Music to Patient</a>
                 </p>
     </asp:Panel>
     <table style="margin:0 auto;">
@@ -111,7 +111,6 @@
 
 
         </asp:DataList>
-
     <footer id="footer" class="top-space">
         <div class="footer2">
             <div class="container">
@@ -140,4 +139,6 @@
 	<script src="webcss/js/jQuery.headroom.min.js"></script>
 	<script src="webcss/js/template.js"></script>
         </asp:Content>
+
+
 

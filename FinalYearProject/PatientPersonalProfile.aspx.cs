@@ -123,5 +123,29 @@ namespace FinalYearProject
             conn.Close();
         }
 
+        protected void Chart1_Load(object sender, EventArgs e)
+        {
+            chrt_score.ChartAreas[0].AxisX.Title = "Date Played";
+            chrt_score.ChartAreas[0].AxisY.Title = "Scores";
+            chrt_score.ChartAreas[0].AxisX.TitleForeColor = System.Drawing.Color.Red;
+            chrt_score.ChartAreas[0].AxisY.TitleForeColor = System.Drawing.Color.Red;
+            chrt_score.ChartAreas[0].AxisY.Interval = 5.0;
+            chrt_score.ChartAreas[0].AxisX.Interval = 1.0;
+        }
+
+        protected void chrt_score_DataBound(object sender, EventArgs e)
+        {
+            if (chrt_score.Series[0].Points.Count == 0)
+            {
+                System.Web.UI.DataVisualization.Charting.TextAnnotation annotation =
+                    new System.Web.UI.DataVisualization.Charting.TextAnnotation();
+                annotation.Text = "Chart empty ,no games scores recorded yet!";
+                annotation.X = 10;
+                annotation.Y = 10;
+                annotation.Font = new System.Drawing.Font("Arial", 12);
+                annotation.ForeColor = System.Drawing.Color.Red;
+                chrt_score.Annotations.Add(annotation);
+            }
+        }
     }
-}
+    }

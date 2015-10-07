@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BeforeLogin.Master" AutoEventWireup="true" CodeBehind="PatientPersonalProfile.aspx.cs" Inherits="FinalYearProject.PatientPersonalProfile" %>
+
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
@@ -12,20 +14,18 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav pull-left">
-                    <li><a href="Home.aspx">Home</a></li>
-                    <li><a href="About.aspx">Patient</a></li>
-                          <!--  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="sidebar-left.html"></a></li>
-                                    <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
-                                </ul>
-                            </li> -->
-                            <li><a href="UploadMusic.aspx">Music</a></li>
+                    <li><a href="patientprogress.aspx">Home</a></li>
+                    <li><a href="ViewPatients.aspx">Patient</a></li>
+                    <li class="dropdown"><a href="UploadMusic.aspx" class="dropdown-toggle" data-toggle="dropdown">Music</a>
+                        <ul class="dropdown-menu">
+                            <li class="active"><a href="UploadMusic.aspx">Upload Music</a></li>
+                            <li class="active"><a href="MusicView.aspx">View Music</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <img src="webcss/images/logo.png" alt="Progressus HTML5 template" class="imgiconcss" />
                 <ul class="nav navbar-nav pull-right">
-                    <li><a href="Home.aspx">Registration</a></li>
-                    <li><a href="About.aspx">Login</a></li>
+                    <li><a href="Home.aspx">Logout</a></li>
                 </ul>
             </div>
                     <!--/.nav-collapse -->
@@ -42,7 +42,7 @@
                     <img src="siteimages/BLmasterpagebanner.jpg" />
                 </p>
     </asp:Panel>
-    <asp:Panel runat="server" HorizontalAlign="Center">
+      <asp:Panel runat="server" HorizontalAlign="Center">
         <a href="ViewPatients.aspx">Patient List</a> > <a href="PatientPersonalProfile.aspx"> View Patient Details</a>
         <table style="margin:0 auto;">
             <tr>
@@ -83,6 +83,22 @@
 
     <asp:Panel runat="server" HorizontalAlign="Center">
          Training Records:(<a href="PatientTrainingRecords.aspx">View Details</a>)
+        <br />
+        <br />
+        <asp:Chart ID="chrt_score" runat="server" CssClass="auto-style1" DataSourceID="fypjdb" Height="403px" Width="740px" OnLoad="Chart1_Load" EmptyDataText="No game scores exists!" OnDataBound="chrt_score_DataBound" >
+            <Series>
+                <asp:Series Name="Series1" ChartType="Line" XValueMember="DateOfScore" YValueMembers="Score" ></asp:Series>
+            </Series>
+            <ChartAreas>
+                <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+            </ChartAreas>
+        </asp:Chart>
+         <asp:SqlDataSource ID="fypjdb" runat="server" ConnectionString="<%$ ConnectionStrings:FypjDBConnectionString %>" SelectCommand="SELECT [DateOfScore], [Score] FROM [Scores] WHERE (([PatientName] = @PatientName) AND ([PatientIC] = @PatientIC))">
+             <SelectParameters>
+                 <asp:SessionParameter Name="PatientName" SessionField="patientname" Type="String" />
+                 <asp:SessionParameter Name="PatientIC" SessionField="patientic" Type="String" />
+             </SelectParameters>
+         </asp:SqlDataSource>
     </asp:Panel>
     <br />
     <br />
@@ -154,4 +170,5 @@
 	<script src="webcss/js/jQuery.headroom.min.js"></script>
 	<script src="webcss/js/template.js"></script>
         </asp:Content>
+
 
