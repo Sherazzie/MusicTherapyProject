@@ -85,18 +85,43 @@
          Training Records:(<a href="PatientTrainingRecords.aspx">View Details</a>)
         <br />
         <br />
-        <asp:Chart ID="chrt_score" runat="server" CssClass="auto-style1" DataSourceID="fypjdb" Height="403px" Width="740px" OnLoad="Chart1_Load" EmptyDataText="No game scores exists!" OnDataBound="chrt_score_DataBound" >
+        
+        <table style="margin:0 auto;">
+            <tr>
+                <td><asp:DropDownList ID="ddl_month" runat="server">
+                    <asp:ListItem Value="January 2015">January 2015</asp:ListItem>
+                    <asp:ListItem>February 2015</asp:ListItem>
+                    <asp:ListItem>March 2015</asp:ListItem>
+                    <asp:ListItem>April 2015</asp:ListItem>
+                    <asp:ListItem>May 2015</asp:ListItem>
+                    <asp:ListItem>June 2015</asp:ListItem>
+                    <asp:ListItem>July 2015</asp:ListItem>
+                    <asp:ListItem>August 2015</asp:ListItem>
+                    <asp:ListItem>September 2015</asp:ListItem>
+                    <asp:ListItem>October 2015</asp:ListItem>
+                    <asp:ListItem Value="November 2015">November 2015</asp:ListItem>
+                    <asp:ListItem>December 2015</asp:ListItem>
+                    </asp:DropDownList></td>
+                <td><asp:Button ID="btn_monthlyscores" runat="server" Text="Get Scores" OnClick="btn_monthlyscores_Click" /></td>
+                
+            </tr>
+        </table>
+        <asp:Chart ID="chrt_score" runat="server" DataSourceID="GetScores" Height="361px" OnDataBound="chrt_score_DataBound" OnLoad="chrt_score_Load" Width="647px">
             <Series>
-                <asp:Series Name="Series1" ChartType="Line" XValueMember="DateOfScore" YValueMembers="Score" ></asp:Series>
+                <asp:Series Name="Series1" ChartType="Line" XValueMember="DateOfScore" YValueMembers="Score" IsXValueIndexed="True" ToolTip="&quot;#VALX: Your Score is #VAL .&quot;" ></asp:Series>
             </Series>
             <ChartAreas>
-                <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+                <asp:ChartArea Name="ChartArea1">
+                    <Area3DStyle Enable3D="True" Inclination="15" />
+                </asp:ChartArea>
             </ChartAreas>
         </asp:Chart>
-         <asp:SqlDataSource ID="fypjdb" runat="server" ConnectionString="<%$ ConnectionStrings:FypjDBConnectionString %>" SelectCommand="SELECT [DateOfScore], [Score] FROM [Scores] WHERE (([PatientName] = @PatientName) AND ([PatientIC] = @PatientIC))">
+         <asp:SqlDataSource ID="GetScores" runat="server" ConnectionString="<%$ ConnectionStrings:FypjDBConnectionString %>" SelectCommand="SELECT [Score], [DateOfScore] FROM [Scores] WHERE (([DateOfScore] &gt;= @DateOfScore) AND ([DateOfScore] &lt;= @DateOfScore2) AND ([PatientIC] = @PatientIC) AND ([PatientName] = @PatientName))">
              <SelectParameters>
-                 <asp:SessionParameter Name="PatientName" SessionField="patientname" Type="String" />
+                 <asp:Parameter DbType="Date" DefaultValue="10/1/2015" Name="DateOfScore" />
+                 <asp:Parameter DbType="Date" DefaultValue="10/31/2015" Name="DateOfScore2" />
                  <asp:SessionParameter Name="PatientIC" SessionField="patientic" Type="String" />
+                 <asp:SessionParameter Name="PatientName" SessionField="patientname" Type="String" />
              </SelectParameters>
          </asp:SqlDataSource>
     </asp:Panel>
