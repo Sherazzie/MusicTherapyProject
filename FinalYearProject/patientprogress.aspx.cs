@@ -11,6 +11,7 @@ namespace FinalYearProject
     public partial class patientprogress : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
+
         {
 
         }
