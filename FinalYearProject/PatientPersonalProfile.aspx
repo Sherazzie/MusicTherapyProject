@@ -105,14 +105,17 @@
                 <td><asp:Button ID="btn_monthlyscores" runat="server" Text="Get Scores" OnClick="btn_monthlyscores_Click" /></td>
                 
             </tr>
+
         </table>
+         <br />
+        
         <asp:Chart ID="chrt_score" runat="server" DataSourceID="GetScores" Height="361px" OnDataBound="chrt_score_DataBound" OnLoad="chrt_score_Load" Width="647px">
             <Series>
                 <asp:Series Name="Series1" ChartType="Line" XValueMember="DateOfScore" YValueMembers="Score" IsXValueIndexed="True" ToolTip="&quot;#VALX: Your Score is #VAL .&quot;" ></asp:Series>
             </Series>
             <ChartAreas>
                 <asp:ChartArea Name="ChartArea1">
-                    <Area3DStyle Enable3D="True" Inclination="15" />
+                    <Area3DStyle Enable3D="True" Inclination="15" IsRightAngleAxes="False" Perspective="10" />
                 </asp:ChartArea>
             </ChartAreas>
         </asp:Chart>
