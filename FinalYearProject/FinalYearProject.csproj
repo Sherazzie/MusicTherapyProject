@@ -137,9 +137,16 @@
   <ItemGroup>
     <Content Include="AssignMusic.aspx" />
     <Content Include="CreatePatient.aspx" />
-    <Content Include="CssStyles\1c2iItAD.jpeg" />
-    <Content Include="CssStyles\datalist css.css" />
-    <Content Include="CssStyles\IndividualEffects.css" />
+    <Content Include="CssStyles\1c2iItAD.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CssStyles\datalist css.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CssStyles\IndividualEffects.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Default.aspx" />
     <Content Include="FilterSongsByAlbum.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
@@ -150,31 +157,81 @@
     <Content Include="PatientPersonalProfile.aspx" />
     <Content Include="patientprogress.aspx" />
     <Content Include="PatientTrainingRecords.aspx" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\adapters\standalone-framework.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\adapters\standalone-framework.src.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-3d.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-3d.src.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-all.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-more.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-more.src.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts.src.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\canvas-tools.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\canvas-tools.src.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\data.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\data.src.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\drilldown.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\drilldown.src.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\exporting.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\exporting.src.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\funnel.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\funnel.src.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\heatmap.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\heatmap.src.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\no-data-to-display.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\no-data-to-display.src.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\solid-gauge.js" />
-    <Content Include="Scripts\Highcharts-4.0.1\js\modules\solid-gauge.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\adapters\standalone-framework.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\adapters\standalone-framework.src.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-3d.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-3d.src.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-all.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-more.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-more.src.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts.src.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\canvas-tools.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\canvas-tools.src.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\data.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\data.src.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\drilldown.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\drilldown.src.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\exporting.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\exporting.src.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\funnel.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\funnel.src.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\heatmap.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\heatmap.src.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\no-data-to-display.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\no-data-to-display.src.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\solid-gauge.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\solid-gauge.src.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\Highcharts-4.0.1\js\themes\dark-blue.js" />
     <Content Include="Scripts\Highcharts-4.0.1\js\themes\dark-green.js" />
     <Content Include="Scripts\Highcharts-4.0.1\js\themes\dark-unica.js" />
@@ -187,11 +244,45 @@
     <Content Include="siteimages\BLmasterpagebanner.jpg" />
     <Content Include="UploadMusic.aspx" />
     <Content Include="ViewPatients.aspx" />
-    <Content Include="webcss\css\main.css" />
+    <Content Include="webcss\css\bootstrap-theme.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="webcss\css\bootstrap.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="webcss\css\font-awesome.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="webcss\css\main.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="HomePage.Master" />
+    <Content Include="webcss\fonts\fontawesome-webfont.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="webcss\js\google-map.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="webcss\js\headroom.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="webcss\js\html5shiv.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="webcss\js\jQuery.headroom.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="webcss\js\respond.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="webcss\js\template.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CssStyles\style.css" />
+    <Content Include="CssStyles\style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssignMusic.aspx.cs">
@@ -214,6 +305,13 @@
     </Compile>
     <Compile Include="CreatePatient.aspx.designer.cs">
       <DependentUpon>CreatePatient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="FilterSongsByAlbum.aspx.cs">
       <DependentUpon>FilterSongsByAlbum.aspx</DependentUpon>
@@ -303,10 +401,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MusicAlbumArt\" />
-    <Folder Include="ProfileImages\" />
-    <Folder Include="webcss\fonts\" />
     <Folder Include="webcss\images\" />
-    <Folder Include="webcss\js\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
@@ -329,6 +424,18 @@
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
+    <Content Include="webcss\fonts\fontawesome-webfont.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="webcss\fonts\fontawesome-webfont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="webcss\fonts\fontawesome-webfont.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="webcss\fonts\FontAwesome.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
