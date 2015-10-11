@@ -2,6 +2,75 @@
 
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+ <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>  
+    <script src="http://code.highcharts.com/highcharts.js" type="text/javascript"></script>
+
+    <script type="text/javascript">  
+     $(function ($) {  
+      $('#hello').highcharts({  
+        chart: {  
+          type: 'line'  
+        },  
+        title: {  
+          text: 'Monthly Average Rainfall'  
+        },  
+        subtitle: {  
+          text: 'Source: WorldClimate.com'  
+        },  
+        xAxis: {  
+          categories: [  
+            'Jan',  
+            'Feb',  
+            'Mar',  
+            'Apr',  
+            'May',  
+            'Jun',  
+            'Jul',  
+            'Aug',  
+            'Sep',  
+            'Oct',  
+            'Nov',
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'  
+          ]  
+        },  
+        yAxis: {  
+          min: 0,  
+          title: {  
+            text: 'Rainfall (mm)'  
+          }  
+        },  
+        tooltip: {  
+          headerFormat: '<span style="font-size:10px">{point.key}</span><table>',  
+          pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +  
+            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',  
+          footerFormat: '</table>',  
+          shared: true,  
+          useHTML: true  
+        },  
+        plotOptions: {  
+          column: {  
+            pointPadding: 0.2,  
+            borderWidth: 0  
+          }  
+        },  
+        series:[{
+                 name: 'Tokyo',
+                 data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+             }]   
+      });  
+    });  
+ </script>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
     <div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -80,53 +149,17 @@
             </table>
    </asp:Panel>
   <br />
-
+       <div id="hello" style="min-width: 400px; height: 400px; margin: 0 auto"></div> 
     <asp:Panel runat="server" HorizontalAlign="Center">
          Training Records:(<a href="PatientTrainingRecords.aspx">View Details</a>)
         <br />
         <br />
         
-        <table style="margin:0 auto;">
-            <tr>
-                <td><asp:DropDownList ID="ddl_month" runat="server">
-                    <asp:ListItem Value="January 2015">January 2015</asp:ListItem>
-                    <asp:ListItem>February 2015</asp:ListItem>
-                    <asp:ListItem>March 2015</asp:ListItem>
-                    <asp:ListItem>April 2015</asp:ListItem>
-                    <asp:ListItem>May 2015</asp:ListItem>
-                    <asp:ListItem>June 2015</asp:ListItem>
-                    <asp:ListItem>July 2015</asp:ListItem>
-                    <asp:ListItem>August 2015</asp:ListItem>
-                    <asp:ListItem>September 2015</asp:ListItem>
-                    <asp:ListItem>October 2015</asp:ListItem>
-                    <asp:ListItem Value="November 2015">November 2015</asp:ListItem>
-                    <asp:ListItem>December 2015</asp:ListItem>
-                    </asp:DropDownList></td>
-                <td><asp:Button ID="btn_monthlyscores" runat="server" Text="Get Scores" OnClick="btn_monthlyscores_Click" /></td>
-                
-            </tr>
-
-        </table>
+   
          <br />
+       
         
-        <asp:Chart ID="chrt_score" runat="server" DataSourceID="GetScores" Height="361px" OnDataBound="chrt_score_DataBound" OnLoad="chrt_score_Load" Width="647px">
-            <Series>
-                <asp:Series Name="Series1" ChartType="Line" XValueMember="DateOfScore" YValueMembers="Score" IsXValueIndexed="True" ToolTip="&quot;#VALX: Your Score is #VAL .&quot;" ></asp:Series>
-            </Series>
-            <ChartAreas>
-                <asp:ChartArea Name="ChartArea1">
-                    <Area3DStyle Enable3D="True" Inclination="15" IsRightAngleAxes="False" Perspective="10" />
-                </asp:ChartArea>
-            </ChartAreas>
-        </asp:Chart>
-         <asp:SqlDataSource ID="GetScores" runat="server" ConnectionString="<%$ ConnectionStrings:FypjDBConnectionString %>" SelectCommand="SELECT [Score], [DateOfScore] FROM [Scores] WHERE (([DateOfScore] &gt;= @DateOfScore) AND ([DateOfScore] &lt;= @DateOfScore2) AND ([PatientIC] = @PatientIC) AND ([PatientName] = @PatientName))">
-             <SelectParameters>
-                 <asp:Parameter DbType="Date" DefaultValue="10/1/2015" Name="DateOfScore" />
-                 <asp:Parameter DbType="Date" DefaultValue="10/31/2015" Name="DateOfScore2" />
-                 <asp:SessionParameter Name="PatientIC" SessionField="patientic" Type="String" />
-                 <asp:SessionParameter Name="PatientName" SessionField="patientname" Type="String" />
-             </SelectParameters>
-         </asp:SqlDataSource>
+      
     </asp:Panel>
     <br />
     <br />
@@ -197,6 +230,7 @@
 	<script src="webcss/js/headroom.min.js"></script>
 	<script src="webcss/js/jQuery.headroom.min.js"></script>
 	<script src="webcss/js/template.js"></script>
+ 
         </asp:Content>
 
 

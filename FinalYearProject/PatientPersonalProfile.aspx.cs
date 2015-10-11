@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI.DataVisualization.Charting;
 
+
 namespace FinalYearProject
 {
     public partial class PatientPersonalProfile : System.Web.UI.Page
@@ -25,9 +26,11 @@ namespace FinalYearProject
                 sessiondatabind();
                 bindonlyinfo();
                 assignedmusic();
-                ddl_month.Items.FindByValue("October 2015").Selected = true;
+                loadcharts();
+                //ddl_month.Items.FindByValue("October 2015").Selected = true;
             }
             selectic();
+
         }
 
         protected void sessiondatabind()
@@ -127,9 +130,13 @@ namespace FinalYearProject
             conn.Close();
         }
 
-  
+        protected void loadcharts()
+        {
+           
+    }
 
-        protected void chrt_score_DataBound(object sender, EventArgs e)
+
+      /*  protected void chrt_score_DataBound(object sender, EventArgs e)
         {
             if (chrt_score.Series[0].Points.Count == 0)
             {
@@ -789,6 +796,7 @@ namespace FinalYearProject
             
 
         }
+    }
 
         /*System.Web.UI.DataVisualization.Charting.TextAnnotation annotation =
             new System.Web.UI.DataVisualization.Charting.TextAnnotation();
@@ -798,5 +806,4 @@ namespace FinalYearProject
                     annotation.Font = new System.Drawing.Font("Arial", 12);
                     annotation.ForeColor = System.Drawing.Color.Red;
                     chrt_score.Annotations.Add(annotation);*/
-    }
-    }
+  

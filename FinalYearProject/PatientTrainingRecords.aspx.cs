@@ -23,12 +23,12 @@ namespace FinalYearProject
         }
 
         protected void cal_records_DayRender(object sender, DayRenderEventArgs e)
-        {
+        {       
             DataRow[] rows = appts.Select(
                 String.Format(
                    "ApptDate >= #{0}# AND ApptDate < #{1}#",
-                   e.Day.Date.ToShortDateString(),
-                   e.Day.Date.AddDays(1).ToShortDateString()
+                   e.Day.Date.ToLongDateString(),
+                   e.Day.Date.AddDays(1).ToLongDateString()
                 )
              );
 
@@ -65,8 +65,8 @@ namespace FinalYearProject
             System.Data.DataView view = appts.DefaultView;
             view.RowFilter = String.Format(
                               "ApptDate >= #{0}# AND ApptDate < #{1}#",
-                              cal_records.SelectedDate.ToShortDateString(),
-                              cal_records.SelectedDate.AddDays(1).ToShortDateString()
+                              cal_records.SelectedDate.ToLongDateString(),
+                              cal_records.SelectedDate.AddDays(1).ToLongDateString()
                            );
 
             if (view.Count > 0)
