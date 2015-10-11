@@ -33,6 +33,24 @@ namespace FinalYearProject
 
         }
 
+        public string monthname
+
+        {
+            get;
+            set;
+        }
+
+        public string monthdata
+        {
+            get;
+            set;
+        }
+
+        public string catname
+        {
+            get;
+            set;
+        }
         protected void sessiondatabind()
         {
             string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";

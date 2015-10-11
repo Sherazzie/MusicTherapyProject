@@ -19,29 +19,7 @@
         },  
         xAxis: {  
           categories: [  
-            'Jan',  
-            'Feb',  
-            'Mar',  
-            'Apr',  
-            'May',  
-            'Jun',  
-            'Jul',  
-            'Aug',  
-            'Sep',  
-            'Oct',  
-            'Nov',
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec'  
+                <%= catname%>
           ]  
         },  
         yAxis: {  
@@ -65,8 +43,8 @@
           }  
         },  
         series:[{
-                 name: 'Tokyo',
-                 data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+                 name: <%= monthname%>,
+                 data:[ <%= monthdata%>]
              }]   
       });  
     });  
@@ -149,12 +127,12 @@
             </table>
    </asp:Panel>
   <br />
-       <div id="hello" style="min-width: 400px; height: 400px; margin: 0 auto"></div> 
+       
     <asp:Panel runat="server" HorizontalAlign="Center">
          Training Records:(<a href="PatientTrainingRecords.aspx">View Details</a>)
         <br />
         <br />
-        
+        <div id="hello" style="min-width: 400px; height: 400px; margin: 0 auto"></div> 
    
          <br />
        
