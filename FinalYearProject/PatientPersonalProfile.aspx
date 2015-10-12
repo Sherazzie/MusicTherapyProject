@@ -12,20 +12,32 @@
           type: 'line'  
         },  
         title: {  
-          text: 'Monthly Average Rainfall'  
+          text: 'Monthly Score'  
         },  
-        subtitle: {  
-          text: 'Source: WorldClimate.com'  
-        },  
+       
         xAxis: {  
-          categories: [  
-                <%= catname%>
-          ]  
+          
+            categories:[
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+            ]
+           
+    
         },  
         yAxis: {  
           min: 0,  
           title: {  
-            text: 'Rainfall (mm)'  
+            text: 'Score'  
           }  
         },  
         tooltip: {  
@@ -43,8 +55,8 @@
           }  
         },  
         series:[{
-                 name: <%= monthname%>,
-                 data:[ <%= monthdata%>]
+                
+                 data:[<%= monthdata%>]
              }]   
       });  
     });  

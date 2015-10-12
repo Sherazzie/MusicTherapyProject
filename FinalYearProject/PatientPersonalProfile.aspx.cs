@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI.DataVisualization.Charting;
-
+using System.Web.Script.Serialization;
 
 namespace FinalYearProject
 {
@@ -15,30 +15,26 @@ namespace FinalYearProject
     {
         string patientname = "";
         string imageurl = "";
+    
         protected void Page_Load(object sender, EventArgs e)
         {
             patientname = Session["patientname"].ToString();
             imageurl = Session["imageurl"].ToString();
-           
-
+            selectic();
+            renderchart();
             if (!IsPostBack)
             {
                 sessiondatabind();
                 bindonlyinfo();
                 assignedmusic();
-                loadcharts();
+               
                 //ddl_month.Items.FindByValue("October 2015").Selected = true;
             }
-            selectic();
+          
 
         }
 
-        public string monthname
-
-        {
-            get;
-            set;
-        }
+      
 
         public string monthdata
         {
@@ -148,11 +144,54 @@ namespace FinalYearProject
             conn.Close();
         }
 
-        protected void loadcharts()
+        protected DataTable loaddaysdefault()
         {
-           
-    }
+            DataTable days = new DataTable();
+          
+            string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+            SqlConnection conn = new SqlConnection(connstr);
+            string cmdstring = "SELECT Score,DateOfScore from Scores where PatientName=@pname and PatientIC=@ic and DateOfScore >=@dos1 and DateOfScore <=@dos2";
+            SqlCommand cmd = new SqlCommand(cmdstring, conn);
+            cmd.Parameters.AddWithValue("@pname", patientname);
+            cmd.Parameters.AddWithValue("@ic", Session["patientic"].ToString());
+            cmd.Parameters.AddWithValue("@dos1", Convert.ToDateTime("1/1/2015"));
+            cmd.Parameters.AddWithValue("@dos2", Convert.ToDateTime("10/31/2015"));
+            conn.Open();
+            using (SqlDataReader dr = cmd.ExecuteReader())
+            {
+                if(dr.HasRows)
+                {
+                    days.Load(dr);
+                }
+            }
+            return days;
+        }
+      
 
+        protected void renderchart()
+        {
+            DataTable d = loaddaysdefault();
+          // DataTable s = loadscoresdefault();
+            List<DateTime> ds = new List<DateTime>();
+            List<string> dsstring = new List<string>();
+            List<int> di = new List<int>();
+
+
+            foreach (DataRow row in d.Rows)
+            {
+                ds.Add((DateTime)row["DateOfScore"]);
+            }
+           /*     foreach (DataRow row in s.Rows)
+            {
+                di.Add((int)row["Score"]);
+               
+            }*/
+            JavaScriptSerializer jss = new JavaScriptSerializer();
+            catname = jss.Serialize(dsstring);
+            monthdata = jss.Serialize(di);
+            string lol = "";
+            
+        }
 
       /*  protected void chrt_score_DataBound(object sender, EventArgs e)
         {
