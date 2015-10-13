@@ -45,6 +45,8 @@
         <br />
         <br />
       <h1>  Patient Training Calendar( <a href="PatientEventsAssignment.aspx">Add Record</a>) </h1>
+        <br />
+        <br />
         <table style="margin:0 auto">
             <tr>
                <td>
