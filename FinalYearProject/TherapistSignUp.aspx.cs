@@ -39,8 +39,8 @@ namespace FinalYearProject
                     {
                         AzureUserBLL validateinput = new AzureUserBLL();
                         string FileName = Path.GetFileName(fu_upload.PostedFile.FileName);
-                        fu_upload.SaveAs(Server.MapPath("ProfileImages//" + FileName));
-                        validateinput.CreateDoctorAcccount(emailinput, tnameinput, userpasswordinput, cfmpasswordinput, mobileinput, userdob, "ProfileImages//" + FileName);
+                        fu_upload.SaveAs(Server.MapPath("PImages//" + FileName));
+                        validateinput.CreateDoctorAcccount(emailinput, tnameinput, userpasswordinput, cfmpasswordinput, mobileinput, userdob, "PImages//" + FileName);
                         lbl_result.Text = validateinput.returnMessage;
                     }
                     else

@@ -33,6 +33,11 @@ namespace DataAcessLayer
             _imgpath = imgpath;
         }
 
+        public AzureUserDAL(string email,string pwd)
+        {
+            _email = email;
+            _pwd = pwd;
+        }
         public AzureUserDAL(string dname,string pwd,string mobileno,string dob,string imgpath)
         :this("",dname,pwd,mobileno,dob,imgpath)
         {
@@ -100,6 +105,26 @@ namespace DataAcessLayer
                 return noofRow;
            
             
+
+        }
+
+        public string CheckDoctorLogin()
+        {
+            string pwd = "";
+            SqlConnection conn=new SqlConnection(connstr);
+            SqlCommand cmd = new SqlCommand("DocLogin", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@email", _email);
+            conn.Open();
+            SqlDataReader read = cmd.ExecuteReader();
+            if (read.Read())
+            {
+                pwd = read["Password"].ToString();
+            }
+            read.Close();
+
+            return pwd;
+
 
         }
 

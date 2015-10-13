@@ -82,8 +82,12 @@ namespace FinalYearProject
                 dl_music.DataBind();
                 conn.Close();
             }
+            else
+            {
+                lbl_result.Text = "None of the checkboxes has been selected";
+            }
 
-            if(rb_artists.Checked == true)
+            if (rb_artists.Checked == true)
             {
                 string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
                 SqlConnection conn = new SqlConnection(connstr);

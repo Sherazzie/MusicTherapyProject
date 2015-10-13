@@ -40,6 +40,8 @@
             
              <input type="text" name="email" placeholder="Email" runat="server" id="email" />
             <input type="password" name="pass" placeholder="Password" runat="server" id="password" />
+            <br />
+            <asp:Label ID="lbl_result" runat="server"></asp:Label>
             <input type="submit" name="login" class="login login-submit" value="Login"  runat="server" onServerClick="btnLogin_Click" />
             
 

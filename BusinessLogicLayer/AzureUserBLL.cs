@@ -11,6 +11,7 @@ namespace BusinessLogicLayer
     public class AzureUserBLL
     {
         public string returnMessage = "";
+        public string userCount = "";
 
         public string CreateDoctorAcccount(string email, string dname, string pwd, string cfmpwd, string mobileno, string dob, string pip)
         {
@@ -48,6 +49,21 @@ namespace BusinessLogicLayer
 
             }
             return returnMessage;
+
+        }
+        public string CheckLogin(string Email)
+        {
+            AzureUserDAL user = new AzureUserDAL(Email);
+           
+            userCount = user.CheckDoctorLogin();
+
+         /*   if (userCount > 0)
+                returnMessage = "Login Succuess.";
+
+            else
+                returnMessage = "Error,Your Email or Password might be wrong";*/
+
+            return userCount;
 
         }
     }
