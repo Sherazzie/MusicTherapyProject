@@ -43,7 +43,7 @@
                 <br />
                 <br />
                 <p style="vertical-align:middle;">
-                    <img src="siteimages/BLmasterpagebanner.jpg" />
+                    &lt;space for patient progress&gt;
                 </p>
     </asp:Panel>
     <footer id="footer" class="top-space">

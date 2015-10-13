@@ -40,9 +40,7 @@
                 <br />
                 <br />
                 <p style="vertical-align:middle;">
-                    <img src="siteimages/BLmasterpagebanner.jpg" />
-                        <br />
-                    <a href="Home.aspx">Home</a> > <a href="MusicView.aspx">Music List</a> > <a href="FilterSongsByAlbum.aspx">Album Songs List</a>
+                    &nbsp;<br /> <a href="Home.aspx">Home</a> > <a href="MusicView.aspx">Music List</a> > <a href="FilterSongsByAlbum.aspx">Album Songs List</a>
         </p>
     </asp:Panel>
 

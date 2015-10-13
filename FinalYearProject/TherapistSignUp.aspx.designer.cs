@@ -10,7 +10,7 @@
 namespace FinalYearProject {
     
     
-    public partial class SignUp {
+    public partial class TherapistSignUp {
         
         /// <summary>
         /// email control.

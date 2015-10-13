@@ -40,8 +40,7 @@
                 <br />
                 <br />
                 <p style="vertical-align:middle;">
-                    <img src="siteimages/BLmasterpagebanner.jpg" />
-                </p>
+                    &nbsp;</p>
     </asp:Panel>
     <asp:Panel HorizontalAlign="Center" runat="server">
          <a href="ViewPatients.aspx">Patient List</a> > <a href="PatientPersonalProfile.aspx"> View Patient Details</a> > <a href="PatientTrainingRecords.aspx"> View Patient Calendar</a>

@@ -1,35 +1,28 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BeforeLogin.Master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="FinalYearProject.SignUp" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="TherapistSignUp.aspx.cs" Inherits="FinalYearProject.TherapistSignUp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CssStyles/style.css" rel="stylesheet" />
-
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
     <div class="navbar navbar-inverse navbar-fixed-top headroom" >
         <div class="container">
-            <div class="navbar-header">
+            <div>
 				<!-- Button for smallest screens -->
 				        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
-                <img src="webcss/images/logo.png" alt="Progressus HTML5 template" /></a>
             </div>
             <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav pull-left">
+                    <li><a href="Home.aspx">Home</a></li>
+                </ul>
+                <img src="webcss/images/logo.png" alt="Progressus HTML5 template" class="imgiconcss" />
                 <ul class="nav navbar-nav pull-right">
-                    <li class="active"><a href="Home.aspx">Home</a></li>
-                    <li><a href="About.aspx">About</a></li>
-                          <!--  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="sidebar-left.html"></a></li>
-                                    <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
-                                </ul>
-                            </li> -->
-                            <li><a href="SignUp.aspx">Registration</a></li>
-                    <li><a href="Login.aspx">Login</a></li>
+                    <li><a href="TherapistSignUp.aspx">Sign Up</a></li>
+                    <li><a href="TherapistLogin.aspx">Login</a></li>
                 </ul>
             </div>
                     <!--/.nav-collapse -->
+
 		        </div>
     </div>
 	<!-- /.navbar -->
@@ -38,12 +31,8 @@
                 <br />
                 <br />
                 <br />
-                <p style="vertical-align:middle;">
-                    <img src="siteimages/BLmasterpagebanner.jpg" />
-                </p>
     </asp:Panel>
- 
-      <div>
+     <div>
              
         <div class="login-card">
             <h1>Registration Page</h1>
@@ -108,6 +97,4 @@
 	<script src="webcss/js/jQuery.headroom.min.js"></script>
 	<script src="webcss/js/template.js"></script>
         </asp:Content>
-
-
 

@@ -39,8 +39,7 @@
                 <br />
                 <br />
                 <p style="vertical-align:middle;">
-                    <img src="siteimages/BLmasterpagebanner.jpg" />
-                </p>
+                    &nbsp;</p>
     <br />
         
            <a href="UploadMusic.aspx">Upload Music</a>

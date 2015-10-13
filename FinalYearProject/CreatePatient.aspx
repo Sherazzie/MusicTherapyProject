@@ -39,8 +39,7 @@
                 <br />
                 <br />
                 <p style="vertical-align:middle;">
-                    <img src="siteimages/BLmasterpagebanner.jpg" />
-                </p>
+                    &nbsp;</p>
     </asp:Panel>
     <asp:Panel runat="server" HorizontalAlign="Center">
         <table style="margin:0 auto">

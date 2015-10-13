@@ -5,62 +5,6 @@
  <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>  
     <script src="http://code.highcharts.com/highcharts.js" type="text/javascript"></script>
 
-    <script type="text/javascript">  
-     $(function ($) {  
-      $('#hello').highcharts({  
-        chart: {  
-          type: 'line'  
-        },  
-        title: {  
-          text: 'Monthly Score'  
-        },  
-       
-        xAxis: {  
-          
-            categories:[
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec'
-            ]
-           
-    
-        },  
-        yAxis: {  
-          min: 0,  
-          title: {  
-            text: 'Score'  
-          }  
-        },  
-        tooltip: {  
-          headerFormat: '<span style="font-size:10px">{point.key}</span><table>',  
-          pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +  
-            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',  
-          footerFormat: '</table>',  
-          shared: true,  
-          useHTML: true  
-        },  
-        plotOptions: {  
-          column: {  
-            pointPadding: 0.2,  
-            borderWidth: 0  
-          }  
-        },  
-        series:[{
-                
-                 data:[<%= monthdata%>]
-             }]   
-      });  
-    });  
- </script>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
     <div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -98,8 +42,7 @@
                 <br />
                 <br />
                 <p style="vertical-align:middle;">
-                    <img src="siteimages/BLmasterpagebanner.jpg" />
-                </p>
+                    &nbsp;</p>
     </asp:Panel>
       <asp:Panel runat="server" HorizontalAlign="Center">
         <a href="ViewPatients.aspx">Patient List</a> > <a href="PatientPersonalProfile.aspx"> View Patient Details</a>
@@ -145,7 +88,7 @@
         <br />
         <br />
         <div id="hello" style="min-width: 400px; height: 400px; margin: 0 auto"></div> 
-   
+                ---- space for charting controls --------
          <br />
        
         

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BeforeLogin.master.cs" Inherits="FinalYearProject.BeforeLogin" %>   
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="FinalYearProject.Home1" %>
 
 <!DOCTYPE html>
 
@@ -31,18 +31,12 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav pull-left">
-                            <li><a href="patientprogress.aspx">Home</a></li>
-                            <li><a href="ViewPatients.aspx">Patient</a></li>
-                            <li class="dropdown"><a href="UploadMusic.aspx" class="dropdown-toggle" data-toggle="dropdown">Music</a>
-                                <ul class="dropdown-menu">
-                                    <li class="active"><a href="UploadMusic.aspx">Upload Music</a></li>
-                                    <li class="active"><a href="MusicView.aspx">View Music</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="Home.aspx">Home</a></li>
                         </ul>
                         <img src="webcss/images/logo.png" alt="Progressus HTML5 template" class="imgiconcss" />
                         <ul class="nav navbar-nav pull-right">
-                            <li><a href="Home.aspx">Logout</a></li>
+                            <li><a href="TherapistSignUp.aspx">Sign Up</a></li>
+                            <li><a href="TherapistLogin.aspx">Login</a></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->

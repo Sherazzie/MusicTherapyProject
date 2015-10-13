@@ -4,19 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Net;
-using System.Net.Mail;
 using BusinessLogicLayer;
 using System.IO;
+using System.Net.Mail;
+
 namespace FinalYearProject
 {
-    public partial class SignUp : System.Web.UI.Page
-   {
+    public partial class TherapistSignUp : System.Web.UI.Page
+    {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-        }
 
+        }
         protected void btn_signup(object sender, EventArgs e)
         {
             string emailinput = email.Value;

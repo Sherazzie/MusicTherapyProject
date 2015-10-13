@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace FinalYearProject
 {
-    public partial class HomePage : System.Web.UI.MasterPage
+    public partial class Home1 : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

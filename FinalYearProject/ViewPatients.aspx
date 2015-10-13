@@ -42,9 +42,7 @@
                 <br />
                 <br />
                 <p style="vertical-align:middle;">
-                    <img src="siteimages/BLmasterpagebanner.jpg" />
-        <br />
-        <a href="ViewPatients.aspx">Patient List</a>
+                    &nbsp;<br /> <a href="ViewPatients.aspx">Patient List</a>
     </asp:Panel>
     <asp:DataList ID="dl_patients" runat="server" Font-Names="Verdana" Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" Width="800px" HorizontalAlign="Center" OnItemCommand="dl_patient_ItemCommand">
         <ItemStyle ForeColor="Black" />
