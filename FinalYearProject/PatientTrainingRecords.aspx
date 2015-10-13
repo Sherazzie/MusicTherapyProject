@@ -11,26 +11,24 @@
                             <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
                 </button>
             </div>
-            <div class="navbar-collapse collapse">
+          <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav pull-left">
-                    <li><a href="Home.aspx">Home</a></li>
-                    <li><a href="About.aspx">Patient</a></li>
-                          <!--  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="sidebar-left.html"></a></li>
-                                    <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
-                                </ul>
-                            </li> -->
-                            <li><a href="UploadMusic.aspx">Music</a></li>
+                    <li><a href="patientprogress.aspx">Home</a></li>
+                    <li><a href="ViewPatients.aspx">Patient</a></li>
+                    <li class="dropdown"><a href="UploadMusic.aspx" class="dropdown-toggle" data-toggle="dropdown">Music</a>
+                        <ul class="dropdown-menu">
+                            <li class="active"><a href="UploadMusic.aspx">Upload Music</a></li>
+                            <li class="active"><a href="MusicView.aspx">View Music</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <img src="webcss/images/logo.png" alt="Progressus HTML5 template" class="imgiconcss" />
                 <ul class="nav navbar-nav pull-right">
-                    <li><a href="Home.aspx">Registration</a></li>
-                    <li><a href="About.aspx">Login</a></li>
+                    <li><a href="Home.aspx">Logout</a></li>
                 </ul>
             </div>
                     <!--/.nav-collapse -->
-
+            
 		        </div>
     </div>
 	<!-- /.navbar -->
@@ -46,11 +44,11 @@
          <a href="ViewPatients.aspx">Patient List</a> > <a href="PatientPersonalProfile.aspx"> View Patient Details</a> > <a href="PatientTrainingRecords.aspx"> View Patient Calendar</a>
         <br />
         <br />
-        Patient Training Calendar( <a href="PatientEventsAssignment.aspx">Add Record</a>)
+      <h1>  Patient Training Calendar( <a href="PatientEventsAssignment.aspx">Add Record</a>) </h1>
         <table style="margin:0 auto">
             <tr>
                <td>
-        <asp:Calendar ID="cal_records" runat="server" Height="268px" Width="335px" OnDayRender="cal_records_DayRender" OnSelectionChanged="cal_records_SelectionChanged">
+        <asp:Calendar ID="cal_records" runat="server" Height="357px" Width="539px" OnDayRender="cal_records_DayRender" OnSelectionChanged="cal_records_SelectionChanged">
 
         </asp:Calendar>
                    </td>

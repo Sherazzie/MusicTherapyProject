@@ -46,6 +46,8 @@
     </asp:Panel>
       <asp:Panel runat="server" HorizontalAlign="Center">
         <a href="ViewPatients.aspx">Patient List</a> > <a href="PatientPersonalProfile.aspx"> View Patient Details</a>
+          <br />
+           <h1> Personal Details:</h1>
         <table style="margin:0 auto;">
             <tr>
                 <td>
@@ -84,7 +86,7 @@
   <br />
        
     <asp:Panel runat="server" HorizontalAlign="Center">
-         Training Records:(<a href="PatientTrainingRecords.aspx">View Details</a>)
+        <h1> Training Records:(<a href="PatientTrainingRecords.aspx">View Details</a>) </h1>
         <br />
         <br />
         <div id="hello" style="min-width: 400px; height: 400px; margin: 0 auto"></div> 
@@ -98,7 +100,7 @@
     <br />
     <br />
     <asp:Panel runat="server" HorizontalAlign="Center">
-        Music Assigned:
+       <h1> Music Assigned:</h1>
         <br />
         <asp:GridView ID="gv_musicfiles" runat="server"   AutoGenerateColumns="False" HorizontalAlign="Center" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gv_musicfiles_RowCommand">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775"  />
