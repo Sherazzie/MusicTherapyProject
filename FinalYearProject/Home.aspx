@@ -132,7 +132,7 @@
 						 Since music choice/usage is tailored to each client’s needs and preferences, there is really no "most common" type of music or instrument
 						<br/>
 						<br/>
-						All styles of music have the potential to be useful in effecting change in a client’s or a patient's life.
+						All styles of music have the potential to be useful.
 					
 					
 						</p>
