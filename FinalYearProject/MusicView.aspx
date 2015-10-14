@@ -40,7 +40,7 @@
                 <br />
                 <br />
                 <p style="vertical-align:middle;">
-                    &nbsp;<br /> <a href="Home.aspx">Home</a> > <a href="MusicView.aspx">Music List</a>
+                    
         </p>
     </asp:Panel>
     <asp:Panel runat="server" HorizontalAlign="Center">
