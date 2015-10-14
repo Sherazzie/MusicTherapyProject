@@ -11,7 +11,7 @@ namespace FinalYearProject
 {
 
 
-    public partial class Home
+    public partial class HomePage
     {
     }
 }

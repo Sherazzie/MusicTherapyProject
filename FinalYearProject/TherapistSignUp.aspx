@@ -15,7 +15,7 @@
                 <ul class="nav navbar-nav pull-left">
                     <li><a href="Home.aspx">Home</a></li>
                 </ul>
-                <img src="webcss/images/logo.png" alt="Progressus HTML5 template" class="imgiconcss" />
+                 <img src="siteimages/logo.png" alt="Progressus HTML5 template" class="imgiconcss" />
                 <ul class="nav navbar-nav pull-right">
                     <li><a href="TherapistSignUp.aspx">Sign Up</a></li>
                     <li><a href="TherapistLogin.aspx">Login</a></li>

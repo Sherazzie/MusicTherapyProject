@@ -170,6 +170,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AssignMusic.aspx" />
+    <Content Include="booklet\images\arrow-next.png" />
+    <Content Include="booklet\images\arrow-prev.png" />
+    <Content Include="booklet\images\shadow-top-back.png" />
+    <Content Include="booklet\images\shadow-top-forward.png" />
+    <Content Include="booklet\images\shadow.png" />
+    <Content Include="booklet\jquery-1.4.4.min.js" />
+    <Content Include="booklet\jquery.booklet.1.1.0.css" />
+    <Content Include="booklet\jquery.booklet.1.1.0.js" />
+    <Content Include="booklet\jquery.booklet.1.1.0.min.js" />
+    <Content Include="booklet\jquery.easing.1.3.js" />
     <Content Include="CreatePatient.aspx" />
     <Content Include="CssStyles\1c2iItAD.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -180,9 +190,13 @@
     <Content Include="CssStyles\IndividualEffects.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="cufon\ChunkFive_400.font.js" />
+    <Content Include="cufon\cufon-yui.js" />
+    <Content Include="cufon\Note_this_400.font.js" />
     <Content Include="FilterSongsByAlbum.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="MusicView.aspx" />
+    <Content Include="notebook css\style.css" />
     <Content Include="packages.config" />
     <Content Include="BeforeLogin.Master" />
     <Content Include="PatientEventsAssignment.aspx" />
@@ -190,7 +204,17 @@
     <Content Include="patientprogress.aspx" />
     <Content Include="PatientTrainingRecords.aspx" />
     <Content Include="Scripts\jquery-1.5.1.min.js" />
+    <Content Include="siteimages\1.jpg" />
+    <Content Include="siteimages\ajax-loader.gif" />
+    <Content Include="siteimages\bg.png" />
     <Content Include="siteimages\BLmasterpagebanner.jpg" />
+    <Content Include="siteimages\buttons.png" />
+    <Content Include="siteimages\circle.png" />
+    <Content Include="siteimages\h1.png" />
+    <Content Include="siteimages\left_bg.jpg" />
+    <Content Include="siteimages\logo.png" />
+    <Content Include="siteimages\right_bg.jpg" />
+    <Content Include="siteimages\wood.jpg" />
     <Content Include="TherapistLogin.aspx" />
     <Content Include="TherapistSignUp.aspx" />
     <Content Include="UploadMusic.aspx" />
@@ -210,6 +234,7 @@
     <Content Include="webcss\fonts\fontawesome-webfont.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="webcss\images\logo.png" />
     <Content Include="webcss\js\google-map.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -345,7 +370,6 @@
   <ItemGroup>
     <Folder Include="MusicAlbumArt\" />
     <Folder Include="PImages\" />
-    <Folder Include="webcss\images\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">

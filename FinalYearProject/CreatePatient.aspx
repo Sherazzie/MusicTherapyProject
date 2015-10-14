@@ -22,7 +22,7 @@
                             </li> -->
                             <li><a href="UploadMusic.aspx">Music</a></li>
                 </ul>
-                <img src="webcss/images/logo.png" alt="Progressus HTML5 template" class="imgiconcss" />
+                 <img src="siteimages/logo.png" alt="Progressus HTML5 template" class="imgiconcss" />
                 <ul class="nav navbar-nav pull-right">
                     <li><a href="Home.aspx">Registration</a></li>
                     <li><a href="About.aspx">Login</a></li>

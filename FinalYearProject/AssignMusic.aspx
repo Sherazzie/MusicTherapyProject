@@ -25,7 +25,7 @@
                         </ul>
                     </li>
                 </ul>
-                <img src="webcss/images/logo.png" alt="Progressus HTML5 template" class="imgiconcss" />
+                 <img src="siteimages/logo.png" alt="Progressus HTML5 template" class="imgiconcss" />
                 <ul class="nav navbar-nav pull-right">
                     <li><a href="Home.aspx">Logout</a></li>
                 </ul>
@@ -44,6 +44,8 @@
                     &nbsp;<br /> <a href="Home.aspx">Home</a> > <a href="MusicView.aspx">Music List</a> > <a href="FilterSongsByAlbum.aspx">Album Songs List</a> > <a href="AssignMusic.aspx">Assign Music to Patient</a>
                 </p>
     </asp:Panel>
+    <br />
+    <br />
     <table style="margin:0 auto;">
         <tr>
             <td>Song Name:</td>
@@ -72,8 +74,12 @@
     <br />
     <br />
     <br />
+    <br />
+    <br />
+    <hr />
     <asp:Panel runat="server" HorizontalAlign="Center">
-    Song Currently Assigned to :
+
+   <h1> Song Currently Assigned to :</h1>
     </asp:Panel>
  
     &nbsp;<asp:DataList ID="dl_patients" runat="server" Font-Names="Verdana" Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" HorizontalAlign="Center">
