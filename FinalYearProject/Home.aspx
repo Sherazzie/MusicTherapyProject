@@ -31,7 +31,7 @@
                     <li><a href="Home.aspx">Home</a></li>
 
                 </ul>
-                <img src="siteimages/logo.png" alt="Progressus HTML5 template" class="imgiconcss" />
+                <img src="siteimages/logo.png" alt="Progressus HTML5 template" class="imghomecss" />
               
                 <ul class="nav navbar-nav pull-right">
                     <li><a href="TherapistSignUp.aspx">Sign Up</a></li>
@@ -229,7 +229,7 @@
 								closedBackChapter:  null,                            // used with "closed", "menu" and "chapterSelector", determines chapter name of blank ending page
 								covers:             false,                           // used with  "closed", makes first and last pages into covers, without page numbers (if enabled)
 
-								pagePadding:        10,                              // padding for each page wrapper
+								pagePadding:        0,                              // padding for each page wrapper
 								pageNumbers:        true,                            // display page numbers on each page
 
 								hovers:             false,                            // enables preview pageturn hover animation, shows a small preview of previous or next page on hover
