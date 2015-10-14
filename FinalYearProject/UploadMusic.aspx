@@ -42,7 +42,7 @@
                     &nbsp;</p>
     <br />
         
-           <a href="UploadMusic.aspx">Upload Music</a>
+           
         
     </asp:Panel>
 

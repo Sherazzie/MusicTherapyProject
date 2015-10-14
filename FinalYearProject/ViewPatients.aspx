@@ -42,7 +42,7 @@
                 <br />
                 <br />
                 <p style="vertical-align:middle;">
-                    &nbsp;<br /> <a href="ViewPatients.aspx">Patient List</a>
+                   
     </asp:Panel>
     <asp:DataList ID="dl_patients" runat="server" Font-Names="Verdana" Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" Width="800px" HorizontalAlign="Center" OnItemCommand="dl_patient_ItemCommand">
         <ItemStyle ForeColor="Black" />
@@ -52,9 +52,9 @@
                     <li class="plan">
                         <ul class="planContainer">
                             <li class="title">
-                                <h2>Patient Name:
-                                    <br />
-                                    <asp:Label ID="lbl_patientname" runat="server" Text='<%#Bind("PatientName") %>'></asp:Label>
+                               <br />
+                                <br />
+                               
                             </li>
                             <li class="title">
                                 <asp:Image ID="img_profileimage" runat="server" Height="200" Width="200" ImageUrl='<%# Bind("PatientImageUrl") %>' />
@@ -62,7 +62,7 @@
                             <br />
                             <li></li>
                             <li class="button">
-                                <asp:LinkButton ID="lbl_profile" CommandName="PatientInfo" runat="server" >View Profile</asp:LinkButton>
+                                <asp:LinkButton ID="lbl_profile" CommandName="PatientInfo" runat="server" Text='<%#Bind("PatientName") %>' ></asp:LinkButton>
 
                             </li>
                         </ul>

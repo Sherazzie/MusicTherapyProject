@@ -28,6 +28,7 @@ namespace FinalYearProject
             string userpasswordinput = password.Value;
             string cfmpasswordinput = cfmpassword.Value;
             string mobileinput = mobileno.Value;
+
             bool emailcheck = EmailIsValid(emailinput);
 
 
