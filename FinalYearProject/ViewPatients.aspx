@@ -52,8 +52,11 @@
                     <li class="plan">
                         <ul class="planContainer">
                             <li class="title">
-                               <br />
-                                <br />
+                                <h2>
+                                 <br />
+                                  <asp:Label ID="lbl_patientname" runat="server" Text='<%#Bind("PatientName") %>'></asp:Label>
+                             <br />
+                                    </h2>
                                
                             </li>
                             <li class="title">
@@ -62,7 +65,7 @@
                             <br />
                             <li></li>
                             <li class="button">
-                                <asp:LinkButton ID="lbl_profile" CommandName="PatientInfo" runat="server" Text='<%#Bind("PatientName") %>' ></asp:LinkButton>
+                                <asp:LinkButton ID="lbl_profile" CommandName="PatientInfo" runat="server" >View Profile</asp:LinkButton>
 
                             </li>
                         </ul>

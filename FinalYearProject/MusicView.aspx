@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BeforeLogin.Master" AutoEventWireup="true" CodeBehind="MusicView.aspx.cs" Inherits="FinalYearProject.MusicView" %>
+﻿ <%@ Page Title="" Language="C#" MasterPageFile="~/BeforeLogin.Master" AutoEventWireup="true" CodeBehind="MusicView.aspx.cs" Inherits="FinalYearProject.MusicView" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CssStyles/style.css" rel="stylesheet" />

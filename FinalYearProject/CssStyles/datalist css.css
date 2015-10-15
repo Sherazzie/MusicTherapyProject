@@ -4,8 +4,8 @@ html,html a {
 }
 
 body {
-	font-family: 'Open Sans', sans-serif;
-	background: #e2e2e2;
+    font-family: 'Open Sans', sans-serif;
+    background:  url('../siteimages/wood.jpg');
 }
 
 #plans,#plans ul,#plans ul li {

@@ -99,6 +99,7 @@ namespace FinalYearProject
                     dl_music.DataBind();
                     conn.Close();
                     lbl_result.Text = "";
+                    
                 }
 
             }
