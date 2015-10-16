@@ -4,6 +4,54 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>  
     <script src="http://code.highcharts.com/highcharts.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var firstSeries = '<%=hidValues1%>';
+        var xAxis = '<%=hidXCategories1%>';
+        var banksname;
+        var seriesOne = new Array();
+        seriesOne = firstSeries.split(',');
+
+        for (var i = 0; i < seriesOne.length; i++)
+        {
+            seriesOne[i] = parseInt(seriesOne[i]);
+        }
+
+        var xAxisSeries = new Array();
+        xAxisSeries = xAxis.split(',');
+        for (var i=0; i < xAxisSeries.length;i++)
+        {
+            banksname = banksname + seriesOne[i];
+        }
+        var _MyArray = seriesOne;
+        var _MyArray2 = banksname;
+
+        $(document).ready(function () {
+            chart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'container',
+                    defaultSeriesType: 'line'
+                },
+                title: {
+                    text: 'Game Scores'
+                },
+                xAxis: {
+                    categories: _MyArray2
+                },
+                yAxis: {
+                    title: {
+                        text: 'Scores'
+                    }
+                },
+                series: [{
+                    name: 'Share Price',
+                    data: _MyArray
+                }]
+
+
+            });
+            $('tspan').last().remove();
+        });
+    </script>
 
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
@@ -89,8 +137,7 @@
         <h1> Training Records:(<a href="PatientTrainingRecords.aspx">View Details</a>) </h1>
         <br />
         <br />
-        <div id="hello" style="min-width: 400px; height: 400px; margin: 0 auto"></div> 
-                ---- space for charting controls --------
+        <div id="container" style="width: 800px; height: 400px; margin: 0 auto"></div>
          <br />
        
         

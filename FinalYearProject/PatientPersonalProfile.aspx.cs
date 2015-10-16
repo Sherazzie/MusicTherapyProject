@@ -15,6 +15,8 @@ namespace FinalYearProject
     {
         string patientname = "";
         string imageurl = "";
+        public string hidValues1;
+        public string  hidXCategories1;
     
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +29,7 @@ namespace FinalYearProject
                 sessiondatabind();
                 bindonlyinfo();
                 assignedmusic();
-               
+                //BindChartData();
                 //ddl_month.Items.FindByValue("October 2015").Selected = true;
             }
           
@@ -133,6 +135,41 @@ namespace FinalYearProject
 
             conn.Close();
         }
+
+        public DataSet getchartdata()
+        {
+            string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+            SqlConnection conn = new SqlConnection(connstr);
+            string cmdstring = "SELECT  Score,DateOfScore from Scores where PatientName=@pname and PatientIC=@ic and DateOfScore >=@dos1 and DateOfScore <=@dos2";
+            SqlCommand cmd = new SqlCommand(cmdstring, conn);
+            cmd.Parameters.AddWithValue("@pname", patientname);
+            cmd.Parameters.AddWithValue("@ic", Session["patientic"].ToString());
+            cmd.Parameters.AddWithValue("@dos1", Convert.ToDateTime("10/1/2015"));
+            cmd.Parameters.AddWithValue("@dos2", Convert.ToDateTime("10/31/2015"));
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+
+        }
+
+        public void BindChartData()
+        {
+            DataSet dsSeries = new DataSet();
+            dsSeries = getchartdata();
+
+            foreach (DataRow dr in dsSeries.Tables[0].Rows)
+            {
+                hidXCategories1 = hidXCategories1 + dr["Score"].ToString() + ",";
+            }
+
+            foreach (DataRow dr1 in dsSeries.Tables[0].Rows)
+            {
+                hidValues1 = hidValues1 + dr1["DateOfScore"].ToString() + ",";
+            }
+
+        }
+
 
  
       /*  protected void chrt_score_DataBound(object sender, EventArgs e)

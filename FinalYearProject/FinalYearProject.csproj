@@ -368,6 +368,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="highchartsjs\" />
     <Folder Include="MusicAlbumArt\" />
     <Folder Include="PImages\" />
   </ItemGroup>
