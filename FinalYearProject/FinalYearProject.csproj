@@ -180,6 +180,7 @@
     <Content Include="booklet\jquery.booklet.1.1.0.js" />
     <Content Include="booklet\jquery.booklet.1.1.0.min.js" />
     <Content Include="booklet\jquery.easing.1.3.js" />
+    <Content Include="chart.js\Chart.js" />
     <Content Include="CreatePatient.aspx" />
     <Content Include="CssStyles\1c2iItAD.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -368,7 +369,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="highchartsjs\" />
     <Folder Include="MusicAlbumArt\" />
     <Folder Include="PImages\" />
   </ItemGroup>

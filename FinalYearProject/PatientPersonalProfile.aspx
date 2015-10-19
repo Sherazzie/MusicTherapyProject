@@ -2,55 +2,39 @@
 
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="chart.js/Chart.js" type="text/javascript"></script>
  <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>  
-    <script src="http://code.highcharts.com/highcharts.js" type="text/javascript"></script>
+   
     <script type="text/javascript">
-        var firstSeries = '<%=hidValues1%>';
-        var xAxis = '<%=hidXCategories1%>';
-        var banksname;
-        var seriesOne = new Array();
-        seriesOne = firstSeries.split(',');
-
-        for (var i = 0; i < seriesOne.length; i++)
-        {
-            seriesOne[i] = parseInt(seriesOne[i]);
+      var randomScalingFactor = function () { return Math.round(Math.random() * 100) };
+        var lineChartData = {
+         
+            labels: <% =this.ChartLabels %>,            
+            datasets: [{
+                
+                label: "Query Count",
+                fillColor: "rgba(220,220,220,0.2)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                  
+                data: <% =this.ChartData1 %>
+                }
+        ]
+                
+                  
+            
         }
 
-        var xAxisSeries = new Array();
-        xAxisSeries = xAxis.split(',');
-        for (var i=0; i < xAxisSeries.length;i++)
-        {
-            banksname = banksname + seriesOne[i];
-        }
-        var _MyArray = seriesOne;
-        var _MyArray2 = banksname;
-
-        $(document).ready(function () {
-            chart = new Highcharts.Chart({
-                chart: {
-                    renderTo: 'container',
-                    defaultSeriesType: 'line'
-                },
-                title: {
-                    text: 'Game Scores'
-                },
-                xAxis: {
-                    categories: _MyArray2
-                },
-                yAxis: {
-                    title: {
-                        text: 'Scores'
-                    }
-                },
-                series: [{
-                    name: 'Share Price',
-                    data: _MyArray
-                }]
-
-
+        function DrawChart() {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myLine = new Chart(ctx).Line(lineChartData, {
+                responsive: true
             });
-            $('tspan').last().remove();
-        });
+        }
+      
     </script>
 
 </asp:Content>
@@ -136,8 +120,11 @@
     <asp:Panel runat="server" HorizontalAlign="Center">
         <h1> Training Records:(<a href="PatientTrainingRecords.aspx">View Details</a>) </h1>
         <br />
+        <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+        <asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList>
+    <input id="btn_line_chart" type="button" value="Show" />
         <br />
-        <div id="container" style="width: 800px; height: 400px; margin: 0 auto"></div>
+        <canvas id="canvas" height="400" width="400"></canvas>
          <br />
        
         

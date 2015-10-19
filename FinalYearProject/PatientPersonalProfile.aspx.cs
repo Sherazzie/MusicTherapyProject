@@ -15,21 +15,21 @@ namespace FinalYearProject
     {
         string patientname = "";
         string imageurl = "";
-        public string hidValues1;
-        public string  hidXCategories1;
-    
+        public string ChartLabels = "[";
+        public string ChartData1 = "[";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             patientname = Session["patientname"].ToString();
             imageurl = Session["imageurl"].ToString();
             selectic();
-       
+            BindChartData();
             if (!IsPostBack)
             {
                 sessiondatabind();
                 bindonlyinfo();
                 assignedmusic();
-                //BindChartData();
+
                 //ddl_month.Items.FindByValue("October 2015").Selected = true;
             }
           
@@ -160,19 +160,38 @@ namespace FinalYearProject
 
             foreach (DataRow dr in dsSeries.Tables[0].Rows)
             {
-                hidXCategories1 = hidXCategories1 + dr["Score"].ToString() + ",";
-            }
+                if (dr != dsSeries.Tables[0].Rows[dsSeries.Tables[0].Rows.Count - 1])
+                {
+                    ChartData1 = ChartData1 + dr["Score"].ToString() + ",";
+                }
+                if (dr == dsSeries.Tables[0].Rows[dsSeries.Tables[0].Rows.Count - 1])
+                {
+                    ChartData1 = ChartData1 + dr["Score"].ToString() + "]";
+                }
+
+
+                }
 
             foreach (DataRow dr1 in dsSeries.Tables[0].Rows)
             {
-                hidValues1 = hidValues1 + dr1["DateOfScore"].ToString() + ",";
+                if (dr1 != dsSeries.Tables[0].Rows[dsSeries.Tables[0].Rows.Count - 1])
+                {
+                    ChartLabels += "'" + dr1["DateOfScore"].ToString() + "'" + ",";
+                }
+                if (dr1 == dsSeries.Tables[0].Rows[dsSeries.Tables[0].Rows.Count - 1])
+                {
+                    ChartLabels +=  "'" + dr1["DateOfScore"].ToString() + "'" + "]";
+                }
+
             }
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "DrawChart()", true);
+
 
         }
 
 
  
-      /*  protected void chrt_score_DataBound(object sender, EventArgs e)
+      /* protected void chrt_score_DataBound(object sender, EventArgs e)
         {
             if (chrt_score.Series[0].Points.Count == 0)
             {
