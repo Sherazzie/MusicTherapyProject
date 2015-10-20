@@ -209,11 +209,14 @@
     <Content Include="siteimages\ajax-loader.gif" />
     <Content Include="siteimages\bg.png" />
     <Content Include="siteimages\BLmasterpagebanner.jpg" />
+    <Content Include="siteimages\bluemale.png" />
     <Content Include="siteimages\buttons.png" />
     <Content Include="siteimages\circle.png" />
     <Content Include="siteimages\h1.png" />
+    <Content Include="siteimages\azicon.gif" />
     <Content Include="siteimages\left_bg.jpg" />
     <Content Include="siteimages\logo.png" />
+    <Content Include="siteimages\pinkfemale.png" />
     <Content Include="siteimages\right_bg.jpg" />
     <Content Include="siteimages\wood.jpg" />
     <Content Include="TherapistLogin.aspx" />

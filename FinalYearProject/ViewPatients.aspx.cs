@@ -50,9 +50,42 @@ namespace FinalYearProject
             }
         }
 
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        protected void btn_az_Click(object sender, ImageClickEventArgs e)
         {
+            string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+            SqlConnection conn = new SqlConnection(connstr);
+            string cmdstring = "SELECT PatientName,PatientImageUrl from PatientDetails ORDER BY PatientName ASC ";
+            SqlCommand cmd = new SqlCommand(cmdstring, conn);
+            conn.Open();
+            dl_patients.DataSource = cmd.ExecuteReader();
+            dl_patients.DataBind();
+            conn.Close();
+        }
 
+        protected void btn_sortbymale_Click(object sender, ImageClickEventArgs e)
+        {
+            string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+            SqlConnection conn = new SqlConnection(connstr);
+            string cmdstring = "SELECT PatientName,PatientImageUrl from PatientDetails where Gender=@gender";
+            SqlCommand cmd = new SqlCommand(cmdstring, conn);
+            cmd.Parameters.AddWithValue("@gender", "M");
+            conn.Open();
+            dl_patients.DataSource = cmd.ExecuteReader();
+            dl_patients.DataBind();
+            conn.Close();
+        }
+
+        protected void btn_sortbyfemale_Click(object sender, ImageClickEventArgs e)
+        {
+            string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+            SqlConnection conn = new SqlConnection(connstr);
+            string cmdstring = "SELECT PatientName,PatientImageUrl from PatientDetails where Gender=@gender";
+            SqlCommand cmd = new SqlCommand(cmdstring, conn);
+            cmd.Parameters.AddWithValue("@gender", "F");
+            conn.Open();
+            dl_patients.DataSource = cmd.ExecuteReader();
+            dl_patients.DataBind();
+            conn.Close();
         }
     }
 }

@@ -44,7 +44,15 @@
                 <p style="vertical-align:middle;">
                    
     </asp:Panel>
-    <asp:ImageButton ID="ImageButton1" runat="server" OnClick="ImageButton1_Click" style="height: 16px" />
+    <asp:Panel runat="server" HorizontalAlign="Center">
+        <asp:ImageButton ID="btn_az" runat="server" ImageUrl="~/siteimages/azicon.gif" Height="48px" Width="59px" OnClick="btn_az_Click" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:ImageButton ID="btn_sortbymale" runat="server" ImageUrl="~/siteimages/bluemale.png" Height="48px" Width="59px" OnClick="btn_sortbymale_Click" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:ImageButton ID="btn_sortbyfemale" runat="server" Height="48px" Width="59px" ImageUrl="~/siteimages/pinkfemale.png" OnClick="btn_sortbyfemale_Click" />
+        
+    </asp:Panel>
+    
     <asp:DataList ID="dl_patients" runat="server" Font-Names="Verdana" Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" Width="800px" HorizontalAlign="Center" OnItemCommand="dl_patient_ItemCommand">
         <ItemStyle ForeColor="Black" />
         <ItemTemplate>

@@ -13,13 +13,31 @@ namespace FinalYearProject {
     public partial class ViewPatients {
         
         /// <summary>
-        /// ImageButton1 control.
+        /// btn_az control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        protected global::System.Web.UI.WebControls.ImageButton btn_az;
+        
+        /// <summary>
+        /// btn_sortbymale control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btn_sortbymale;
+        
+        /// <summary>
+        /// btn_sortbyfemale control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btn_sortbyfemale;
         
         /// <summary>
         /// dl_patients control.
