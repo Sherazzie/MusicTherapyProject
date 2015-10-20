@@ -50,14 +50,15 @@
         <table style="margin:0 auto">
             <tr>
                <td>
-        <asp:Calendar ID="cal_records" runat="server" Height="276px" Width="419px" OnDayRender="cal_records_DayRender" OnSelectionChanged="cal_records_SelectionChanged" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth">
+        <asp:Calendar ID="cal_records" runat="server" Height="394px" Width="491px" OnDayRender="cal_records_DayRender" OnSelectionChanged="cal_records_SelectionChanged" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="ShortMonth">
 
-            <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
-            <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+            <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
+            <DayStyle BackColor="#CCCCCC" />
+            <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
             <OtherMonthDayStyle ForeColor="#999999" />
             <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-            <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
-            <TodayDayStyle BackColor="#CCCCCC" />
+            <TitleStyle BackColor="#333399" BorderStyle="Solid" Font-Bold="True" Font-Size="12pt" ForeColor="White" Height="12pt" />
+            <TodayDayStyle BackColor="#999999" ForeColor="White" />
 
         </asp:Calendar>
                    </td>

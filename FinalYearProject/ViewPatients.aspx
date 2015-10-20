@@ -44,6 +44,7 @@
                 <p style="vertical-align:middle;">
                    
     </asp:Panel>
+    <asp:ImageButton ID="ImageButton1" runat="server" OnClick="ImageButton1_Click" style="height: 16px" />
     <asp:DataList ID="dl_patients" runat="server" Font-Names="Verdana" Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" Width="800px" HorizontalAlign="Center" OnItemCommand="dl_patient_ItemCommand">
         <ItemStyle ForeColor="Black" />
         <ItemTemplate>
