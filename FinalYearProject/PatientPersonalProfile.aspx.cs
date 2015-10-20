@@ -15,8 +15,9 @@ namespace FinalYearProject
     {
         string patientname = "";
         string imageurl = "";
-        public string ChartLabels = "[";
-        public string ChartData1 = "[";
+       
+        public string hclabels = "";
+        public string hcdata = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -162,11 +163,14 @@ namespace FinalYearProject
             {
                 if (dr != dsSeries.Tables[0].Rows[dsSeries.Tables[0].Rows.Count - 1])
                 {
-                    ChartData1 = ChartData1 + dr["Score"].ToString() + ",";
+                    //ChartData1 = ChartData1 + dr["Score"].ToString() + ",";
+                    hcdata = hcdata + dr["Score"].ToString() + ",";
+          
                 }
                 if (dr == dsSeries.Tables[0].Rows[dsSeries.Tables[0].Rows.Count - 1])
                 {
-                    ChartData1 = ChartData1 + dr["Score"].ToString() + "]";
+                   // ChartData1 = ChartData1 + dr["Score"].ToString() + "]";
+                    hcdata = hcdata + dr["Score"].ToString();
                 }
 
 
@@ -176,15 +180,18 @@ namespace FinalYearProject
             {
                 if (dr1 != dsSeries.Tables[0].Rows[dsSeries.Tables[0].Rows.Count - 1])
                 {
-                    ChartLabels += "'" + dr1["DateOfScore"].ToString() + "'" + ",";
+
+                    hclabels += "'" + dr1["DateOfScore"].ToString() + "'" + ",";
+
                 }
                 if (dr1 == dsSeries.Tables[0].Rows[dsSeries.Tables[0].Rows.Count - 1])
                 {
-                    ChartLabels +=  "'" + dr1["DateOfScore"].ToString() + "'" + "]";
+                   
+                    hclabels += "'" + dr1["DateOfScore"].ToString() + "'";
                 }
 
             }
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "DrawChart()", true);
+
 
 
         }

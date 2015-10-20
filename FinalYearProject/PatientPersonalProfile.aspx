@@ -4,39 +4,55 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="chart.js/Chart.js" type="text/javascript"></script>
  <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>  
+       <script src="http://code.highcharts.com/highcharts.js" type="text/javascript"></script>
+    <script src="http://code.highcharts.com/themes/sand-signika.js"></script>
+   
    
     <script type="text/javascript">
-      var randomScalingFactor = function () { return Math.round(Math.random() * 100) };
-        var lineChartData = {
-         
-            labels: <% =this.ChartLabels %>,            
-            datasets: [{
-                
-                label: "Query Count",
-                fillColor: "rgba(220,220,220,0.2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                  
-                data: <% =this.ChartData1 %>
-                }
-        ]
-                
-                  
-            
-        }
-
-        function DrawChart() {
-            var ctx = document.getElementById("canvas").getContext("2d");
-            window.myLine = new Chart(ctx).Line(lineChartData, {
-                responsive: true
-            });
-        }
-      
+       
+     $(function ($) {  
+      $('#hello').highcharts({  
+        chart: {  
+          type: 'line'  
+        },  
+        title: {  
+          text: 'Montly Game Scores'
+        },  
+        subtitle: {  
+          text: 'Source: WorldClimate.com'  
+        },  
+        xAxis: {  
+          categories: [  
+                <%= this.hclabels%>
+          ]  
+        },  
+        yAxis: {  
+          min: 0,  
+          title: {  
+            text: 'Scores'  
+          }  
+        },  
+        tooltip: {  
+          headerFormat: '<span style="font-size:10px">{point.key}</span><table>',  
+          pointFormat: '<tr><td style="color:{series.color};padding:0"> Score is: </td>' +  
+            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',  
+          footerFormat: '</table>',  
+          shared: true,  
+          useHTML: true  
+        },  
+        plotOptions: {  
+          column: {  
+            pointPadding: 0.2,  
+            borderWidth: 0  
+          }  
+        },  
+        series:[{
+                name :'October',
+                 data:[ <%= this.hcdata%>]
+             }]   
+      });  
+    });  
     </script>
-
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
     <div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -124,9 +140,9 @@
         <asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList>
     <input id="btn_line_chart" type="button" value="Show" />
         <br />
-        <canvas id="canvas" height="400" width="400"></canvas>
+        <canvas id="myChart" width="400" height="400"></canvas>
          <br />
-       
+             <div id="hello" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
         
       
     </asp:Panel>
