@@ -35,6 +35,7 @@
 
 		        </div>
     </div>
+    <a href="AssignMusic.aspx">AssignMusic.aspx</a>
 	<!-- /.navbar -->
             <asp:Panel runat="server" HorizontalAlign="Center" >
                 <br />
@@ -45,7 +46,9 @@
                    
     </asp:Panel>
     <asp:Panel runat="server" HorizontalAlign="Center">
-        <asp:ImageButton ID="btn_az" runat="server" ImageUrl="~/siteimages/azicon.gif" Height="48px" Width="59px" OnClick="btn_az_Click" />
+        <h1 style="color:black"> SORT BY:</h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br />
+        <asp:ImageButton ID="btn_az" runat="server" Height="48px" ImageUrl="~/siteimages/azicon.gif" OnClick="btn_az_Click" Width="59px" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:ImageButton ID="btn_sortbymale" runat="server" ImageUrl="~/siteimages/bluemale.png" Height="48px" Width="59px" OnClick="btn_sortbymale_Click" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

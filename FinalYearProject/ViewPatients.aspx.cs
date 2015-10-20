@@ -66,7 +66,7 @@ namespace FinalYearProject
         {
             string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
             SqlConnection conn = new SqlConnection(connstr);
-            string cmdstring = "SELECT PatientName,PatientImageUrl from PatientDetails where Gender=@gender";
+            string cmdstring = "SELECT PatientName,PatientImageUrl from PatientDetails where Gender=@gender ORDER BY PatientName ASC";
             SqlCommand cmd = new SqlCommand(cmdstring, conn);
             cmd.Parameters.AddWithValue("@gender", "M");
             conn.Open();
@@ -79,7 +79,7 @@ namespace FinalYearProject
         {
             string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
             SqlConnection conn = new SqlConnection(connstr);
-            string cmdstring = "SELECT PatientName,PatientImageUrl from PatientDetails where Gender=@gender";
+            string cmdstring = "SELECT PatientName,PatientImageUrl from PatientDetails where Gender=@gender ORDER BY PatientName ASC";
             SqlCommand cmd = new SqlCommand(cmdstring, conn);
             cmd.Parameters.AddWithValue("@gender", "F");
             conn.Open();
