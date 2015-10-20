@@ -19,7 +19,7 @@
           text: 'Montly Game Scores'
         },  
         subtitle: {  
-          text: 'Source: WorldClimate.com'  
+          text: 'Month:October'  
         },  
         xAxis: {  
           categories: [  
@@ -138,10 +138,9 @@
         <br />
         <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
         <asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList>
-    <input id="btn_line_chart" type="button" value="Show" />
-        <br />
-        <canvas id="myChart" width="400" height="400"></canvas>
+   
          <br />
+        <br />
              <div id="hello" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
         
       

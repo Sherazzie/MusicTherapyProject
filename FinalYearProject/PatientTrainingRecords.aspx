@@ -50,7 +50,14 @@
         <table style="margin:0 auto">
             <tr>
                <td>
-        <asp:Calendar ID="cal_records" runat="server" Height="357px" Width="539px" OnDayRender="cal_records_DayRender" OnSelectionChanged="cal_records_SelectionChanged">
+        <asp:Calendar ID="cal_records" runat="server" Height="276px" Width="419px" OnDayRender="cal_records_DayRender" OnSelectionChanged="cal_records_SelectionChanged" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth">
+
+            <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+            <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+            <OtherMonthDayStyle ForeColor="#999999" />
+            <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+            <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+            <TodayDayStyle BackColor="#CCCCCC" />
 
         </asp:Calendar>
                    </td>
