@@ -10,9 +10,11 @@ namespace FinalYearProject
 {
     public partial class PatientEventsAssignment : System.Web.UI.Page
     {
+        public string patientname = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             tb_patientname.Text = Session["patientname"].ToString();
+            patientname= Session["patientname"].ToString();
             tb_patientic.Text = Session["patientic"].ToString();
         }
         int count = 0;

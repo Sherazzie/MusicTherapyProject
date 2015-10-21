@@ -12,7 +12,7 @@ namespace FinalYearProject
 {
     public partial class PatientTrainingRecords : System.Web.UI.Page
     {
-        string patientname = "";
+        public string patientname = "";
         string patientic = "";
         DataTable appts;
         protected void Page_Load(object sender, EventArgs e)

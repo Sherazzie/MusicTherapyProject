@@ -41,7 +41,7 @@
                 <br />
                 <br />
                 <p style="vertical-align:middle;">
-                  <a href="MusicView.aspx">Music List</a> > <a href="FilterSongsByAlbum.aspx">Album Songs List</a> > <a href="AssignMusic.aspx">Assign Music to Patient</a>
+                  <a href="MusicView.aspx">Music List</a> > <a href="FilterSongsByAlbum.aspx"><%= this.albumname %></a> > <a href="AssignMusic.aspx">Assign Music to Patient</a>
                 </p>
     </asp:Panel>
     <br />

@@ -15,6 +15,7 @@ namespace FinalYearProject
         string azureurl = "";
         string pimage = "";
         string ic = "";
+        public string albumname;
         int count = 0;
         List<string> allpatientlist = new List<string>();
         List<string> uniquelist = new List<string>();
@@ -22,6 +23,7 @@ namespace FinalYearProject
         protected void Page_Load(object sender, EventArgs e)
         {
             songname = Session["assignedsongname"].ToString();
+            albumname = Session["albumname"].ToString();
             tb_songname.Text = songname;
             if (!IsPostBack)
             {
