@@ -13,16 +13,18 @@ namespace FinalYearProject
 {
     public partial class PatientPersonalProfile : System.Web.UI.Page
     {
-        string patientname = "";
+       public string patientname = "";
         string imageurl = "";
        
         public string hclabels = "";
         public string hcdata = "";
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
             patientname = Session["patientname"].ToString();
             imageurl = Session["imageurl"].ToString();
+            
             selectic();
             BindChartData();
             if (!IsPostBack)
@@ -163,14 +165,15 @@ namespace FinalYearProject
             {
                 if (dr != dsSeries.Tables[0].Rows[dsSeries.Tables[0].Rows.Count - 1])
                 {
-                    //ChartData1 = ChartData1 + dr["Score"].ToString() + ",";
+                   
                     hcdata = hcdata + dr["Score"].ToString() + ",";
           
                 }
                 if (dr == dsSeries.Tables[0].Rows[dsSeries.Tables[0].Rows.Count - 1])
                 {
-                   // ChartData1 = ChartData1 + dr["Score"].ToString() + "]";
+                   
                     hcdata = hcdata + dr["Score"].ToString();
+
                 }
 
 
@@ -188,6 +191,7 @@ namespace FinalYearProject
                 {
                    
                     hclabels += "'" + dr1["DateOfScore"].ToString() + "'";
+                   
                 }
 
             }

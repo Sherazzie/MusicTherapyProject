@@ -93,7 +93,7 @@
                     &nbsp;</p>
     </asp:Panel>
       <asp:Panel runat="server" HorizontalAlign="Center">
-        <a href="ViewPatients.aspx">Patient List</a> > <a href="PatientPersonalProfile.aspx"> View Patient Details</a>
+        <a href="ViewPatients.aspx">Patient List</a> > <a href="PatientPersonalProfile.aspx"> <%=this.patientname %></a>
           <br />
            <h1> Personal Details:</h1>
         <table style="margin:0 auto;">

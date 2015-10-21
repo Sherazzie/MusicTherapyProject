@@ -16,7 +16,7 @@ namespace FinalYearProject
     public partial class FilterSongsByAlbum : System.Web.UI.Page
     {
         string artistname;
-        string albumname;
+      public string albumname;
 
         protected void Page_Load(object sender, EventArgs e)
         {
