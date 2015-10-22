@@ -214,9 +214,11 @@
     <Content Include="siteimages\circle.png" />
     <Content Include="siteimages\h1.png" />
     <Content Include="siteimages\azicon.gif" />
+    <Content Include="siteimages\leftbutton.png" />
     <Content Include="siteimages\left_bg.jpg" />
     <Content Include="siteimages\logo.png" />
     <Content Include="siteimages\pinkfemale.png" />
+    <Content Include="siteimages\rightbutton.png" />
     <Content Include="siteimages\right_bg.jpg" />
     <Content Include="siteimages\wood.jpg" />
     <Content Include="TherapistLogin.aspx" />

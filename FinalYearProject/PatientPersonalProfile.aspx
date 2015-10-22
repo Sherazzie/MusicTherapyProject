@@ -19,7 +19,7 @@
           text: 'Montly Game Scores'
         },  
         subtitle: {  
-          text: 'Month:October'  
+          text:'Month: <%=this.chartmonthname%> '
         },  
         xAxis: {  
           categories: [  
@@ -47,7 +47,7 @@
           }  
         },  
         series:[{
-                name :'October',
+                name :'<%= this.chartmonthname%>',
                  data:[ <%= this.hcdata%>]
              }]   
       });  
@@ -136,8 +136,9 @@
     <asp:Panel runat="server" HorizontalAlign="Center">
         <h1> Training Records:(<a href="PatientTrainingRecords.aspx">View Details</a>) </h1>
         <br />
-        <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
-        <asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList>
+        <asp:ImageButton ID="imbPrevious" runat="server" ImageUrl="~/siteimages/leftbutton.png" Height="39px" Width="52px" OnClick="imbPrevious_Click"/>
+                            &nbsp;<asp:Label ID="lbLineDateRangeView" runat="server"></asp:Label>
+                            &nbsp;<asp:ImageButton ID="imbNext" runat="server" ImageUrl="~/siteimages/rightbutton.png" Height="39px" Width="52px" OnClick="imbNext_Click" />
    
          <br />
         <br />

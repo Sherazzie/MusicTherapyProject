@@ -31,22 +31,31 @@ namespace FinalYearProject {
         protected global::System.Web.UI.WebControls.DataList dl_info;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// imbPrevious control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.ImageButton imbPrevious;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// lbLineDateRangeView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.Label lbLineDateRangeView;
+        
+        /// <summary>
+        /// imbNext control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imbNext;
         
         /// <summary>
         /// gv_musicfiles control.
