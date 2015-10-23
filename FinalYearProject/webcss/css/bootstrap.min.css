@@ -279,7 +279,7 @@ body {
     font-size: 14px;
     line-height: 1.428571429;
     color: #348781;
-    background: #ccc url('../siteimages/wood.jpg') repeat top left;
+    background:  url('../../siteimages/wood.jpg') repeat top left;
 }
 
 input, button, select, textarea {

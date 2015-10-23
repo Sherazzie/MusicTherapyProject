@@ -15,6 +15,7 @@ namespace FinalYearProject
         public string patientname = "";
         string patientic = "";
         DataTable appts;
+        DataSet ds = new DataSet();
         protected void Page_Load(object sender, EventArgs e)
         {
            patientname= Session["patientname"].ToString();
@@ -26,10 +27,12 @@ namespace FinalYearProject
         {       
             DataRow[] rows = appts.Select(
                 String.Format(
+
                    "ApptDate >= #{0}# AND ApptDate < #{1}#",
                    e.Day.Date.ToLongDateString(),
                    e.Day.Date.AddDays(1).ToLongDateString()
                 )
+               
              );
 
             foreach (DataRow row in rows)
@@ -55,7 +58,7 @@ namespace FinalYearProject
             sda.SelectCommand.Parameters.AddWithValue("@ic", patientic);
             
 
-            DataSet ds = new DataSet();
+
             sda.Fill(ds);
              appts = ds.Tables[0];
         }
@@ -68,16 +71,22 @@ namespace FinalYearProject
                               cal_records.SelectedDate.ToLongDateString(),
                               cal_records.SelectedDate.AddDays(1).ToLongDateString()
                            );
-
+            
             if (view.Count > 0)
             {
-                gv_apptinfo.Visible = true;
-                gv_apptinfo.DataSource = view;
-                gv_apptinfo.DataBind();
+               // gv_apptinfo.Visible = true;
+               // gv_apptinfo.DataSource = view;
+               // gv_apptinfo.DataBind();
+                dl_appoimentinfo.Visible = true;
+                dl_appoimentinfo.DataSource = view;
+                dl_appoimentinfo.DataBind();
+
             }
             else
             {
-                gv_apptinfo.Visible = false;
+               // gv_apptinfo.Visible = false;
+                
+               
             }
         }
     }

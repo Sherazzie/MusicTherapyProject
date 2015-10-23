@@ -67,7 +67,38 @@
         </table>
         <br />
         <br />
-        <asp:GridView ID="gv_apptinfo" runat="server" HorizontalAlign="Center"></asp:GridView>
+        
+        <asp:DataList ID="dl_appoimentinfo" runat="server"  HorizontalAlign="Center" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" Height="100px" Width="314px">
+
+            <AlternatingItemStyle BackColor="#CCCCCC" />
+            <FooterStyle BackColor="#CCCCCC" />
+            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+             <HeaderTemplate>
+
+            Appointment Summaries
+
+         </HeaderTemplate>
+            <ItemTemplate>
+                <table style="border: 1px solid black;">
+                    <tr>
+                        <td style="border: 1px solid black;border-collapse: collapse;">Appointment <br />Day</td>
+                        <td style="border: 1px solid black;border-collapse: collapse;"><asp:Label ID="lbl_appdate" runat="server" Text='<%#Bind("ApptDate") %>'></asp:Label></td>   
+                    </tr>
+              
+                    <tr>
+                        <td style="border: 1px solid black;border-collapse: collapse;">Appointment Summary</td>
+                        <td style="border: 1px solid black;border-collapse: collapse;"><asp:Label ID="lbl_apptsummary" runat="server" Text='<%#Bind("ApptSummary") %>'></asp:Label></td>
+                    </tr>
+                </table>
+                
+                
+                
+                
+            </ItemTemplate>
+
+            <SelectedItemStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+
+        </asp:DataList>
     </asp:Panel>
     <footer id="footer" class="top-space">
         <div class="footer2">

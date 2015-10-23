@@ -22,12 +22,12 @@ namespace FinalYearProject {
         protected global::System.Web.UI.WebControls.Calendar cal_records;
         
         /// <summary>
-        /// gv_apptinfo control.
+        /// dl_appoimentinfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_apptinfo;
+        protected global::System.Web.UI.WebControls.DataList dl_appoimentinfo;
     }
 }
