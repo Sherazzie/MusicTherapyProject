@@ -46,8 +46,6 @@
                    
     </asp:Panel>
     <asp:Panel runat="server" HorizontalAlign="Center">
-        <h1 style="color:black"> SORT BY:</h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <br />
         <asp:ImageButton ID="btn_az" runat="server" Height="48px" ImageUrl="~/siteimages/azicon.gif" OnClick="btn_az_Click" Width="59px" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:ImageButton ID="btn_sortbymale" runat="server" ImageUrl="~/siteimages/bluemale.png" Height="48px" Width="59px" OnClick="btn_sortbymale_Click" />
@@ -55,7 +53,7 @@
         <asp:ImageButton ID="btn_sortbyfemale" runat="server" Height="48px" Width="59px" ImageUrl="~/siteimages/pinkfemale.png" OnClick="btn_sortbyfemale_Click" />
         
     </asp:Panel>
-    
+    <br />
     <asp:DataList ID="dl_patients" runat="server" Font-Names="Verdana" Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" Width="800px" HorizontalAlign="Center" OnItemCommand="dl_patient_ItemCommand">
         <ItemStyle ForeColor="Black" />
         <ItemTemplate>

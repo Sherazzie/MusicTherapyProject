@@ -44,7 +44,7 @@
          <a href="ViewPatients.aspx">Patient List</a> > <a href="PatientPersonalProfile.aspx"> <%=this.patientname %></a> > <a href="PatientTrainingRecords.aspx"> View Patient Calendar</a>
         <br />
         <br />
-      <h1>  Patient Training Calendar( <a href="PatientEventsAssignment.aspx">Add Record</a>) </h1>
+      <h1 style="color:black;">  Patient Training Calendar( <a href="PatientEventsAssignment.aspx">Add Record</a>) </h1>
         <br />
         <br />
         <table style="margin:0 auto">
@@ -69,7 +69,7 @@
         <br />
         <table style="margin:0 auto">
              <tr>
-                <td style="border: 3px solid black;border-collapse: collapse;">Legend - Summary Available:&nbsp;&nbsp;  <img src="siteimages/SummaryAvail.JPG" />  Today&#39;s Date:&nbsp; <img src="siteimages/currentcaldate.JPG" />&nbsp;&nbsp;&nbsp; </td>
+                <td style="border: 3px solid black;border-collapse: collapse; color:black;">Legend - Summary Available:&nbsp;&nbsp;  <img src="siteimages/SummaryAvail.JPG" />  Today&#39;s Date:&nbsp; <img src="siteimages/currentcaldate.JPG" />&nbsp;&nbsp;&nbsp; </td>
             </tr>
         </table>
         <br />
