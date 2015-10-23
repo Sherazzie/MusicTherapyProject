@@ -41,7 +41,7 @@ namespace FinalYearProject
                 image = new System.Web.UI.WebControls.Image();
                 image.ImageUrl = this.ResolveUrl("Dot.jpg");
                 image.ToolTip = row["ApptSummary"].ToString();
-                e.Cell.BackColor = Color.Wheat;
+                e.Cell.BackColor = Color.LightGreen;
             }
         }
 

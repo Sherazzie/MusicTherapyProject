@@ -50,7 +50,7 @@
         <table style="margin:0 auto">
             <tr>
                <td>
-        <asp:Calendar ID="cal_records" runat="server" Height="394px" Width="491px" OnDayRender="cal_records_DayRender" OnSelectionChanged="cal_records_SelectionChanged" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="ShortMonth">
+        <asp:Calendar ID="cal_records" runat="server" Height="357px" Width="417px" OnDayRender="cal_records_DayRender" OnSelectionChanged="cal_records_SelectionChanged" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="ShortMonth">
 
             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
             <DayStyle BackColor="#CCCCCC" />
@@ -63,11 +63,17 @@
         </asp:Calendar>
                    </td>
                 </tr>
+           
             
         </table>
         <br />
+        <table style="margin:0 auto">
+             <tr>
+                <td style="border: 3px solid black;border-collapse: collapse;">Legend - Summary Available:&nbsp;&nbsp;  <img src="siteimages/SummaryAvail.JPG" />  Today&#39;s Date:&nbsp; <img src="siteimages/currentcaldate.JPG" />&nbsp;&nbsp;&nbsp; </td>
+            </tr>
+        </table>
         <br />
-        
+        <br />
         <asp:DataList ID="dl_appoimentinfo" runat="server"  HorizontalAlign="Center" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" Height="100px" Width="314px">
 
             <AlternatingItemStyle BackColor="#CCCCCC" />
