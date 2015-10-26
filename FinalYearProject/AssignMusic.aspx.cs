@@ -215,7 +215,7 @@ namespace FinalYearProject
                             if (noofRow > 0)
                             {
                                 lbl_result.Text = "The Songs has been assigned";
-
+                                patientassigndl.Remove(selectedpatient.ToString());
 
                             }
                         }
@@ -223,7 +223,7 @@ namespace FinalYearProject
                     }
 
                 }
-                patientassigndl.Clear();
+                
                 removeduplicates();
                 databind();
             }
