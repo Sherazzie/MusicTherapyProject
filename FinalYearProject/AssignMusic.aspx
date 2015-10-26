@@ -51,18 +51,44 @@
             <td>Song Name:</td>
             <td><asp:TextBox ID="tb_songname" runat="server" ReadOnly="True"></asp:TextBox></td>
         </tr>
-        <tr>
-            
-            <td>Assign to</td>
-            <td> <asp:ListBox ID="lb_patients" runat="server" Height="298px" SelectionMode="Multiple" Width="415px"></asp:ListBox>
-                <br />
-                multiple selections allowed (use ctrl key)
-            </td>
-        </tr>
+      
        
         <tr>
-            <td></td>
-            <td></td>
+            <td>Assign To</td>
+            <td> &nbsp;<asp:DataList ID="dl_un" runat="server" Font-Names="Verdana" Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" HorizontalAlign="Center">
+        <ItemStyle ForeColor="Black" />
+        <ItemTemplate>
+            <div id="pricePlans">
+                <ul id="plans">
+                    <li class="plan">
+                        <ul class="planContainer">
+                            <li class="title">
+                                <h2>
+                                    
+                                    <asp:Label ID="lbl_patientname" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Key") %>'></asp:Label>
+                            </li>
+                            <li class="title">
+                                <asp:Image ID="img_profileimage" runat="server" Height="200" Width="200" ImageUrl='<%# DataBinder.Eval(Container.DataItem, "Value") %>' />
+                            </li>
+                            <br />
+                            <li>
+                                <asp:CheckBox ID="cb_ifassigned" runat="server" /></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+             
+
+
+
+
+
+
+        </ItemTemplate>
+
+
+        </asp:DataList></td>
         </tr>
         <tr>
             <td></td>
@@ -75,6 +101,10 @@
             
         </tr>
     </table>
+
+  
+ 
+   
     <br />
     <br />
     <br />

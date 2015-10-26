@@ -19,6 +19,7 @@ namespace FinalYearProject
         int count = 0;
         List<string> allpatientlist = new List<string>();
         List<string> uniquelist = new List<string>();
+        Dictionary<string, string> patientassigndl = new Dictionary<string, string>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -80,16 +81,35 @@ namespace FinalYearProject
         {
             getallpatients();
             getassignedpatients();
-
+            string pname = "";
+            string purl = "";
             
            var newvalues= allpatientlist.GroupBy(x => x).Where(group => group.Count() == 1).Select(group => group.Key);
             uniquelist = newvalues.ToList();
-            /*foreach(string  patient in uniquelist)
+            foreach(string  patient in uniquelist)
             {
-                lb_patients.Items.Add(patient);
-            }*/
-            lb_patients.DataSource = uniquelist;
-           lb_patients.DataBind();
+               
+                string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+                SqlConnection conn = new SqlConnection(connstr);
+                string cmdstring = "SELECT PatientName,PatientImageUrl from PatientDetails where PatientName=@pname";
+                SqlCommand cmd = new SqlCommand(cmdstring, conn);
+                cmd.Parameters.AddWithValue("@pname", patient);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if(dr.Read())
+                {
+                     pname = dr["PatientName"].ToString();
+                     purl=dr["PatientImageUrl"].ToString();
+                }
+                patientassigndl.Add(pname, purl);
+                
+            }
+            dl_un.DataSource = patientassigndl;
+            dl_un.DataBind();
+
+            
+            //lb_patients.DataSource = uniquelist;
+          // lb_patients.DataBind();
            // ddl_patients.DataSource = uniquelist;
             //ddl_patients.DataBind();
            
@@ -148,59 +168,65 @@ namespace FinalYearProject
         }
         protected void btn_assign_Click(object sender, EventArgs e)
         {
-            foreach (ListItem selectepatient in lb_patients.Items)
+            foreach (DataListItem item in dl_un.Items)
             {
-                if(selectepatient.Selected)
-                { 
-                    getazureurl();
-                    getpatientinfo(selectepatient.ToString());
-                    string patientname = selectepatient.ToString();
-
-                    string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
-                    SqlConnection conn = new SqlConnection(connstr);
-                    string cmdstring = "SELECT COUNT(*) FROM MusicAssignment WHERE PatientName=@pname and SongName=@sname";
-                    SqlCommand cmd = new SqlCommand(cmdstring, conn);
-                    cmd.Parameters.AddWithValue("@pname", patientname);
-                    cmd.Parameters.AddWithValue("@sname", songname);
-
-                    conn.Open();
-                    count = (int)cmd.ExecuteScalar();
-                    conn.Close();
-                    if (count > 0)
+                CheckBox myCheckBox = (CheckBox)item.FindControl("cb_ifassigned");
+                {
+                    if (myCheckBox.Checked)
                     {
-                        lbl_result.Text = "The song has been assigned to the patient already";
+                        Label selectedpatient = (Label)item.FindControl("lbl_patientname");
+                        
+                        getazureurl();
+                        getpatientinfo(selectedpatient.ToString());
+                        string patientname = selectedpatient.ToString();
 
-                    }
-                    else if (count == 0)
-                    {
-
-
-                        SqlCommand cmd2 = new SqlCommand("AssignMusicToPatient", conn);
-                        cmd2.CommandType = CommandType.StoredProcedure;
-                        cmd2.Parameters.AddWithValue("@patientname", patientname);
-                        cmd2.Parameters.AddWithValue("@songname", songname);
-                        cmd2.Parameters.AddWithValue("@azureurl", azureurl);
-                        cmd2.Parameters.AddWithValue("@patientic", ic);
-                        cmd2.Parameters.AddWithValue("@profileimage", pimage);
-
+                        string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+                        SqlConnection conn = new SqlConnection(connstr);
+                        string cmdstring = "SELECT COUNT(*) FROM MusicAssignment WHERE PatientName=@pname and SongName=@sname";
+                        SqlCommand cmd = new SqlCommand(cmdstring, conn);
+                        cmd.Parameters.AddWithValue("@pname", patientname);
+                        cmd.Parameters.AddWithValue("@sname", songname);
 
                         conn.Open();
-                        int noofRow = 0;
-                        noofRow = cmd2.ExecuteNonQuery();
+                        count = (int)cmd.ExecuteScalar();
                         conn.Close();
-                        if (noofRow > 0)
+                        if (count > 0)
                         {
-                            lbl_result.Text = "The Songs has been assigned";
-                           
+                            lbl_result.Text = "The song has been assigned to the patient already";
 
                         }
+                        else if (count == 0)
+                        {
+
+
+                            SqlCommand cmd2 = new SqlCommand("AssignMusicToPatient", conn);
+                            cmd2.CommandType = CommandType.StoredProcedure;
+                            cmd2.Parameters.AddWithValue("@patientname", patientname);
+                            cmd2.Parameters.AddWithValue("@songname", songname);
+                            cmd2.Parameters.AddWithValue("@azureurl", azureurl);
+                            cmd2.Parameters.AddWithValue("@patientic", ic);
+                            cmd2.Parameters.AddWithValue("@profileimage", pimage);
+
+
+                            conn.Open();
+                            int noofRow = 0;
+                            noofRow = cmd2.ExecuteNonQuery();
+                            conn.Close();
+                            if (noofRow > 0)
+                            {
+                                lbl_result.Text = "The Songs has been assigned";
+
+
+                            }
+                        }
+
                     }
 
                 }
-                
+                patientassigndl.Clear();
+                removeduplicates();
+                databind();
             }
-            removeduplicates();
-            databind();
         }
         protected void databind()
         {
