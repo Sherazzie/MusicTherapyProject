@@ -54,8 +54,12 @@
         <tr>
             
             <td>Assign to</td>
-            <td><asp:DropDownList ID="ddl_patients" runat="server"></asp:DropDownList></td>
+            <td> <asp:ListBox ID="lb_patients" runat="server" Height="298px" SelectionMode="Multiple" Width="415px"></asp:ListBox>
+                <br />
+                multiple selections allowed (use ctrl key)
+            </td>
         </tr>
+       
         <tr>
             <td></td>
             <td></td>

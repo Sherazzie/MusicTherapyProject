@@ -22,13 +22,13 @@ namespace FinalYearProject {
         protected global::System.Web.UI.WebControls.TextBox tb_songname;
         
         /// <summary>
-        /// ddl_patients control.
+        /// lb_patients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_patients;
+        protected global::System.Web.UI.WebControls.ListBox lb_patients;
         
         /// <summary>
         /// btn_assign control.
