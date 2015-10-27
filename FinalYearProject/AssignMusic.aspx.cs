@@ -15,17 +15,18 @@ namespace FinalYearProject
         string azureurl = "";
         string pimage = "";
         string ic = "";
-        public int pos;
+
         public string albumname;
-        public int dictmax;
+
         public int endcount;
         public int begincount = 0;
-        int count = 1;
+
+
         List<string> allpatientlist = new List<string>();
         List<string> uniquelist = new List<string>();
         Dictionary<string, string> patientassigndl = new Dictionary<string, string>();
         Dictionary<string, string> patientnext = new Dictionary<string, string>();
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             songname = Session["assignedsongname"].ToString();
@@ -42,8 +43,9 @@ namespace FinalYearProject
 
 
         }
-
        
+
+
 
         protected List<string> getallpatients()
         {
@@ -186,6 +188,7 @@ namespace FinalYearProject
         }
         protected void btn_assign_Click(object sender, EventArgs e)
         {
+            int count = 0;
             foreach (DataListItem item in dl_un.Items)
             {
                 CheckBox myCheckBox = (CheckBox)item.FindControl("cb_ifassigned");
@@ -292,12 +295,13 @@ namespace FinalYearProject
             newpatient.PageSize = 3;
             dl_un.DataSource = newpatient;
             dl_un.DataBind();
-
-
+            
+            
         }
 
         protected void imbNext_Click(object sender, ImageClickEventArgs e)
         {
+ 
             if (endcount == 0)
             {
                 Dictionary<string, string> wowdict = (Dictionary<string, string>)Session["patientdict"];
@@ -307,8 +311,9 @@ namespace FinalYearProject
                     imbPrevious.Enabled = true;
                 }
 
+
                 Session["begincountnext"] = begincount;
-                 endcount = begincount + 2;
+                endcount = begincount + 2;
                 Session["endcountnext"] = endcount;
                 int dictcount = 0;
                 foreach (KeyValuePair<string, string> x in wowdict)
@@ -326,9 +331,10 @@ namespace FinalYearProject
                 newpatient.PageSize = 3;
                 dl_un.DataSource = newpatient;
                 dl_un.DataBind();
-                endcount = Convert.ToInt32(Session["endcountnext"]);
+                
+
             }
-            else if (endcount >0)
+            else if (endcount > 0)
             {
                 Dictionary<string, string> wowdict = (Dictionary<string, string>)Session["patientdict"];
                 begincount = endcount + 1;
@@ -360,5 +366,7 @@ namespace FinalYearProject
 
 
         }
+
+        
     }
 }
