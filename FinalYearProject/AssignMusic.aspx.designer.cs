@@ -31,6 +31,24 @@ namespace FinalYearProject {
         protected global::System.Web.UI.WebControls.DataList dl_un;
         
         /// <summary>
+        /// imbPrevious control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imbPrevious;
+        
+        /// <summary>
+        /// imbNext control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imbNext;
+        
+        /// <summary>
         /// btn_assign control.
         /// </summary>
         /// <remarks>

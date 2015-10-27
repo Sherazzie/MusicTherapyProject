@@ -15,12 +15,17 @@ namespace FinalYearProject
         string azureurl = "";
         string pimage = "";
         string ic = "";
+        public int pos;
         public string albumname;
-        int count = 0;
+        public int dictmax;
+        public int endcount;
+        public int begincount = 0;
+        int count = 1;
         List<string> allpatientlist = new List<string>();
         List<string> uniquelist = new List<string>();
         Dictionary<string, string> patientassigndl = new Dictionary<string, string>();
-
+        Dictionary<string, string> patientnext = new Dictionary<string, string>();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             songname = Session["assignedsongname"].ToString();
@@ -30,7 +35,9 @@ namespace FinalYearProject
             {
                 removeduplicates();
                 databind();
+                
             }
+          
          
 
 
@@ -79,6 +86,7 @@ namespace FinalYearProject
 
         public void removeduplicates()
         {
+            patientassigndl.Clear();
             getallpatients();
             getassignedpatients();
             string pname = "";
@@ -102,9 +110,19 @@ namespace FinalYearProject
                      purl=dr["PatientImageUrl"].ToString();
                 }
                 patientassigndl.Add(pname, purl);
+                Session["patientdict"] = patientassigndl;
+                if(patientassigndl.Count > 3)
+                {
+                    imbNext.Enabled = true;
+                }
+                
                 
             }
-            dl_un.DataSource = patientassigndl;
+            PagedDataSource pdsunassigned = new PagedDataSource();
+            pdsunassigned.DataSource = patientassigndl;
+            pdsunassigned.AllowPaging = true;
+            pdsunassigned.PageSize = 3;
+            dl_un.DataSource = pdsunassigned;
             dl_un.DataBind();
 
             
@@ -177,8 +195,8 @@ namespace FinalYearProject
                         Label selectedpatient = (Label)item.FindControl("lbl_patientname");
                         
                         getazureurl();
-                        getpatientinfo(selectedpatient.ToString());
-                        string patientname = selectedpatient.ToString();
+                        getpatientinfo(selectedpatient.Text);
+                        string patientname = selectedpatient.Text;
 
                         string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
                         SqlConnection conn = new SqlConnection(connstr);
@@ -215,7 +233,7 @@ namespace FinalYearProject
                             if (noofRow > 0)
                             {
                                 lbl_result.Text = "The Songs has been assigned";
-                                patientassigndl.Remove(selectedpatient.ToString());
+                               
 
                             }
                         }
@@ -223,13 +241,15 @@ namespace FinalYearProject
                     }
 
                 }
+               
                 
-                removeduplicates();
-                databind();
             }
+            removeduplicates();
+            databind();
         }
         protected void databind()
         {
+            
             string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
             SqlConnection conn = new SqlConnection(connstr);
             string cmdstring = "SELECT PatientName,PatientImageUrl from MusicAssignment WHERE SongName=@sname ";
@@ -244,6 +264,101 @@ namespace FinalYearProject
         protected void btn_back_Click(object sender, EventArgs e)
         {
             Response.Redirect("FilterSongsByAlbum.aspx");
+        }
+
+        protected void imbPrevious_Click(object sender, ImageClickEventArgs e)
+        {
+            Dictionary<string, string> wowdict = (Dictionary<string, string>)Session["patientdict"];
+            int begincount = Convert.ToInt32(Session["begincountnext"]) - 3;
+            if (begincount == 1)
+            {
+                imbPrevious.Enabled = false;
+            }
+
+            int endcount = begincount + 2;
+            int dictcount = 0;
+            foreach (KeyValuePair<string, string> x in wowdict)
+            {
+                dictcount++;
+                if (dictcount >= begincount && dictcount <= endcount)
+                {
+                    patientnext.Add(x.Key, x.Value);
+                }
+            }
+
+            PagedDataSource newpatient = new PagedDataSource();
+            newpatient.DataSource = patientnext;
+            newpatient.AllowPaging = true;
+            newpatient.PageSize = 3;
+            dl_un.DataSource = newpatient;
+            dl_un.DataBind();
+
+
+        }
+
+        protected void imbNext_Click(object sender, ImageClickEventArgs e)
+        {
+            if (endcount == 0)
+            {
+                Dictionary<string, string> wowdict = (Dictionary<string, string>)Session["patientdict"];
+                begincount = 1 + 3;
+                if (begincount > 3)
+                {
+                    imbPrevious.Enabled = true;
+                }
+
+                Session["begincountnext"] = begincount;
+                 endcount = begincount + 2;
+                Session["endcountnext"] = endcount;
+                int dictcount = 0;
+                foreach (KeyValuePair<string, string> x in wowdict)
+                {
+                    dictcount++;
+                    if (dictcount >= begincount && dictcount <= endcount)
+                    {
+                        patientnext.Add(x.Key, x.Value);
+                    }
+                }
+
+                PagedDataSource newpatient = new PagedDataSource();
+                newpatient.DataSource = patientnext;
+                newpatient.AllowPaging = true;
+                newpatient.PageSize = 3;
+                dl_un.DataSource = newpatient;
+                dl_un.DataBind();
+                endcount = Convert.ToInt32(Session["endcountnext"]);
+            }
+            else if (endcount >0)
+            {
+                Dictionary<string, string> wowdict = (Dictionary<string, string>)Session["patientdict"];
+                begincount = endcount + 1;
+                if (begincount > 3)
+                {
+                    imbPrevious.Enabled = true;
+                }
+
+                Session["begincountnext"] = begincount;
+                endcount = begincount + 2;
+                Session["endcountnext"] = endcount;
+                int dictcount = 0;
+                foreach (KeyValuePair<string, string> x in wowdict)
+                {
+                    dictcount++;
+                    if (dictcount >= begincount && dictcount <= endcount)
+                    {
+                        patientnext.Add(x.Key, x.Value);
+                    }
+                }
+
+                PagedDataSource newpatient = new PagedDataSource();
+                newpatient.DataSource = patientnext;
+                newpatient.AllowPaging = true;
+                newpatient.PageSize = 3;
+                dl_un.DataSource = newpatient;
+                dl_un.DataBind();
+            }
+
+
         }
     }
 }

@@ -55,7 +55,10 @@
        
         <tr>
             <td>Assign To</td>
-            <td> &nbsp;<asp:DataList ID="dl_un" runat="server" Font-Names="Verdana" Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" HorizontalAlign="Center">
+            <td> 
+               
+                &nbsp;<asp:DataList ID="dl_un" runat="server" Font-Names="Verdana" Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" HorizontalAlign="Center">
+
         <ItemStyle ForeColor="Black" />
         <ItemTemplate>
             <div id="pricePlans">
@@ -88,7 +91,10 @@
         </ItemTemplate>
 
 
-        </asp:DataList></td>
+        </asp:DataList>
+                   <asp:ImageButton ID="imbPrevious" runat="server" ImageUrl="~/siteimages/leftbutton.png" Height="39px" Width="52px" Enabled="False" OnClick="imbPrevious_Click" /> &nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                <asp:ImageButton ID="imbNext" runat="server" ImageUrl="~/siteimages/rightbutton.png" Height="39px" Width="52px"  Enabled="False" OnClick="imbNext_Click" />
+            </td>
         </tr>
         <tr>
             <td></td>
