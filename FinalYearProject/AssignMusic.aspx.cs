@@ -20,7 +20,7 @@ namespace FinalYearProject
 
         public int endcount;
         public int begincount = 0;
-
+        
 
         List<string> allpatientlist = new List<string>();
         List<string> uniquelist = new List<string>();
@@ -310,7 +310,7 @@ namespace FinalYearProject
                 {
                     imbPrevious.Enabled = true;
                 }
-
+                
 
                 Session["begincountnext"] = begincount;
                 endcount = begincount + 2;
@@ -370,3 +370,4 @@ namespace FinalYearProject
         
     }
 }
+            
