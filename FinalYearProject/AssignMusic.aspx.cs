@@ -20,6 +20,8 @@ namespace FinalYearProject
 
         public int endcount;
         public int begincount = 0;
+   
+        public int ncount = 0;
         
 
         List<string> allpatientlist = new List<string>();
@@ -36,15 +38,17 @@ namespace FinalYearProject
             {
                 removeduplicates();
                 databind();
-                
+                Session["begincountnext"] = 0;
+                Session["endcountnext"] = 0;
+
             }
           
          
 
 
         }
-       
 
+        public static int count = 0;
 
 
         protected List<string> getallpatients()
@@ -188,7 +192,7 @@ namespace FinalYearProject
         }
         protected void btn_assign_Click(object sender, EventArgs e)
         {
-            int count = 0;
+           
             foreach (DataListItem item in dl_un.Items)
             {
                 CheckBox myCheckBox = (CheckBox)item.FindControl("cb_ifassigned");
@@ -209,14 +213,14 @@ namespace FinalYearProject
                         cmd.Parameters.AddWithValue("@sname", songname);
 
                         conn.Open();
-                        count = (int)cmd.ExecuteScalar();
+                        ncount = (int)cmd.ExecuteScalar();
                         conn.Close();
-                        if (count > 0)
+                        if (ncount > 0)
                         {
                             lbl_result.Text = "The song has been assigned to the patient already";
 
                         }
-                        else if (count == 0)
+                        else if (ncount == 0)
                         {
 
 
@@ -249,6 +253,10 @@ namespace FinalYearProject
             }
             removeduplicates();
             databind();
+            Session["begincountnext"] = 0;
+            Session["endcountnext"] = 0;
+            count = 0;
+
         }
         protected void databind()
         {
@@ -273,12 +281,13 @@ namespace FinalYearProject
         {
             Dictionary<string, string> wowdict = (Dictionary<string, string>)Session["patientdict"];
             int begincount = Convert.ToInt32(Session["begincountnext"]) - 3;
-            if (begincount == 1)
+            int endcount = begincount + 2;
+            if(endcount < 4)
             {
                 imbPrevious.Enabled = false;
             }
-
-            int endcount = begincount + 2;
+            Session["begincountnext"] = begincount;
+            Session["endcountnext"] = endcount;
             int dictcount = 0;
             foreach (KeyValuePair<string, string> x in wowdict)
             {
@@ -302,10 +311,12 @@ namespace FinalYearProject
         protected void imbNext_Click(object sender, ImageClickEventArgs e)
         {
  
-            if (endcount == 0)
+            if (count < 1)
             {
+                
                 Dictionary<string, string> wowdict = (Dictionary<string, string>)Session["patientdict"];
                 begincount = 1 + 3;
+                endcount = begincount + 2;
                 if (begincount > 3)
                 {
                     imbPrevious.Enabled = true;
@@ -313,8 +324,9 @@ namespace FinalYearProject
                 
 
                 Session["begincountnext"] = begincount;
-                endcount = begincount + 2;
                 Session["endcountnext"] = endcount;
+               
+              
                 int dictcount = 0;
                 foreach (KeyValuePair<string, string> x in wowdict)
                 {
@@ -322,7 +334,7 @@ namespace FinalYearProject
                     if (dictcount >= begincount && dictcount <= endcount)
                     {
                         patientnext.Add(x.Key, x.Value);
-                    }
+                    }                                                                
                 }
 
                 PagedDataSource newpatient = new PagedDataSource();
@@ -331,13 +343,13 @@ namespace FinalYearProject
                 newpatient.PageSize = 3;
                 dl_un.DataSource = newpatient;
                 dl_un.DataBind();
-                
+              
 
             }
-            else if (endcount > 0)
+            else if (count > 0)
             {
                 Dictionary<string, string> wowdict = (Dictionary<string, string>)Session["patientdict"];
-                begincount = endcount + 1;
+                begincount = Convert.ToInt32(Session["endcountnext"]) + 1;
                 if (begincount > 3)
                 {
                     imbPrevious.Enabled = true;
@@ -363,8 +375,7 @@ namespace FinalYearProject
                 dl_un.DataSource = newpatient;
                 dl_un.DataBind();
             }
-
-
+            count++;
         }
 
         
