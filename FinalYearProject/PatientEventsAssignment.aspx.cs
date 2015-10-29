@@ -11,6 +11,7 @@ namespace FinalYearProject
     public partial class PatientEventsAssignment : System.Web.UI.Page
     {
         public string patientname = "";
+        public string imgurl = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             tb_patientname.Text = Session["patientname"].ToString();
@@ -24,8 +25,29 @@ namespace FinalYearProject
             tb_date.Text = date;
     }
 
+
+        protected string getpatientimgurl(string patientname, string patientic)
+        {
+            
+            string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+            SqlConnection conn = new SqlConnection(connstr);
+            string cmdstring = "SELECT PatientImageUrl From PatientDetails Where PatientName=@pname and PatientIC=@pic";
+            SqlCommand cmd = new SqlCommand(cmdstring, conn);
+            cmd.Parameters.AddWithValue("@pname", patientname);
+            cmd.Parameters.AddWithValue("@pic", patientic);
+            conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                imgurl = dr["PatientImageUrl"].ToString();
+            }
+
+            return imgurl;
+        }
+
         protected void btn_submit_Click(object sender, EventArgs e)
         {
+           string wowurl =getpatientimgurl(patientname, Session["patientic"].ToString());
             string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
             SqlConnection conn = new SqlConnection(connstr);
             string cmdstring = "SELECT COUNT(*) FROM Appointments WHERE PatientName=@pname and PatientIC=@ic and ApptDate=@apptdate";
@@ -52,6 +74,7 @@ namespace FinalYearProject
                 cmd2.Parameters.AddWithValue("@patientic",tb_patientic.Text);
                 cmd2.Parameters.AddWithValue("@apptdate", tb_date.Text);
                 cmd2.Parameters.AddWithValue("@apptsummary", tb_summary.Text);
+                cmd2.Parameters.AddWithValue("@imgurl", wowurl);
                 
 
 

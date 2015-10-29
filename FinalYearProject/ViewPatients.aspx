@@ -42,7 +42,7 @@
                 <br />
                 <br />
                 <br />
-                <p style="vertical-align:middle;">
+             
                    
     </asp:Panel>
     <asp:Panel runat="server" HorizontalAlign="Center">

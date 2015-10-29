@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BeforeLogin.Master" AutoEventWireup="true" CodeBehind="patientprogress.aspx.cs" Inherits="FinalYearProject.patientprogress" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-
+    
 
  
 </asp:Content>
@@ -40,12 +41,38 @@
             <asp:Panel runat="server" HorizontalAlign="Center" >
                 <br />
                 <br />
+                
                 <br />
                 <br />
-                <p style="vertical-align:middle;">
-                    &lt;space for patient progress&gt;
+                <br />
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                <p style="vertical-align: middle; color: black;">
+                    <asp:DataList ID="dl_progress" runat="server" Height="211px" Width="329px" HorizontalAlign="Center" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" GridLines="Both">
+                        <FooterStyle BackColor="#CCCCCC" />
+                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                        <ItemStyle BackColor="White" />
+                        <ItemTemplate>
+                            <table>
+                                <tr>
+                                    <td style="float:left;"><asp:Image ID="Image1" runat="server" Height="40px" Width="40px" ImageUrl='<%# Bind("PatientProfileImage") %>' />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<asp:Label ID="lbl_name" runat="server" Text='<%#Bind("PatientName") %>'></asp:Label></td>
+                                </tr>
+                                
+                            </table>
+                            <br />
+                            Appointment Summary:<asp:Label ID="lbl_date" runat="server" Text='<%#Bind("ApptSummary") %>'></asp:Label>
+                            <cc1:HoverMenuExtender ID="HoverMenuExtender1" runat="server" PopupControlID="popupImage" TargetControlID="Image1" OffsetX="10" OffsetY="5" PopupPosition="Right" PopDelay="100" HoverDelay="100">
+                            </cc1:HoverMenuExtender>
+                            <asp:Panel runat="server" ID="popupImage" BorderColor="#628BD7"
+                                BorderStyle="Solid" BorderWidth="7px">
+                                <asp:Image runat="server" ID="mainImage" Height="150px" Width="150px"
+                                    ImageUrl='<%# Eval("PatientProfileImage") %>' />
+                            </asp:Panel>
+
+                        </ItemTemplate>
+                        <SelectedItemStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                    </asp:DataList>
                 </p>
-    </asp:Panel>
+            </asp:Panel>
     <footer id="footer" class="top-space">
         <div class="footer2">
             <div class="container">
