@@ -353,6 +353,11 @@ hr {
     border-top: 1px solid #eee;
 }
 
+.hrblue{
+     border-top-color:#628BD7;
+     
+}
+
 .sr-only {
     position: absolute;
     width: 1px;

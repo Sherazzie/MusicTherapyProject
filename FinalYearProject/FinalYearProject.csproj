@@ -217,6 +217,7 @@
     <Content Include="siteimages\buttons.png" />
     <Content Include="siteimages\circle.png" />
     <Content Include="siteimages\currentcaldate.JPG" />
+    <Content Include="siteimages\downarrowinfo.png" />
     <Content Include="siteimages\h1.png" />
     <Content Include="siteimages\azicon.gif" />
     <Content Include="siteimages\leftbutton.png" />
