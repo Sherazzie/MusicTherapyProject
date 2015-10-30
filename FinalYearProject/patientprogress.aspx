@@ -57,7 +57,7 @@
                                     <td style="float:left;"><asp:Image ID="Image1" runat="server" Height="40px" Width="40px" ImageUrl='<%# Bind("PatientProfileImage") %>' />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<asp:Label ID="lbl_name" runat="server" Text='<%#Bind("PatientName") %>'></asp:Label></td>
                                     <td>
                                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                        <asp:ImageButton ID="infoimg"  runat="server" Height="35px" Width="35px" ImageUrl="~/siteimages/downarrowinfo.png" />
+                                        <asp:Image ID="infoimg"  runat="server" Height="35px" Width="35px" ImageUrl="~/siteimages/downarrowinfo.png" />
                                             </td>
 
                                 </tr>
