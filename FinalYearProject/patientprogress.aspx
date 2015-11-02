@@ -34,7 +34,7 @@
         </div>
     </div>
     <!-- /.navbar -->
-    <asp:Panel runat="server" HorizontalAlign="Center">
+    <asp:Panel runat="server" HorizontalAlign="Center" >
         <br />
         <br />
 
@@ -42,8 +42,10 @@
         <br />
         <br />
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <p style="vertical-align: middle; color: black;">
-            <asp:DataList ID="dl_progress" runat="server" Height="348px" Width="401px" HorizontalAlign="Center" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" GridLines="Both">
+      
+         <table style="margin:0 auto;">
+             <tr>
+                 <td> <asp:DataList ID="dl_progress" runat="server" Height="348px" Width="401px" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" GridLines="Both">
                 <FooterStyle BackColor="#CCCCCC" />
                 <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
                 <ItemStyle BackColor="White" />
@@ -87,7 +89,63 @@
                 </ItemTemplate>
                 <SelectedItemStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
             </asp:DataList>
-        </p>
+
+                 </td>
+                 <td style="float:right;">
+                     
+                      <asp:GridView ID="gv_highscores" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+        <Columns>
+
+            <asp:TemplateField HeaderText="Patient Name">
+                <ItemTemplate>
+                    <asp:Label ID="lbl_patientname" Text='<%#Bind("PatientName") %>' runat="server"></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+
+
+
+            <asp:TemplateField HeaderText="Patient IC">
+                <ItemTemplate>
+                    <asp:Label ID="lbl_patientic" Text='<%#Bind("PatientIC") %>' runat="server"></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="HighScore">
+                <ItemTemplate>
+                    <asp:Label ID="lbl_score" Text='<%#Bind("Score") %>' runat="server"></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="Date Played">
+                <ItemTemplate>
+                    <asp:Label ID="lbl_score" Text='<%#Bind("DateOfScore") %>' runat="server"></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+ 
+
+        </Columns>
+        <EditRowStyle BackColor="#999999" />
+        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#E9E7E2" />
+        <SortedAscendingHeaderStyle BackColor="#506C8C" />
+        <SortedDescendingCellStyle BackColor="#FFFDF8" />
+        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+    </asp:GridView>
+                 </td>
+             </tr>
+         </table>
+            
+           
+   
+
+   
+       
+    
     </asp:Panel>
     <footer id="footer" class="top-space">
         <div class="footer2">

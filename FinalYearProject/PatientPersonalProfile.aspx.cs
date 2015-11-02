@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI.DataVisualization.Charting;
 using System.Web.Script.Serialization;
+using System.Globalization;
 
 namespace FinalYearProject
 {
@@ -27,12 +28,12 @@ namespace FinalYearProject
         {
             patientname = Session["patientname"].ToString();
             imageurl = Session["imageurl"].ToString();
-
+            string chartcurrentmonth = DateTime.Now.ToString("MMMM", CultureInfo.InvariantCulture);
             selectic();
 
             if (!IsPostBack)
             {
-                chartmonthname = "October";
+                chartmonthname = chartcurrentmonth;
                 sessiondatabind();
                 bindonlyinfo();
                 assignedmusic();
@@ -147,14 +148,20 @@ namespace FinalYearProject
 
         public DataSet getchartdata()
         {
+            string currentmonth = System.DateTime.Today.Month.ToString();
+            string currentyear = System.DateTime.Today.Year.ToString();
+            string firstday = currentmonth + "/1/" + currentyear;
+            int daysincurrentmonth = DateTime.DaysInMonth(System.DateTime.Today.Year, System.DateTime.Today.Month);
+            string lastday = currentmonth + "/" + daysincurrentmonth.ToString() + "/" + currentyear;
+            lbLineDateRangeView.Text = "1-" + currentmonth + "-" + currentyear + " " + "to" + " " + daysincurrentmonth.ToString() + "-" + currentmonth + "-" + currentyear;
             string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
             SqlConnection conn = new SqlConnection(connstr);
             string cmdstring = "SELECT  Score,DateOfScore from Scores where PatientName=@pname and PatientIC=@ic and DateOfScore >=@dos1 and DateOfScore <=@dos2";
             SqlCommand cmd = new SqlCommand(cmdstring, conn);
             cmd.Parameters.AddWithValue("@pname", patientname);
             cmd.Parameters.AddWithValue("@ic", Session["patientic"].ToString());
-            cmd.Parameters.AddWithValue("@dos1", Convert.ToDateTime("10/1/2015"));
-            cmd.Parameters.AddWithValue("@dos2", Convert.ToDateTime("10/31/2015"));
+            cmd.Parameters.AddWithValue("@dos1", Convert.ToDateTime(firstday));
+            cmd.Parameters.AddWithValue("@dos2", Convert.ToDateTime(lastday));
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);

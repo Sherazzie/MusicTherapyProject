@@ -15,7 +15,11 @@ namespace FinalYearProject
         protected void Page_Load(object sender, EventArgs e)
 
         {
-            bindpatientprogress();
+            
+
+          
+       bindpatientprogress();
+            bindtopscores();
 
         }
 
@@ -34,6 +38,21 @@ namespace FinalYearProject
             
             
         }
+
+        protected void bindtopscores()
+        {
+
+            string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+            SqlConnection conn = new SqlConnection(connstr);
+            string cmdstring = "SELECT TOP 3 PatientName,PatientIC,Score,DateOfScore FROM Scores ORDER BY Score DESC";
+            SqlCommand cmd = new SqlCommand(cmdstring, conn);
+            conn.Open();
+            gv_highscores.DataSource = cmd.ExecuteReader();
+            gv_highscores.DataBind();
+            conn.Close();
+        }
+
+        
         
     }
 }
