@@ -108,6 +108,9 @@ namespace FinalYearProject
         protected void btn_reset_Click(object sender, EventArgs e)
         {
             databind();
+            tb_query.Text = "";
+            rb_albums.Checked= false;
+            rb_artists.Checked= false;
         }
 
        

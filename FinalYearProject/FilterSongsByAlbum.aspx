@@ -1,8 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BeforeLogin.Master" AutoEventWireup="true" CodeBehind="FilterSongsByAlbum.aspx.cs" Inherits="FinalYearProject.FilterSongsByAlbum" %>
-
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CssStyles/style.css" rel="stylesheet" />
     <link href="CssStyles/datalist%20css.css" rel="stylesheet" />
+    <style type="text/css">
+    .modalBackground
+    {
+        background-color: Black;
+        filter: alpha(opacity=90);
+        opacity: 0.8;
+    }
+    .modalPopup
+    {
+        background-color: #FFFFFF;
+        border-width: 3px;
+        border-style: solid;
+        border-color: black;
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 390px;
+        height: 600px;
+    }
+</style>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
     <div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -85,6 +104,8 @@
 
 
     </asp:DataList>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+</asp:ScriptManager>
     &nbsp;<asp:GridView ID="gv_musicfiles" runat="server" AutoGenerateColumns="False" HorizontalAlign="Center" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gv_musicfiles_RowCommand">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
@@ -95,7 +116,7 @@
                 </ItemTemplate>
             </asp:TemplateField>
 
-
+            
 
             <asp:TemplateField HeaderText="Play">
                 <ItemTemplate>
@@ -103,8 +124,21 @@
                         <source src="<%# Eval("AzureUrl") %>" type="audio/mpeg">
                     </audio>
                 </ItemTemplate>
-                <asp:ItemTemplate>
-                </asp:ItemTemplate>
+             
+            </asp:TemplateField>
+            <asp:TemplateField>
+                <ItemTemplate>
+                    <asp:Button ID="btn_showlyrics" runat="server" Text="Show lyrics" />
+                    <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panel1" TargetControlID="btn_showlyrics" CancelControlID="btnClose" BackgroundCssClass="modalBackground"></cc1:ModalPopupExtender>
+                    <asp:Panel ID="Panel1" runat="server" CssClass="modalPopup" align="center" Style="display: none">
+                      <asp:Label ID="lbl_title" Text='<%#Bind("SongName") %>'  runat="server"></asp:Label>
+                        <hr />
+                      <asp:Label ID="lbl_titlelyrics" Text='<%#Bind("Lyrics") %>' runat="server"></asp:Label>
+                        <br />
+                        <asp:Button ID="btnClose" runat="server" Text="Close" />
+                    </asp:Panel>
+                </ItemTemplate>
+
             </asp:TemplateField>
             <asp:ButtonField CommandName="Select" Text="Assign Music"/>
 

@@ -20,6 +20,7 @@ namespace FinalYearProject
           
        bindpatientprogress();
             bindtopscores();
+            bindallscores();
 
         }
 
@@ -29,7 +30,7 @@ namespace FinalYearProject
         {
             string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
             SqlConnection conn = new SqlConnection(connstr);
-            string cmdstring = "SELECT TOP 3 PatientName,PatientIC,PatientProfileImage,ApptDate,ApptSummary FROM Appointments ORDER BY ApptDate DESC";
+            string cmdstring = "SELECT TOP 4 PatientName,PatientIC,PatientProfileImage,ApptDate,ApptSummary FROM Appointments ORDER BY ApptDate DESC";
             SqlCommand cmd = new SqlCommand(cmdstring, conn);
             conn.Open();
             dl_progress.DataSource = cmd.ExecuteReader();
@@ -44,11 +45,23 @@ namespace FinalYearProject
 
             string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
             SqlConnection conn = new SqlConnection(connstr);
-            string cmdstring = "SELECT TOP 3 PatientName,PatientIC,Score,DateOfScore FROM Scores ORDER BY Score DESC";
+            string cmdstring = "SELECT TOP 5 PatientName,PatientIC,Score,DateOfScore FROM Scores ORDER BY Score DESC";
             SqlCommand cmd = new SqlCommand(cmdstring, conn);
             conn.Open();
             gv_highscores.DataSource = cmd.ExecuteReader();
             gv_highscores.DataBind();
+            conn.Close();
+        }
+
+        protected void bindallscores()
+        {
+            string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+            SqlConnection conn = new SqlConnection(connstr);
+            string cmdstring = "SELECT PatientName,PatientIC,Score,DateOfScore FROM Scores ORDER BY PatientName ASC";
+            SqlCommand cmd = new SqlCommand(cmdstring, conn);
+            conn.Open();
+            gv_allscores.DataSource = cmd.ExecuteReader();
+            gv_allscores.DataBind();
             conn.Close();
         }
 

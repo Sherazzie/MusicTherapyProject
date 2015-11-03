@@ -24,6 +24,7 @@ namespace DataAcessLayer
         string _album = "";
         string _azureurl = "";
         string _albumartpath = "";
+        string _lyrics = "";
 
 
         public AzureMusicDAL()
@@ -31,23 +32,24 @@ namespace DataAcessLayer
 
         }
 
-        public AzureMusicDAL(string songname, string artistname, string album, string azureurl, string albumartpath)
+        public AzureMusicDAL(string songname, string artistname, string album, string azureurl, string albumartpath,string lyrics)
         {
             _songname = songname;
             _artistname = artistname;
             _album = album;
             _azureurl = azureurl;
             _albumartpath = albumartpath;
+            _lyrics = lyrics;
         }
 
-        public AzureMusicDAL(string artistname, string album, string azureurl, string albumartpath)
-        : this("", artistname, album, azureurl, albumartpath)
+        public AzureMusicDAL(string artistname, string album, string azureurl, string albumartpath,string lyrics)
+        : this("", artistname, album, azureurl, albumartpath,lyrics)
         {
 
         }
 
         public AzureMusicDAL(string songname)
-        : this(songname, "", "", "", "")
+        : this(songname, "", "", "", "","")
         {
 
         }
@@ -82,6 +84,11 @@ namespace DataAcessLayer
             set { _albumartpath = value; }
         }
 
+        public string Lyrics
+        {
+            get { return _lyrics; }
+            set { _lyrics = value; }
+        }
         public int CreateMusicFile()
         {
             SqlConnection conn = new SqlConnection(connstr);
@@ -92,6 +99,7 @@ namespace DataAcessLayer
             cmd.Parameters.AddWithValue("@albumname", _album);
             cmd.Parameters.AddWithValue("@azureurl", _azureurl);
             cmd.Parameters.AddWithValue("@albumartpath", _albumartpath);
+            cmd.Parameters.AddWithValue("@lyrics", _lyrics);
 
             conn.Open();
             int noofRow = 0;

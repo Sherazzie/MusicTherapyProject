@@ -2,6 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CssStyles/style.css" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style3 {
+        width: 191px;
+        height: 345px;
+        margin-right: 0;
+    }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
     <div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -58,6 +65,11 @@
             <input type="text" name="Artist Name" placeholder="Artist Name" runat="server" id="artistname" />
             Album Name:
             <input type="text" name="Album Name" placeholder="Album Name" runat="server" id="albumname" />
+            Lyrics:<br />
+&nbsp;<textarea name="Lyrics" runat="server" id="lyrics"  class="auto-style3" >
+            </textarea>
+            <br />
+            <br />
             Mp3 File:
             <asp:FileUpload ID="fu_uploadmusic" runat="server" />
             Mp3 Album Art:
@@ -69,7 +81,7 @@
 
 
             <div class="login-help">
-                <a href="MusicView.aspx">View Music </a>• <a href="#">Forgot Password</a>
+                <a href="MusicView.aspx">View Music </a>•
             </div>
         </div>
 

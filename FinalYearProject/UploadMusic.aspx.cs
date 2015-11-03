@@ -29,6 +29,7 @@ namespace FinalYearProject
                     string songname = sname.Value;
                     string artname = artistname.Value;
                     string albname = albumname.Value;
+                    string lyr = lyrics.Value;
 
                     string FileName = Path.GetFileName(fu_uploadart.PostedFile.FileName);
                     fu_uploadart.SaveAs(Server.MapPath("MusicAlbumArt//" + FileName));
@@ -41,7 +42,7 @@ namespace FinalYearProject
                     blockBlob.Properties.ContentType = fu_uploadmusic.PostedFile.ContentType;
                     blockBlob.UploadFromStream(fu_uploadmusic.FileContent);
                     string azureurl = "https://musicupload.blob.core.windows.net/musicfiles/" + filenameUnique;
-                    validatemusic.MusicDetails(songname, artname, albname, azureurl, albumartpath);
+                    validatemusic.MusicDetails(songname, artname, albname, azureurl, albumartpath,lyr);
                     lbl_result.Text = validatemusic.returnmessage;
                     
 

@@ -40,6 +40,15 @@ namespace FinalYearProject {
         protected global::System.Web.UI.HtmlControls.HtmlInputText albumname;
         
         /// <summary>
+        /// lyrics control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea lyrics;
+        
+        /// <summary>
         /// fu_uploadmusic control.
         /// </summary>
         /// <remarks>
