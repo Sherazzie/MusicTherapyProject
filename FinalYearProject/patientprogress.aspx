@@ -139,7 +139,7 @@
     </asp:GridView>
                       <h1 style="color:black;"> ALL SCORES:</h1>
                      <br />
-                      <asp:GridView ID="gv_allscores" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" PageSize="5" AllowPaging="True">
+                      <asp:GridView ID="gv_allscores" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" PageSize="5" AllowPaging="True" OnPageIndexChanging="OnPaging">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
 

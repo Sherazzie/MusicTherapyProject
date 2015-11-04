@@ -5,8 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
-
-
+using System.Data;
 
 namespace FinalYearProject
 {
@@ -15,12 +14,14 @@ namespace FinalYearProject
         protected void Page_Load(object sender, EventArgs e)
 
         {
-            
 
-          
-       bindpatientprogress();
-            bindtopscores();
-            bindallscores();
+            if (!this.IsPostBack)
+            {
+                bindpatientprogress();
+                bindtopscores();
+                this.bindallscores(); 
+
+            }
 
         }
 
@@ -55,17 +56,39 @@ namespace FinalYearProject
 
         protected void bindallscores()
         {
+          
             string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
-            SqlConnection conn = new SqlConnection(connstr);
-            string cmdstring = "SELECT PatientName,PatientIC,Score,DateOfScore FROM Scores ORDER BY PatientName ASC";
-            SqlCommand cmd = new SqlCommand(cmdstring, conn);
-            conn.Open();
-            gv_allscores.DataSource = cmd.ExecuteReader();
-            gv_allscores.DataBind();
-            conn.Close();
+           
+           
+
+            
+            using (SqlConnection con = new SqlConnection(connstr))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT PatientName,PatientIC,Score,DateOfScore FROM Scores ORDER BY PatientName ASC"))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                           gv_allscores.DataSource = dt;
+                            gv_allscores.DataBind();
+                        }
+                    }
+                }
+            }
         }
 
-        
-        
+        protected void OnPaging(object sender, GridViewPageEventArgs e)
+        {
+            gv_allscores.PageIndex = e.NewPageIndex;
+            this.bindallscores();
+            
+        }
+
+
+
     }
 }
