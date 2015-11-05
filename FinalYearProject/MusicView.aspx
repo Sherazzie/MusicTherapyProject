@@ -3,6 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CssStyles/style.css" rel="stylesheet" />
     <link href="CssStyles/datalist%20css.css" rel="stylesheet" />
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.0.js"></script>  
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.22/jquery-ui.js"></script>  
+    <link rel="Stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/redmond/jquery-ui.css" />  
+   
+    
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
     <div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -49,6 +54,7 @@
         <asp:RadioButton ID="rb_artists" runat="server" Text="Artists" GroupName="Query" />
         by
         <asp:RadioButton ID="rb_albums" runat="server" Text="Albums" GroupName="Query" />
+   
         <asp:Button ID="btn_queries" runat="server" Text="Search" OnClick="btn_queries_Click" Width="67px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btn_reset" runat="server" Text="Reset Music View" OnClick="btn_reset_Click" />
         &nbsp;&nbsp;

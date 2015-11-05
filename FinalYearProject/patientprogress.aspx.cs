@@ -85,6 +85,7 @@ namespace FinalYearProject
         {
             gv_allscores.PageIndex = e.NewPageIndex;
             this.bindallscores();
+
             
         }
 
