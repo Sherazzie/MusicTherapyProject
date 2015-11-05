@@ -10,7 +10,7 @@ using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
-using System.Web.Services;
+
 
 namespace FinalYearProject
 {
@@ -114,26 +114,7 @@ namespace FinalYearProject
             rb_artists.Checked= false;
         }
 
-        [WebMethod]
-        public static List<string> GetEmpNames(string empName)
-        {
-            string connstr = "Server=tcp:o18y8i1qfe.database.windows.net,1433;Database=FypjDB;User ID=sherazzie@o18y8i1qfe;Password=Zulamibinsalami21;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
-            List<string> Emp = new List<string>();
-            string query = string.Format("SELECT ArtistName FROM MusicFiles WHERE ArtistName LIKE '%{0}%'", empName);
-            using (SqlConnection con = new SqlConnection(connstr))
-            {
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    con.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        Emp.Add(reader.GetString(0));
-                    }
-                }
-            }
-            return Emp;
-        }
+
     }
 
 }
