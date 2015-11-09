@@ -22,13 +22,13 @@ namespace FinalYearProject {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// dl_progress control.
+        /// lblpatient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dl_progress;
+        protected global::System.Web.UI.WebControls.Label lblpatient;
         
         /// <summary>
         /// gv_highscores control.
@@ -40,6 +40,15 @@ namespace FinalYearProject {
         protected global::System.Web.UI.WebControls.GridView gv_highscores;
         
         /// <summary>
+        /// lbl_scores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_scores;
+        
+        /// <summary>
         /// gv_allscores control.
         /// </summary>
         /// <remarks>
@@ -47,5 +56,23 @@ namespace FinalYearProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gv_allscores;
+        
+        /// <summary>
+        /// lbWorkoutSummarySubHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbWorkoutSummarySubHeader;
+        
+        /// <summary>
+        /// dl_progress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList dl_progress;
     }
 }
