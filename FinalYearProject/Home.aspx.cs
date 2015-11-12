@@ -11,6 +11,12 @@ namespace FinalYearProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.Browser["IsMobile"] == "True")
+            {
+                Response.Redirect("http://musictherapy.azurewebsites.net/MusicView.aspx");
+            }
+
+                
 
         }
     }

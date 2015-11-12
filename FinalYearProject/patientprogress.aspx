@@ -98,7 +98,7 @@
                 <asp:Label ID="lbl_scores" runat="server" Text="All Scores"></asp:Label>
             </div>
             <br />
-            <asp:GridView ID="gv_allscores" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnPageIndexChanging="OnPaging" HorizontalAlign="Center">
+            <asp:GridView ID="gv_allscores" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnPageIndexChanging="OnPaging" HorizontalAlign="Center" PageSize="15">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
 
