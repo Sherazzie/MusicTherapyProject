@@ -104,7 +104,23 @@
 
 
 
-    </asp:DataList>                                             
+    </asp:DataList>    
+     <table style="margin:0 auto">
+  <tr>
+    <td>
+        <asp:Button ID="btnfirst" runat="server" Font-Bold="true" Text="<<" Height="31px" 
+                    Width="43px" onclick="btnfirst_Click" /></td>
+        <td>
+            <asp:Button ID="btnprevious" runat="server" Font-Bold="true" Text="<" Height="31px" 
+                    Width="43px" onclick="btnprevious_Click" /></td>
+            <td>
+                <asp:Button ID="btnnext" runat="server" Font-Bold="true" Text=">" Height="31px" 
+                    Width="43px" onclick="btnnext_Click" /></td>
+                <td>
+                    <asp:Button ID="btnlast" runat="server" Font-Bold="true" Text=">>" Height="31px" 
+                    Width="43px" onclick="btnlast_Click" /></td>
+    </tr>
+   </table>                                         
     <footer id="footer" class="top-space">
         <div class="footer2">
             <div class="container">
