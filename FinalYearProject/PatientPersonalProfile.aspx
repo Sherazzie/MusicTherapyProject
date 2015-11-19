@@ -95,7 +95,7 @@
       <asp:Panel runat="server" HorizontalAlign="Center">
         <a href="ViewPatients.aspx">Patient List</a> > <a href="PatientPersonalProfile.aspx"> <%=this.patientname %></a>
           <br />
-           <h1> Personal Details:</h1>
+           <h1 style="color:black"> Personal Details:</h1>
         <table style="margin:0 auto;">
             <tr>
                 <td>
@@ -134,7 +134,7 @@
   <br />
        
     <asp:Panel runat="server" HorizontalAlign="Center">
-        <h1> Training Records:(<a href="PatientTrainingRecords.aspx">View Details</a>) </h1>
+        <h1 style="color:black"> Training Records:(<a href="PatientTrainingRecords.aspx">View Details</a>) </h1>
         <br />
         <asp:ImageButton ID="imbPrevious" runat="server" ImageUrl="~/siteimages/leftbutton.png" Height="39px" Width="52px" OnClick="imbPrevious_Click"/>
                             &nbsp;<asp:Label ID="lbLineDateRangeView" runat="server"></asp:Label>
@@ -151,7 +151,7 @@
     <br />
     <br />
     <asp:Panel runat="server" HorizontalAlign="Center">
-       <h1> Music Assigned:</h1>
+       <h1 style="color:black"> Music Assigned:</h1>
         <br />
         <asp:GridView ID="gv_musicfiles" runat="server"   AutoGenerateColumns="False" HorizontalAlign="Center" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gv_musicfiles_RowCommand">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775"  />

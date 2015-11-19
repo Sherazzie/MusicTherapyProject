@@ -48,7 +48,7 @@
      <br />
     <br />
      
-    <table style="margin:0 auto;">
+    <table style="margin:0 auto;color:black;">
         <tr>
             <td>Patient Name</td>
             
