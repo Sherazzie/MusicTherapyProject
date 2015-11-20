@@ -4,6 +4,11 @@
    <link href="CssStyles/style.css" rel="stylesheet" />
     <link href="CssStyles/datalist%20css.css" rel="stylesheet" />
     <link href="CssStyles/IndividualEffects.css" rel="stylesheet" />
+        <style type="text/css">
+            .auto-style1 {
+                height: 25px;
+            }
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
     <div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -46,16 +51,16 @@
     </asp:Panel>
     <br />
     <br />
-    <table style="margin:0 auto;">
+    <table style="margin:0 auto;color:black;border-color:black; border-width:3px;" border="1"  >
         <tr>
-            <td>Song Name:</td>
-            <td><asp:TextBox ID="tb_songname" runat="server" ReadOnly="True"></asp:TextBox></td>
+            <td style="border-color:black;" class="auto-style1">Song Name:</td>
+            <td style="border-color:black;"class="auto-style1"><asp:TextBox ID="tb_songname" runat="server" ReadOnly="True"></asp:TextBox></td>
         </tr>
       
        
         <tr>
-            <td>Assign To</td>
-            <td> 
+            <td style="border-color:black;">Assign To</td>
+            <td style="border-color:black;"> 
                
                 &nbsp;<asp:DataList ID="dl_un" runat="server" Font-Names="Verdana" Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" HorizontalAlign="Center">
 
@@ -97,13 +102,13 @@
             </td>
         </tr>
         <tr>
-            <td></td>
+            <td style="border-color:black;"></td>
             
-            <td><asp:Button ID="btn_assign" runat="server" Text="Assign Music" OnClick="btn_assign_Click" /> <asp:Button ID="btn_back" runat="server" Text="Back to album" OnClick="btn_back_Click" /></td>
+            <td style="border-color:black;"><asp:Button ID="btn_assign" runat="server" Text="Assign Music" OnClick="btn_assign_Click" /> <asp:Button ID="btn_back" runat="server" Text="Back to album" OnClick="btn_back_Click" /></td>
         </tr>
         <tr>
-            <td></td>
-            <td><asp:Label ID="lbl_result" runat="server" ></asp:Label></td>
+            <td style="border-color:black;"></td>
+            <td style="border-color:black;"><asp:Label ID="lbl_result" runat="server" ></asp:Label></td>
             
         </tr>
     </table>

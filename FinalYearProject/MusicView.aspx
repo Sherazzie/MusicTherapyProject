@@ -47,9 +47,10 @@
         </p>
     </asp:Panel>
     <asp:Panel runat="server" HorizontalAlign="Center">
+        <div id ="getrektboiss" style="color:black">
         Search Query:<asp:TextBox ID="tb_query" runat="server"></asp:TextBox>
         by
-        <asp:RadioButton ID="rb_artists" runat="server" Text="Artists" GroupName="Query" />
+        <asp:RadioButton ID="rb_artists"  runat="server" Text="Artists" GroupName="Query" />
         by
         <asp:RadioButton ID="rb_albums" runat="server" Text="Albums" GroupName="Query" />
    
@@ -59,7 +60,7 @@
         
         <br />
         <asp:Label ID="lbl_result" runat="server"></asp:Label>
-
+</div>
         
 
 
