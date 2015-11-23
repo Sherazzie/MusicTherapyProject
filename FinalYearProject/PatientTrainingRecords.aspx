@@ -44,13 +44,19 @@
          <a href="ViewPatients.aspx">Patient List</a> > <a href="PatientPersonalProfile.aspx"> <%=this.patientname %></a> > <a href="PatientTrainingRecords.aspx"> View Patient Calendar</a>
         <br />
         <br />
-      <h1 style="color:black;">  Patient Training Calendar( <a href="PatientEventsAssignment.aspx">Add Record</a>) </h1>
+      
         <br />
         <br />
+         <div class="container main-container">
+              <div class="FoodIntake-container2">
+                 <div class="common-header-containerW">
+                 Patient Training Calendar( <a href="PatientEventsAssignment.aspx">Add Record</a>)
+            </div>
+                    <div class="common-content-containerW">
         <table style="margin:0 auto">
             <tr>
                <td>
-        <asp:Calendar ID="cal_records" runat="server" Height="357px" Width="417px" OnDayRender="cal_records_DayRender" OnSelectionChanged="cal_records_SelectionChanged" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="ShortMonth">
+        <asp:Calendar ID="cal_records"  runat="server" Height="357px" Width="417px" OnDayRender="cal_records_DayRender" OnSelectionChanged="cal_records_SelectionChanged" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="ShortMonth" >
 
             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
             <DayStyle BackColor="#CCCCCC" />
@@ -105,6 +111,9 @@
             <SelectedItemStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
 
         </asp:DataList>
+                        </div>
+                 </div>
+    </div>
     </asp:Panel>
     <footer id="footer" class="top-space">
         <div class="footer2">

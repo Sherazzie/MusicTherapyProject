@@ -56,6 +56,14 @@
             width: 49.8%;
             float: right;
         }
+        .FoodIntake-container2 {
+    width: 49.8%;
+    margin-left: 300px;
+}
+               .FoodIntake-container3 {
+    width: 49.8%;
+    margin-left: 250px;
+}
 
         .clear {
             clear: both;
@@ -109,7 +117,16 @@
             .FoodIntake-container {
                 width: 49.5%;
                 float: right;
+
             }
+            .FoodIntake-container2 {
+    width: 49.8%;
+    margin-left: 300px;
+}
+                         .FoodIntake-container3 {
+    width: 49.8%;
+    margin-left: 250px;
+}
 
             .clear {
                 clear: both;

@@ -2,6 +2,16 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            width: 567px;
+            height: 40px;
+            color: white;
+            padding-left: 20px;
+            padding-top: 10px;
+            background-color: #5d4949;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
     <div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -32,75 +42,97 @@
 
 		        </div>
     </div>
-	<!-- /.navbar -->
-            <asp:Panel runat="server" HorizontalAlign="Center" >
-                <br />
-                <br />
-                <br />
-                <br />
-                <p style="vertical-align:middle;">
-                    &nbsp;</p>
+    <!-- /.navbar -->
+    <asp:Panel runat="server" HorizontalAlign="Center">
+        <br />
+        <br />
+        <br />
+        <br />
+        <p style="vertical-align: middle;">
+            &nbsp;
+        </p>
     </asp:Panel>
-      <asp:Panel runat="server" HorizontalAlign="Center">
-        <a href="ViewPatients.aspx">Patient List</a> > <a href="PatientPersonalProfile.aspx"> <%=this.patientname %></a> > <a href="PatientTrainingRecords.aspx"> View Patient Calendar</a> > <a href="PatientEventsAssignment.aspx"> Add Appointment Summary</a>
-   
-        </asp:Panel>
-     <br />
-    <br />
-     
-    <table style="margin:0 auto;color:black;">
-        <tr>
-            <td>Patient Name</td>
-            
-            <td><asp:TextBox ID="tb_patientname" runat="server" TextMode="SingleLine" Enabled="False"></asp:TextBox></td>
-        </tr>
-        <tr>
-            <td>Patient IC</td>
-            <td>
-            <asp:TextBox ID="tb_patientic" runat="server" Enabled="False"></asp:TextBox></td>
-        </tr>
-        <tr>
-            
-            <td> Select Appointment Date</td>
-            <td><asp:TextBox ID="tb_date" runat="server" Enabled="False"></asp:TextBox></td>
-        </tr>
-         <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><asp:Calendar ID="cal_patient" runat="server" OnSelectionChanged="cal_patient_SelectionChanged" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="250px" NextPrevFormat="ShortMonth" Width="330px">
-                <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
-                <DayStyle BackColor="#CCCCCC" />
-                <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
-                <OtherMonthDayStyle ForeColor="#999999" />
-                <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-                <TitleStyle BackColor="#333399" BorderStyle="Solid" Font-Bold="True" Font-Size="12pt" ForeColor="White" Height="12pt" />
-                <TodayDayStyle BackColor="#999999" ForeColor="White" />
-                </asp:Calendar></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Appointment Summary</td>
-            <td><asp:TextBox ID="tb_summary" runat="server" TextMode="MultiLine" Height="128px" Width="355px"></asp:TextBox> </td>
-            
-        </tr>
-        <tr>
-            <td></td>
-            
-            <td><asp:Button ID="btn_submit" runat="server" Text="Submit" OnClick="btn_submit_Click" /> <asp:Button ID="btn_back" runat="server" Text="Back" OnClick="btn_back_Click" /></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><asp:Label ID="lbl_result" runat="server"></asp:Label></td>
-            
-        </tr>
+    <asp:Panel runat="server" HorizontalAlign="Center">
+        <a href="ViewPatients.aspx">Patient List</a> > <a href="PatientPersonalProfile.aspx"><%=this.patientname %></a> > <a href="PatientTrainingRecords.aspx">View Patient Calendar</a> > <a href="PatientEventsAssignment.aspx">Add Appointment Summary</a>
 
-    </table>
+    </asp:Panel>
+    <br />
+    <br />
+    <div class="container main-container">
+        <div class="FoodIntake-container2">
+            <div class="auto-style1">
+                Add appointment Summary
+            </div>
+          
+            <div class="common-content-containerW">
+                  <br />
+            <br />
+            <br />
+                <table style="margin: 0 auto; color: black;">
+                    <tr>
+                        <td>Patient Name</td>
+
+                        <td>
+                            <asp:TextBox ID="tb_patientname" runat="server" TextMode="SingleLine" Enabled="False"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td>Patient IC</td>
+                        <td>
+                            <asp:TextBox ID="tb_patientic" runat="server" Enabled="False"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+
+                        <td>Select Appointment Date</td>
+                        <td>
+                            <asp:TextBox ID="tb_date" runat="server" Enabled="False"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <asp:Calendar ID="cal_patient" runat="server" OnSelectionChanged="cal_patient_SelectionChanged" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="250px" NextPrevFormat="ShortMonth" Width="330px">
+                                <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
+                                <DayStyle BackColor="#CCCCCC" />
+                                <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
+                                <OtherMonthDayStyle ForeColor="#999999" />
+                                <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                                <TitleStyle BackColor="#333399" BorderStyle="Solid" Font-Bold="True" Font-Size="12pt" ForeColor="White" Height="12pt" />
+                                <TodayDayStyle BackColor="#999999" ForeColor="White" />
+                            </asp:Calendar>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Appointment Summary</td>
+                        <td>
+                            <asp:TextBox ID="tb_summary" runat="server" TextMode="MultiLine" Height="128px" Width="355px"></asp:TextBox>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+
+                        <td>
+                            <asp:Button ID="btn_submit" runat="server" Text="Submit" OnClick="btn_submit_Click" />
+                            <asp:Button ID="btn_back" runat="server" Text="Back" OnClick="btn_back_Click" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <asp:Label ID="lbl_result" runat="server"></asp:Label></td>
+
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        </div>
     <footer id="footer" class="top-space">
         <div class="footer2">
             <div class="container">

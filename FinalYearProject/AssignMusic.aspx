@@ -8,6 +8,20 @@
             .auto-style1 {
                 height: 25px;
             }
+            .auto-style2 {
+                width: 732px;
+                height: 877px;
+                top: 40px;
+                background-color: #FFFAFA;
+            }
+            .auto-style3 {
+                width: 732px;
+                height: 40px;
+                color: white;
+                padding-left: 20px;
+                padding-top: 10px;
+                background-color: #5d4949;
+            }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
@@ -51,16 +65,26 @@
     </asp:Panel>
     <br />
     <br />
-    <table style="margin:0 auto;color:black;border-color:black; border-width:3px;" border="1"  >
+      <div class="container main-container">
+        <div class="FoodIntake-container3">
+            <div class="auto-style3">
+               Assign Music
+            </div>
+          
+            <div class="auto-style2">
+             <br />
+            <br />
+            <br />
+    <table style="margin:0 auto;color:black;"" >
         <tr>
-            <td style="border-color:black;" class="auto-style1">Song Name:</td>
-            <td style="border-color:black;"class="auto-style1"><asp:TextBox ID="tb_songname" runat="server" ReadOnly="True"></asp:TextBox></td>
+            <td class="auto-style1">Song Name:</td>
+            <td class="auto-style1"><asp:TextBox ID="tb_songname" runat="server" ReadOnly="True"></asp:TextBox></td>
         </tr>
       
        
         <tr>
-            <td style="border-color:black;">Assign To</td>
-            <td style="border-color:black;"> 
+            <td >Assign To</td>
+            <td > 
                
                 &nbsp;<asp:DataList ID="dl_un" runat="server" Font-Names="Verdana" Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" HorizontalAlign="Center">
 
@@ -102,19 +126,21 @@
             </td>
         </tr>
         <tr>
-            <td style="border-color:black;"></td>
+            <td ></td>
             
-            <td style="border-color:black;"><asp:Button ID="btn_assign" runat="server" Text="Assign Music" OnClick="btn_assign_Click" /> <asp:Button ID="btn_back" runat="server" Text="Back to album" OnClick="btn_back_Click" /></td>
+            <td ><asp:Button ID="btn_assign" runat="server" Text="Assign Music" OnClick="btn_assign_Click" /> <asp:Button ID="btn_back" runat="server" Text="Back to album" OnClick="btn_back_Click" /></td>
         </tr>
         <tr>
-            <td style="border-color:black;"></td>
-            <td style="border-color:black;"><asp:Label ID="lbl_result" runat="server" ></asp:Label></td>
+            <td ></td>
+            <td ><asp:Label ID="lbl_result" runat="server" ></asp:Label></td>
             
         </tr>
     </table>
-
+</div>
+            </div>
   
- 
+ </div>
+    
    
     <br />
     <br />
