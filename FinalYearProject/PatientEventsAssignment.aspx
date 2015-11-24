@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
-            width: 567px;
+            width: 561px;
             height: 40px;
             color: white;
             padding-left: 20px;

@@ -36,11 +36,11 @@ namespace FinalYearProject
                     string albumartpath = "MusicAlbumArt//" + FileName;
                     CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=musicupload;AccountKey=/3oK1KTz3hD8DgtlVODqrr2ZzD3G/roTxqi1XXdWu6c9l2WXe0lXkFkb1bdpigaotEnxWYCkRyacsn5hYq4EkA==");
                     CloudBlobClient blobclient = storageAccount.CreateCloudBlobClient();
-                    CloudBlobContainer cloudBlobContainer = blobclient.GetContainerReference("musicfiles");
-                    string filenameUnique = songname + "_" + artname + Path.GetExtension(fu_uploadmusic.FileName.ToLower());
-                    CloudBlockBlob blockBlob = cloudBlobContainer.GetBlockBlobReference(filenameUnique);
-                    blockBlob.Properties.ContentType = fu_uploadmusic.PostedFile.ContentType;
-                    blockBlob.UploadFromStream(fu_uploadmusic.FileContent);
+                    CloudBlobContainer cloudBlobContainer = blobclient.GetContainerReference("musicfiles");//get container refrence 
+                    string filenameUnique = songname + "_" + artname + Path.GetExtension(fu_uploadmusic.FileName.ToLower());//create unqiue file name
+                    CloudBlockBlob blockBlob = cloudBlobContainer.GetBlockBlobReference(filenameUnique);// get blob reference
+                    blockBlob.Properties.ContentType = fu_uploadmusic.PostedFile.ContentType;//set content type
+                    blockBlob.UploadFromStream(fu_uploadmusic.FileContent);//upload to storage
                     string azureurl = "https://musicupload.blob.core.windows.net/musicfiles/" + filenameUnique;
                     validatemusic.MusicDetails(songname, artname, albname, azureurl, albumartpath,lyr);
                     lbl_result.Text = validatemusic.returnmessage;

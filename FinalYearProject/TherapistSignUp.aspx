@@ -59,7 +59,7 @@
             
 
             <div class="login-help">
-                <a href="Login.aspx">Login</a> • <a href="#">Forgot Password</a>
+                <a href="Login.aspx">Login</a> 
             </div>
         </div>
       
