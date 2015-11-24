@@ -47,7 +47,7 @@
 
 
             <div class="login-help">
-                <a href="SignUp.aspx">Sign Up</a> • <a href="#">Forgot Password</a>
+                <a href="SignUp.aspx">Sign Up</a> •
             </div>
         </div>
 
