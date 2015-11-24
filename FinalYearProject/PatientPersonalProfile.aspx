@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BeforeLogin.Master" AutoEventWireup="true" CodeBehind="PatientPersonalProfile.aspx.cs" Inherits="FinalYearProject.PatientPersonalProfile" %>
-
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="chart.js/Chart.js" type="text/javascript"></script>
@@ -137,10 +137,13 @@
         <h1 style="color:black"> Training Records:(<a href="PatientTrainingRecords.aspx">View Details</a>) </h1>
         <br />
         <asp:ImageButton ID="imbPrevious" runat="server" ImageUrl="~/siteimages/leftbutton.png" Height="39px" Width="52px" OnClick="imbPrevious_Click"/>
-                            &nbsp;<asp:Label ID="lbLineDateRangeView" runat="server"></asp:Label>
+                            &nbsp;<asp:Label ID="lbLineDateRangeView" runat="server" ForeColor="Black"></asp:Label>
                             &nbsp;<asp:ImageButton ID="imbNext" runat="server" ImageUrl="~/siteimages/rightbutton.png" Height="39px" Width="52px" OnClick="imbNext_Click" />
    
          <br />
+        <br />
+        <br />
+      <div style="color:white">  *If chart empty no data for current month*</div>
         <br />
              <div id="hello" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
           
@@ -153,7 +156,7 @@
     <asp:Panel runat="server" HorizontalAlign="Center">
        <h1 style="color:black"> Music Assigned:</h1>
         <br />
-        <asp:GridView ID="gv_musicfiles" runat="server"   AutoGenerateColumns="False" HorizontalAlign="Center" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gv_musicfiles_RowCommand">
+        <asp:GridView ID="gv_musicfiles" runat="server"   AutoGenerateColumns="False" HorizontalAlign="Center" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gv_musicfiles_RowCommand" EmptyDataText="No music currently assigned to patient" Font-Size="15pt">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775"  />
         <Columns>
 

@@ -150,7 +150,7 @@
     <hr />
     <asp:Panel runat="server" HorizontalAlign="Center">
 
-   <h1> Song Currently Assigned to :</h1>
+   <h1 style="color:black;"> Song Currently Assigned to :</h1>
     </asp:Panel>
  
     &nbsp;<asp:DataList ID="dl_patients" runat="server" Font-Names="Verdana" Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" HorizontalAlign="Center">

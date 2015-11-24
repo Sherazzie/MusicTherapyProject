@@ -133,7 +133,9 @@
             }
         }
 
-
+.tdright{
+    float:right;
+}
 audio, canvas, video {
     display: inline-block;
 }

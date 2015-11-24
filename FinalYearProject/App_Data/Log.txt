@@ -7,3 +7,12 @@
    at System.IO.DirectoryInfo.InternalGetFiles(String searchPattern, SearchOption searchOption)
    at System.IO.DirectoryInfo.GetFiles()
    at FiftyOne.Foundation.Mobile.Detection.WebProvider.CleanTemporaryFiles()
+2015-11-24T11:13:26.6951507Z - 15044 - Warn - Exception cleaning temporary files
+2015-11-24T11:13:26.9781218Z - 15044 - Warn - 
+2015-11-24T11:13:26.9781218Z - 15044 - Warn - Could not find a part of the path 'C:\Users\Sherrez\Source\Repos\MusicTherapyProject\FinalYearProject\App_Data\51Degrees'.
+2015-11-24T11:13:26.9816262Z - 15044 - Warn -    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileSystemEnumerableIterator`1.CommonInit()
+   at System.IO.FileSystemEnumerableIterator`1..ctor(String path, String originalUserPath, String searchPattern, SearchOption searchOption, SearchResultHandler`1 resultHandler, Boolean checkHost)
+   at System.IO.DirectoryInfo.InternalGetFiles(String searchPattern, SearchOption searchOption)
+   at System.IO.DirectoryInfo.GetFiles()
+   at FiftyOne.Foundation.Mobile.Detection.WebProvider.CleanTemporaryFiles()

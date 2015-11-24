@@ -50,9 +50,10 @@
         <div id ="getrektboiss" style="color:black">
         Search Query:<asp:TextBox ID="tb_query" runat="server"></asp:TextBox>
         by
-        <asp:RadioButton ID="rb_artists"  runat="server" Text="Artists" GroupName="Query" />
+      
+        <asp:RadioButton ID="rb_artists"  runat="server" Text="Artists" GroupName="Query" ForeColor="Black" />
         by
-        <asp:RadioButton ID="rb_albums" runat="server" Text="Albums" GroupName="Query" />
+        <asp:RadioButton ID="rb_albums" runat="server" Text="Albums" GroupName="Query" ForeColor="Black"  />
    
         <asp:Button ID="btn_queries" runat="server" Text="Search" OnClick="btn_queries_Click" Width="67px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btn_reset" runat="server" Text="Reset Music View" OnClick="btn_reset_Click" />
