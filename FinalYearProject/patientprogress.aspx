@@ -193,7 +193,7 @@
                         <asp:Label ID="lbl_ic" runat="server" Text='<%#Bind("PatientIC") %>'></asp:Label>
                                              <br />
                                              <hr class="hrblue" />
-                                             Appointment Date:<asp:Label ID="lbl_apptdate" runat="server" Text='<%#Bind("ApptDate") %>'></asp:Label>
+                                             Appointment Date:<br /><asp:Label ID="lbl_apptdate" runat="server" Text='<%#Bind("ApptDate","{0:dd/M/yyyy}")%>'></asp:Label>
                                          </asp:Panel>
                                      </ItemTemplate>
                                      <SelectedItemStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />

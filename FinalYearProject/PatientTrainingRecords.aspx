@@ -91,10 +91,10 @@
 
          </HeaderTemplate>
             <ItemTemplate>
-                <table style="border: 1px solid black;">
+                <table style="border: 1px solid black;margin:0 auto;">
                     <tr>
                         <td style="border: 1px solid black;border-collapse: collapse;">Appointment <br />Day</td>
-                        <td style="border: 1px solid black;border-collapse: collapse;"><asp:Label ID="lbl_appdate" runat="server" Text='<%#Bind("ApptDate") %>'></asp:Label></td>   
+                        <td style="border: 1px solid black;border-collapse: collapse;"><asp:Label ID="lbl_appdate" runat="server" Text='<%#Bind("ApptDate","{0:dd/M/yyyy}") %>'></asp:Label></td>   
                     </tr>
               
                     <tr>

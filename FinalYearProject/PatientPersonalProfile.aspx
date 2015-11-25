@@ -124,7 +124,7 @@
             <br />
             Gender:<asp:Label ID="lbl_Gender" runat="server" Text='<%# Bind("Gender") %>' Font-Bold="true"></asp:Label>
             <br />
-            Birthdate:<asp:Label ID="lbl_bday" runat="server" Text='<%# Bind("Birtthdate") %>' Font-Bold="true"></asp:Label>
+            Birthdate:<asp:Label ID="lbl_bday" runat="server" Text='<%# Bind("Birtthdate","{0:dd/M/yyyy}") %>' Font-Bold="true"></asp:Label>
         </ItemTemplate>
     </asp:DataList>
                     </td>
