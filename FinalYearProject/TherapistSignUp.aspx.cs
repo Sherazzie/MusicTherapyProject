@@ -16,6 +16,7 @@ namespace FinalYearProject
         {
 
         }
+        bool emailcheck;
         protected void btn_signup(object sender, EventArgs e)
         {
             string emailinput = email.Value;
@@ -23,13 +24,18 @@ namespace FinalYearProject
             {
                 lbl_result.Text = "Email cannot be empty";
             }
+            else
+            {
+                 emailcheck = EmailIsValid(emailinput);
+            }
+
             string tnameinput = tname.Value;
             string userdob = dob.Value;
             string userpasswordinput = password.Value;
             string cfmpasswordinput = cfmpassword.Value;
             string mobileinput = mobileno.Value;
 
-            bool emailcheck = EmailIsValid(emailinput);
+           
 
 
             if (emailcheck == true)
@@ -44,25 +50,24 @@ namespace FinalYearProject
                         validateinput.CreateDoctorAcccount(emailinput, tnameinput, userpasswordinput, cfmpasswordinput, mobileinput, userdob, "PImages//" + FileName);
                         lbl_result.Text = validateinput.returnMessage;
                     }
-                    else
-                    {
-                        lbl_result.Text = "You did not upload a profile image";
-                    }
+                   
                 }
                 else
                 {
-                    lbl_result.Text = "Email is Invalid";
+                    lbl_result.Text = "You did not upload a profile image";
                 }
 
 
+
+            }
+            else
+            {
+                lbl_result.Text = "Email is Invalid";
             }
         }
         public bool EmailIsValid(string emailaddress)
         {
-            if (emailaddress == "")
-            {
-                lbl_result.Text = "Your email cannot be empty";
-            }
+           
             try
             {
                 MailAddress m = new MailAddress(emailaddress);
