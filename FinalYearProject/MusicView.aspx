@@ -103,7 +103,17 @@
 
 
         </ItemTemplate>
-
+        <FooterTemplate >
+           <asp:Panel runat="server" HorizontalAlign="Center">
+               <br />
+               <br />
+               <br />
+<asp:Label Visible='<%#bool.Parse((dl_music.Items.Count==0).ToString())%>' runat="server" ID="lblNoRecord" Text="No Record Found!" ForeColor="Black" Font-Size="Large"></asp:Label>
+               </asp:Panel>
+            <br />
+            <br />
+            <br />
+</FooterTemplate>
 
 
     </asp:DataList>    

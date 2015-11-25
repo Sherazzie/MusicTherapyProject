@@ -183,7 +183,17 @@
 
 
         </ItemTemplate>
-
+        <FooterTemplate >
+           <asp:Panel runat="server" HorizontalAlign="Center">
+               <br />
+               <br />
+               <br />
+<asp:Label Visible='<%#bool.Parse((dl_patients.Items.Count==0).ToString())%>' runat="server" ID="lblNoRecord" Text="Song not assigned to any patient yet!" ForeColor="Black" Font-Size="Large"></asp:Label>
+               </asp:Panel>
+            <br />
+            <br />
+            <br />
+</FooterTemplate>
 
         </asp:DataList>
     <footer id="footer" class="top-space">

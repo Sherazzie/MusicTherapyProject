@@ -54,7 +54,7 @@
         
     </asp:Panel>
     <br />
-    <asp:DataList ID="dl_patients" runat="server" Font-Names="Verdana" Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" Width="800px" HorizontalAlign="Center" OnItemCommand="dl_patient_ItemCommand">
+    <asp:DataList ID="dl_patients" runat="server" Font-Names="Verdana" Font-Size="Small" RepeatColumns="3" RepeatDirection="Horizontal" Width="600px" HorizontalAlign="Center" OnItemCommand="dl_patient_ItemCommand">
         <ItemStyle ForeColor="Black" />
         <ItemTemplate>
             <div id="pricePlans">

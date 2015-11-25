@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BeforeLogin.Master" AutoEventWireup="true" CodeBehind="PatientTrainingRecords.aspx.cs" Inherits="FinalYearProject.PatientTrainingRecords" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
+    <style type="text/css">
+        .auto-style1 {
+            height: 926px;
+        }
+    </style>
+
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
     <div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -47,7 +53,7 @@
       
         <br />
         <br />
-         <div class="container main-container">
+         <div class="auto-style1">
               <div class="FoodIntake-container2">
                  <div class="common-header-containerW">
                  Patient Training Calendar( <a href="PatientEventsAssignment.aspx">Add Record</a>)
